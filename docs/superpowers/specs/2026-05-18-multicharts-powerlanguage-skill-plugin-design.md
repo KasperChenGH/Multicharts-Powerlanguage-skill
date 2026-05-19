@@ -2,7 +2,7 @@
 
 **Date:** 2026-05-18
 **Status:** Approved
-**Author:** Kasper Chen
+**Author:** Yu-An Chen
 
 ---
 
@@ -172,9 +172,9 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
   "name": "multicharts-powerlanguage",
   "description": "MultiCharts PowerLanguage skills for Claude: platform fundamentals, language syntax, and the built-in function reference.",
   "version": "0.1.0",
-  "author": { "name": "Kasper Chen" },
-  "homepage": "https://github.com/<user>/Multicharts-Powerlanguage-skill",
-  "repository": "https://github.com/<user>/Multicharts-Powerlanguage-skill",
+  "author": { "name": "Yu-An Chen" },
+  "homepage": "https://github.com/kappa123451/Multicharts-Powerlanguage-skill",
+  "repository": "https://github.com/kappa123451/Multicharts-Powerlanguage-skill",
   "license": "MIT",
   "keywords": ["multicharts", "powerlanguage", "trading", "skills", "easylanguage"]
 }
@@ -186,7 +186,7 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
 {
   "name": "multicharts-powerlanguage-dev",
   "description": "MultiCharts PowerLanguage skills marketplace",
-  "owner": { "name": "Kasper Chen" },
+  "owner": { "name": "Yu-An Chen" },
   "plugins": [
     {
       "name": "multicharts-powerlanguage",
@@ -207,7 +207,6 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
 }
 ```
 
-(The repo URL and GitHub user need to be filled in once the user provides their GitHub handle.)
 
 ---
 
@@ -218,7 +217,7 @@ The root `README.md` should cover:
 1. **What this is** — one-paragraph pitch: a Claude Code skill plugin that teaches Claude to write and look up MultiCharts PowerLanguage.
 2. **Install** — for now, Claude Code only (the user can extend later):
    ```text
-   /plugin marketplace add <github-user>/Multicharts-Powerlanguage-skill
+   /plugin marketplace add kappa123451/Multicharts-Powerlanguage-skill
    /plugin install multicharts-powerlanguage@multicharts-powerlanguage-dev
    ```
 3. **What's inside** — list the three skills with one-line descriptions.
