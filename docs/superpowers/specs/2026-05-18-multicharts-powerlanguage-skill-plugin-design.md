@@ -8,7 +8,7 @@
 
 ## Goal
 
-Build a Claude Code skill plugin named `multicharts-powerlanguage` that teaches Claude how to read and write MultiCharts PowerLanguage code and how to look up the language's built-in functions. The plugin follows the on-disk format of the official [`superpowers`](https://github.com/obra/superpowers) plugin so it can be installed via the standard plugin marketplace flow and hosted on GitHub Pages / GitHub.
+Build a Claude Code skill plugin named `multicharts-powerlanguage` that teaches Claude how to read and write MultiCharts PowerLanguage code, and gives Claude an indexed reference covering every PowerLanguage keyword and built-in function. The plugin follows the on-disk format of the official [`superpowers`](https://github.com/obra/superpowers) plugin so it can be installed via the standard plugin marketplace flow and hosted on GitHub.
 
 There is no public Claude skill for MultiCharts PowerLanguage today; this fills that gap.
 
@@ -16,15 +16,28 @@ There is no public Claude skill for MultiCharts PowerLanguage today; this fills 
 
 ## Scope
 
-**In scope:** General MultiCharts PowerLanguage *language* and *platform* usage — what a new MultiCharts user needs to write a working indicator, signal, or function.
+**In scope:** General MultiCharts PowerLanguage *language* and *platform* usage — what a MultiCharts user needs to read and write any indicator, signal, or function. Specifically, the complete set of PowerLanguage keywords as catalogued in MultiCharts's own help system (`PowerLanguage.chm`, 951 keyword pages across 40 categories).
 
-**Out of scope:** Trading strategy patterns, exit recipes, position-sizing formulas, indicator-selection methodology, alpha research, parameter-tuning heuristics, monte-carlo tooling. These are the author's strategy research — they're leakage from a different domain and would mislead public users into thinking the plugin endorses a particular trading style.
+**Out of scope:** Trading strategy patterns, exit recipes, position-sizing formulas, indicator-selection methodology, alpha research, parameter-tuning heuristics, monte-carlo tooling. These are the author's strategy research — leakage from a different domain that would mislead public users into thinking the plugin endorses a particular trading style.
 
 ---
 
 ## Audience
 
-Any MultiCharts PowerLanguage user. Examples are kept generic (no TXF / TWD / specific contract assumptions, no "92 strategies" references). Where a worked example needs a contract spec, use an abstract `BigPointValue` placeholder and say so.
+Any MultiCharts PowerLanguage user, on any operating system. Although MultiCharts itself is Windows-only, the *skill content* must be platform-independent so a user running Claude Code on macOS or Linux (e.g. while studying or analyzing PowerLanguage code) gets identical behavior.
+
+Examples are kept generic — no TXF / TWD / specific contract assumptions, no "92 strategies" references, no personal naming conventions.
+
+---
+
+## Cross-platform constraint
+
+The plugin must work identically on Windows, macOS, and Linux. Two consequences:
+
+1. **No platform-specific runtime hooks.** The reference content cannot be generated at install time by extracting the user's local `PowerLanguage.chm` (the CHM only exists on Windows machines with MultiCharts installed). All content is committed to the public repo and bundled with the plugin.
+2. **No reliance on local tools.** The skill must not assume `hh.exe`, MultiCharts install paths, or any Windows-only binaries are present.
+
+Build-time tools (run by the maintainer, not by users) may still be Windows-specific. See "Build process" below.
 
 ---
 
@@ -40,28 +53,43 @@ Multicharts-Powerlanguage-skill/
 │   │   └── SKILL.md
 │   ├── powerlanguage-syntax/
 │   │   └── SKILL.md
-│   └── powerlanguage-functions/
+│   └── powerlanguage-keywords-reference/
 │       ├── SKILL.md
-│       └── functions-reference.md
+│       ├── keywords-index.md           # bundled — categorized index of all 951 keywords
+│       └── details/                    # bundled — one .md per keyword (paraphrased)
+│           ├── Strategy_Orders/
+│           │   ├── Buy.md
+│           │   ├── Sell.md
+│           │   └── …
+│           ├── Math_and_Trig/
+│           ├── Plotting/
+│           └── …  (40 category folders)
+├── scripts/
+│   └── generate-keyword-details.ps1    # maintainer-only build tool (see "Build process")
+├── references/                         # gitignored — local-only working data
+│   ├── chm_extracted/                  # decompiled PowerLanguage.chm (MCT-copyrighted)
+│   └── wiki_keyword_index.txt          # wiki category page text
 ├── docs/
-│   └── superpowers/
-│       └── specs/
-│           └── 2026-05-18-multicharts-powerlanguage-skill-plugin-design.md
+│   └── superpowers/specs/
+│       └── 2026-05-18-multicharts-powerlanguage-skill-plugin-design.md
+├── .gitignore
 ├── README.md
-├── LICENSE                 (existing — MIT, Kasper Chen 2026)
+├── LICENSE                             # MIT (existing)
 └── package.json
 ```
 
 ### Why this layout
 
-Mirrors the `superpowers` plugin convention exactly:
+Mirrors the `superpowers` plugin convention:
 
 - `.claude-plugin/plugin.json` — plugin metadata (name, version, author, repo, license, keywords).
-- `.claude-plugin/marketplace.json` — listing entry so the GitHub repo itself works as a single-plugin marketplace (`/plugin marketplace add <user>/Multicharts-Powerlanguage-skill`).
+- `.claude-plugin/marketplace.json` — listing entry so the GitHub repo itself works as a single-plugin marketplace (`/plugin marketplace add kappa123451/Multicharts-Powerlanguage-skill`).
 - `skills/<skill-name>/SKILL.md` — one folder per skill. Each `SKILL.md` has YAML frontmatter (`name`, `description`) plus a markdown body. The `description` field is the trigger Claude reads to decide whether to invoke the skill.
-- Large reference material lives in a sibling `.md` file inside the skill folder (e.g. `functions-reference.md`). The `SKILL.md` stays small (fast to load); the reference is loaded on demand. This matches how superpowers handles `testing-anti-patterns.md` next to `test-driven-development/SKILL.md`.
+- Large reference material lives in sibling `.md` files inside the skill folder. The `SKILL.md` stays small (fast to load); the per-keyword `.md` files are loaded on demand. This matches how superpowers handles `testing-anti-patterns.md` next to `test-driven-development/SKILL.md`.
+- `scripts/` holds maintainer-only build tooling that produces `skills/powerlanguage-keywords-reference/details/`. End users never run anything from this folder.
+- `references/` is gitignored — used during dev (by the maintainer) to hold the locally-extracted CHM and any source notes. Never committed.
 - `package.json` mirrors the version/name (some harnesses read it).
-- `README.md` documents install paths for Claude Code and any other supported harnesses, lists the three skills, and links to the LICENSE.
+- `README.md` documents install paths, lists the three skills, links to the LICENSE.
 
 ---
 
@@ -74,7 +102,7 @@ Mirrors the `superpowers` plugin convention exactly:
 **Body covers:**
 - What MultiCharts is and what PowerLanguage is (`.pla` files; EasyLanguage compatibility).
 - Editions: MultiCharts (standard, PowerLanguage), MultiCharts .NET (C# / VB.NET), MultiCharts Portfolio Trader.
-- The three script types and what each can do:
+- The three script types:
   - **Indicator** — plots only, cannot place orders.
   - **Signal** — places orders; one or more signals compose a Strategy.
   - **Function** — reusable calculation; returns via `FunctionName = value;`.
@@ -104,62 +132,124 @@ Mirrors the `superpowers` plugin convention exactly:
 
 **Sources:** `powerlanguage_reference.md` — only the language-syntax sections; scrub strategy-specific examples ("seller v4-v6", "Kway HU01W", named personal strategies, the "Strategy Code Structure — Canonical Layout" section, the "Custom Indicator Construction Patterns" section).
 
-### 3. `powerlanguage-functions`
+### 3. `powerlanguage-keywords-reference`
 
-**Trigger description (frontmatter):** Use when looking up a PowerLanguage built-in or library function — the functions shipped with MultiCharts across the ADE framework, Global Variables (GV*), ADA/ADP period access, technical indicators, options pricing (OS_*), collections (Map/List), date/time utilities, strategy diagnostics, and INI file I/O.
+**Trigger description (frontmatter):** Use when looking up a PowerLanguage keyword or built-in function — covers the ~951 official keywords across 40 categories from MultiCharts's help system (Strategy Orders, Math and Trig, Plotting, Date and Time Routines, Drawing, Sessions, etc.). Provides name, category, signature, paraphrased description, and a link to the official wiki entry for each keyword.
 
-**Body (`SKILL.md`):** Short trigger + a category index pointing into `functions-reference.md`. Categories:
-1. Chart Drawing & Auto-Build (AB_*)
-2. ADE Framework (ADE*, _ADE*)
-3. Global Variables (GV*)
-4. Trade Manager / Account Functions (Get*)
-5. Session & Calendar Utilities
-6. Futures Expiration / Close Dates
-7. Technical Indicators
-8. OHLC Period Access (ADA / ADP)
-9. Options Pricing (OS_*)
-10. Strategy Diagnostics & Equity
-11. Position Sizing & Entry Tracking
-12. Array & Utility Functions
-13. Collection Framework (Map / List)
-14. Date/Time Utilities
-15. Chart Display Helpers
-16. INI File I/O
-17. ARPS Functions
-18. Miscellaneous Functions
-19. Empty / Stub Functions
+**Body (`SKILL.md`):** Short trigger + a category index that points into `keywords-index.md` and `details/<Category>/<Keyword>.md`. Lookup flow:
+1. Check `keywords-index.md` for the keyword name → confirms it exists, gives the category and one-line signature.
+2. Open `details/<Category>/<Keyword>.md` for the paraphrased description, parameter list, and example.
+3. If the user needs full official prose or extended examples, point them at `https://www.multicharts.com/trading-software/index.php?title=<Keyword>`.
 
-**`functions-reference.md`:** The full 343-function catalog. Each entry: function name, source `.elf` file, inputs, purpose, return value. This is bulky reference material — Claude loads it only when looking up a specific function.
+**`keywords-index.md`:** One section per category. Each section lists the keywords in that category as a table with two columns: keyword name and one-line signature. Maintained by `scripts/generate-keyword-details.ps1` so it stays in sync with `details/`.
 
-**Sources:** `mc_functions.md` (full file, light editorial pass for clarity).
+**`details/<Category>/<Keyword>.md`:** One file per keyword, ~951 total. Each follows this template:
+
+```markdown
+# <Keyword>
+
+**Category:** <Category Name>
+**Signature:** `<usage signature line>`
+
+<1-2 sentence paraphrased description>
+
+**Parameters**
+- `<paramA>` *(type, required|optional)* — <short paraphrased explanation>
+- `<paramB>` *(type, required|optional)* — <short paraphrased explanation>
+
+**Example (illustrative)**
+```
+<original minimal example we author — not copied from CHM>
+```
+
+*Official docs:* https://www.multicharts.com/trading-software/index.php?title=<Keyword>
+```
+
+**The 40 categories** (sourced from CHM `files/03_words/`):
+
+```
+AccountsPositions, Alerts, Arrow_Drawing, Attributes, Colors,
+Comparison_and_Loops, Currency_Codes, Data_Information_General,
+Date_and_Time_routines, Declaration, DLL_Calling, DOM, Dynamic_Arrays,
+Environment_Information, Execution_Control, ExpertCommentary,
+Math_and_Trig, Miscellaneous_keywords, MouseClickEvents, Multimedia,
+Output, Plotting, Portfolio_Money_Management,
+Portfolio_Strategy_Performance, Portfolio_Strategy_Position,
+Portfolio_Strategy_Properties, Quote_Fields, Rectangle_Drawing,
+Sessions, Skip_Words, Strategy_Events, Strategy_Orders,
+Strategy_Performance, Strategy_Position,
+Strategy_Position_Synchronization, Strategy_Position_Trades,
+Strategy_Properties, Text_Drawing, Text_Manipulation, Trendline_Drawing
+```
+
+**Sources (maintainer only, never committed):**
+- `references/chm_extracted/files/03_words/<Category>/<Keyword>.htm` — decompiled PowerLanguage.chm. Read during build to extract structural facts and to draft paraphrased prose. Never republished verbatim.
+- The MultiCharts wiki (`https://www.multicharts.com/trading-software/index.php?title=Category:PowerLanguageKeywords`) as a category cross-reference.
+
+Skill 3 deliberately **supersedes** the earlier `mc_functions.md` catalog (343 `.elf` files, stale classification). The CHM is the authoritative reference and is broader: 951 entries vs. 343, includes pure-language keywords (`If`, `Then`, `Buy`, color constants) that aren't on disk as `.elf` files.
 
 ---
 
-## Content sourcing rules
+## Copyright and attribution
+
+The `PowerLanguage.chm` content is © MCT Limited. To keep the public repo legally clean:
+
+1. **Never commit raw CHM content.** The decompiled `.htm` files live only under `references/chm_extracted/` which is gitignored. They exist on the maintainer's machine for build purposes only.
+2. **Paraphrase prose; don't copy.** Every description, parameter explanation, and example in `details/<Category>/<Keyword>.md` is original prose written by the maintainer (machine-assisted but original). The first sentence of MCT's description must NOT appear verbatim.
+3. **Examples are authored, not copied.** Where MCT's CHM contains code examples, the corresponding `details/<Keyword>.md` provides a *new* minimal example based on the signature pattern. Don't reuse MCT's example variables, narratives, or trade scenarios.
+4. **Structural facts are fine.** Keyword name, category name, parameter types, signature line — these are factual API data, not copyrightable expression.
+5. **Attribution and link-out.** Every keyword detail file ends with `*Official docs:* https://www.multicharts.com/trading-software/index.php?title=<Keyword>`. The repo README acknowledges MultiCharts and links to the official help.
+6. **NOTICE file.** Ship a `NOTICE` (or section in the README) that reads roughly:
+
+   > This plugin references MultiCharts and PowerLanguage, trademarks of MCT Limited. Keyword summaries are original paraphrased descriptions; the official documentation is maintained by MultiCharts at https://www.multicharts.com/.
+
+If MCT Limited objects at any point, the maintainer pulls the details and reverts the skill to index-only (signature + link out).
+
+---
+
+## Build process (maintainer only)
+
+End users never run anything. The maintainer regenerates `keywords-index.md` and `details/` via `scripts/generate-keyword-details.ps1`. The script:
+
+1. **Decompile** `C:\Program Files\TS Support\MultiCharts64\PowerLanguage.chm` into `references/chm_extracted/` using `hh.exe -decompile`. (Run once per MultiCharts version update.)
+2. **Walk** `references/chm_extracted/files/03_words/<Category>/<keyword>.htm` for each of the 951 files.
+3. **Per file, extract structural facts** by regex/HTML parse: keyword name (`<H1>`), category (folder name), usage signature (block after `<B>Usage</B>`), parameter names and types (block after `<B>Parameters</B>`).
+4. **Per file, generate paraphrased description**: take the first sentence of the source description and rewrite it (the script uses a small set of rewrite rules + manual review hooks for awkward cases).
+5. **Per file, generate an original example** from the signature pattern (template-based; never read MCT's example text).
+6. **Write** `skills/powerlanguage-keywords-reference/details/<Category>/<Keyword>.md` following the template above.
+7. **Rebuild** `keywords-index.md` from the produced details.
+8. **Flag for human review** any keyword whose source description couldn't be parsed cleanly — these get manually authored.
+
+The script is committed to the repo for transparency, but only the maintainer runs it. It assumes Windows + MultiCharts installed; it doesn't run for end users and isn't part of the user-facing install flow.
+
+A separate verification step before each release:
+- Lint pass: ensure no `details/*.md` contains any verbatim string from `references/chm_extracted/`.
+- Spot-review of ~50-100 high-traffic keywords (Buy, Sell, If, Then, Average, RSI, MACD, Plot1, EntryPrice, MarketPosition, etc.) for prose quality.
+
+---
+
+## Content sourcing rules (skills 1 and 2)
 
 The two source directories (`C:\Users\User\Desktop\Mc_Agent` and `C:\Users\User\Desktop\trade_agent\knowledge\coding`) contain overlapping files. When a file exists in both:
 
-- For `powerlanguage_reference.md`, use the **larger 728-line version** from `trade_agent/coding/` as the base. Then drop these sections entirely (do not attempt to genericize — their value is tied to the specific strategies they describe):
+- For `powerlanguage_reference.md`, use the **larger 728-line version** from `trade_agent/coding/` as the base. Then drop these sections entirely (do not attempt to genericize):
   - "Custom Indicator Construction Patterns" (names personal strategies: seller v4-v6, Kway HU01W/HU07W/HU08W/HU10W).
-  - "Strategy Code Structure — Canonical Layout" (personal section-comment convention: `{ === BUSINESS === }` / `{ === DIAGNOSTIC === }`).
-  Keep "Bar Time Labeling Convention" (the close-time labeling rule) — it documents general MultiCharts behavior, not a strategy choice.
+  - "Strategy Code Structure — Canonical Layout" (personal section-comment convention).
+  Keep "Bar Time Labeling Convention" (general MultiCharts behavior, not a strategy choice).
 - For files identical in both sources, use either.
 
-Files explicitly **excluded** from this plugin (they are strategy research, not language reference):
-- `input_reduction.md`
-- `exit_patterns.md`
-- `position_sizing_formulas.md`
-- `all_indicators_reference.md`
-- `novel_indicators.md`
-- `price_action_features.md`
+Files explicitly **excluded** from this plugin (strategy research, not language reference):
+- `input_reduction.md`, `exit_patterns.md`, `position_sizing_formulas.md`
+- `all_indicators_reference.md`, `novel_indicators.md`, `price_action_features.md`
 - `monte_carlo_usage.md`
 - The personal naming table in `signal_naming.md` (only the compile-rule survives, folded into skill 1).
+- `mc_functions.md` — superseded by the CHM-derived `keywords-reference` skill.
 
 Scrubbing checklist when copying content into `SKILL.md` bodies:
-- Replace TXF / TWD / `BigPointValue = 200` with generic placeholders or example contract specs.
+- Replace TXF / TWD / `BigPointValue = 200` with generic placeholders.
 - Remove references to "92 strategies", "seller v4-v6", "Kway HU01W", etc.
 - Remove personal section-comment conventions (`{ === BUSINESS === }`, `{ === DIAGNOSTIC === }`).
-- Keep general gotchas, language rules, platform behavior. Drop user-specific exit/sizing/indicator opinions.
+- Keep general gotchas, language rules, platform behavior. Drop user-specific strategy opinions.
 
 ---
 
@@ -170,13 +260,13 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
 ```json
 {
   "name": "multicharts-powerlanguage",
-  "description": "MultiCharts PowerLanguage skills for Claude: platform fundamentals, language syntax, and the built-in function reference.",
+  "description": "MultiCharts PowerLanguage skills for Claude: platform fundamentals, language syntax, and a categorized reference for all 951 PowerLanguage keywords.",
   "version": "0.1.0",
   "author": { "name": "Yu-An Chen" },
   "homepage": "https://github.com/kappa123451/Multicharts-Powerlanguage-skill",
   "repository": "https://github.com/kappa123451/Multicharts-Powerlanguage-skill",
   "license": "MIT",
-  "keywords": ["multicharts", "powerlanguage", "trading", "skills", "easylanguage"]
+  "keywords": ["multicharts", "powerlanguage", "trading", "skills", "easylanguage", "keywords-reference"]
 }
 ```
 
@@ -190,7 +280,7 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
   "plugins": [
     {
       "name": "multicharts-powerlanguage",
-      "description": "MultiCharts PowerLanguage skills for Claude: fundamentals, syntax, and built-in function reference.",
+      "description": "MultiCharts PowerLanguage skills for Claude: fundamentals, syntax, and keywords reference.",
       "version": "0.1.0",
       "source": "./"
     }
@@ -207,23 +297,24 @@ Scrubbing checklist when copying content into `SKILL.md` bodies:
 }
 ```
 
-
 ---
 
 ## README
 
 The root `README.md` should cover:
 
-1. **What this is** — one-paragraph pitch: a Claude Code skill plugin that teaches Claude to write and look up MultiCharts PowerLanguage.
-2. **Install** — for now, Claude Code only (the user can extend later):
+1. **What this is** — one-paragraph pitch: a Claude Code skill plugin that teaches Claude to write MultiCharts PowerLanguage and look up any of its 951 keywords.
+2. **Cross-platform** — works on Windows, macOS, Linux. No install-time scripts to run.
+3. **Install (Claude Code):**
    ```text
    /plugin marketplace add kappa123451/Multicharts-Powerlanguage-skill
    /plugin install multicharts-powerlanguage@multicharts-powerlanguage-dev
    ```
-3. **What's inside** — list the three skills with one-line descriptions.
-4. **How it works** — skills auto-trigger based on conversation context (Claude reads the `description` frontmatter). Users don't need to invoke anything manually.
-5. **License** — MIT (existing).
-6. **Contributing / source** — link to the repo. No contribution guide for v0.1.
+4. **What's inside** — list the three skills with one-line descriptions.
+5. **How it works** — skills auto-trigger based on the `description` frontmatter. Users don't invoke anything manually.
+6. **Attribution / NOTICE** — MultiCharts and PowerLanguage are trademarks of MCT Limited. Keyword summaries are original paraphrased descriptions; full official documentation lives at https://www.multicharts.com/.
+7. **License** — MIT (existing).
+8. **Contributing / source** — link to the repo. No formal contribution guide for v0.1.
 
 ---
 
@@ -232,22 +323,25 @@ The root `README.md` should cover:
 The plugin is complete when:
 
 1. The three `SKILL.md` files exist with proper YAML frontmatter (`name` matches folder name, `description` starts with "Use when …").
-2. `functions-reference.md` lists all 343 functions in the source catalog, organized by the 19 categories.
-3. No file under `skills/` contains TXF / TWD / "92 strategies" / personal-strategy-name references.
-4. `.claude-plugin/plugin.json` and `marketplace.json` are valid JSON and parse with the same shape as the superpowers equivalents.
-5. `README.md` documents the install command.
-6. A manual test from a fresh Claude Code instance: install the plugin from a local path, ask "what's the difference between a MultiCharts indicator and a signal?" — the `multicharts-fundamentals` skill should auto-invoke.
+2. `skills/powerlanguage-keywords-reference/keywords-index.md` lists all 951 keywords organized under the 40 categories.
+3. `skills/powerlanguage-keywords-reference/details/` contains one `.md` file per keyword (~951 total), each conforming to the template (Keyword, Category, Signature, paraphrased Description, Parameters, original Example, wiki link).
+4. **Lint:** no file under `skills/` contains a verbatim string of ≥10 consecutive words taken from `references/chm_extracted/`.
+5. **Lint:** no file under `skills/` contains TXF / TWD / "92 strategies" / personal-strategy-name references.
+6. `.claude-plugin/plugin.json` and `marketplace.json` are valid JSON.
+7. `README.md` documents the install command, cross-platform support, and the MCT attribution.
+8. **Manual smoke test** from a fresh Claude Code instance on Windows AND on macOS or Linux: install the plugin from a local path, ask "what does the Buy keyword do in PowerLanguage?" — the `powerlanguage-keywords-reference` skill should auto-invoke and Claude should answer using the paraphrased entry plus the wiki link.
 
 ---
 
 ## Versioning
 
-Start at `0.1.0`. Bump minor for new skills, patch for content fixes within a skill. The version lives in three places: `plugin.json`, `marketplace.json`, `package.json` — keep them in sync.
+Start at `0.1.0`. Bump minor for new skills or major content regenerations from a newer MultiCharts version; patch for content fixes within a skill. The version lives in three places: `plugin.json`, `marketplace.json`, `package.json` — keep them in sync.
 
 ---
 
 ## Out-of-scope decisions deferred
 
-- **Other harnesses (Codex, Gemini, OpenCode, Copilot, Cursor, Factory).** The superpowers plugin supports all of them via per-harness install scripts and a `gemini-extension.json` / `.opencode/` / `AGENTS.md` etc. For v0.1 we ship Claude Code only. Adding other harnesses is a future minor-version bump.
+- **Other harnesses (Codex, Gemini, OpenCode, Copilot, Cursor, Factory).** The superpowers plugin supports all of them via per-harness install scripts and a `gemini-extension.json` / `.opencode/` / `AGENTS.md`. For v0.1 we ship Claude Code only. Adding other harnesses is a future minor-version bump.
 - **A separate marketplace.** For v0.1 the repo itself is the marketplace (single-plugin). If this grows to multiple MultiCharts-related plugins later, split out a real marketplace repo.
-- **CI / tests.** No automated tests in v0.1. The `superpowers:writing-skills` skill has a methodology for testing skills with subagents — adopt only if the plugin grows.
+- **CI / tests.** No automated tests in v0.1 beyond the lint checks. The `superpowers:writing-skills` skill has a methodology for testing skills with subagents — adopt if the plugin grows.
+- **Auto-update from newer MultiCharts CHM versions.** v0.1 ships the keywords reference built from MultiCharts 15.0 (September 2025). When a new MultiCharts release lands, the maintainer reruns `scripts/generate-keyword-details.ps1` and ships a new plugin version.
