@@ -35,6 +35,11 @@ Describe 'SKILL.md frontmatter' {
       $r.Valid | Should -BeTrue -Because $r.Reason
       $r.Name  | Should -Be 'powerlanguage-syntax'
     }
+    It 'powerlanguage-keywords-reference has valid frontmatter' {
+      $r = Test-SkillFrontmatter "$repoRoot/skills/powerlanguage-keywords-reference/SKILL.md"
+      $r.Valid | Should -BeTrue -Because $r.Reason
+      $r.Name  | Should -Be 'powerlanguage-keywords-reference'
+    }
   }
 
   Context 'negative cases (synthetic fixtures)' {
@@ -122,6 +127,28 @@ Second paragraph below an HR.
       $r.Valid | Should -BeTrue -Because $r.Reason
       # The description must be the YAML one, not anything after the body HR
       $r.Description | Should -Match 'verifying body horizontal rules'
+    }
+  }
+
+  Context 'powerlanguage-keywords-reference scaffolding' {
+    It 'has all 40 category folders' {
+      $expected = @(
+        'AccountsPositions','Alerts','Arrow_Drawing','Attributes','Colors',
+        'Comparison_and_Loops','Currency_Codes','Data_Information_General',
+        'Date_and_Time_routines','Declaration','DLL_Calling','DOM','Dynamic_Arrays',
+        'Environment_Information','Execution_Control','ExpertCommentary',
+        'Math_and_Trig','Miscellaneous_keywords','MouseClickEvents','Multimedia',
+        'Output','Plotting','Portfolio_Money_Management',
+        'Portfolio_Strategy_Performance','Portfolio_Strategy_Position',
+        'Portfolio_Strategy_Properties','Quote_Fields','Rectangle_Drawing',
+        'Sessions','Skip_Words','Strategy_Events','Strategy_Orders',
+        'Strategy_Performance','Strategy_Position',
+        'Strategy_Position_Synchronization','Strategy_Position_Trades',
+        'Strategy_Properties','Text_Drawing','Text_Manipulation','Trendline_Drawing'
+      )
+      $detailsRoot = "$repoRoot/skills/powerlanguage-keywords-reference/details"
+      $actual = Get-ChildItem $detailsRoot -Directory | Select-Object -Expand Name | Sort-Object
+      ($expected | Sort-Object) -join ',' | Should -Be ($actual -join ',')
     }
   }
 }
