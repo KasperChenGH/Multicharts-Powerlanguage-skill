@@ -15,6 +15,9 @@ function Get-ParaphrasedDescription {
     @{ From = '^Enters a short position as specified by the parameters\.?$';      To = 'Opens a short position with the size and timing given by the parameters.' }
     @{ From = '^Closes? (an? )?long position as specified.*$';                    To = 'Exits the current long position per the parameters.' }
     @{ From = '^Closes? (an? )?short position as specified.*$';                   To = 'Exits the current short position per the parameters.' }
+    @{ From = '^Completely or partially exits one or all of the long entries as specified by the parameters\.?$'; To = 'Closes part or all of any open long entries per the given parameters.' }
+    @{ From = '^Completely or partially exits.*long.*$';                          To = 'Closes part or all of any open long entries per the given parameters.' }
+    @{ From = '^Completely or partially exits.*short.*$';                         To = 'Closes part or all of any open short entries per the given parameters.' }
     @{ From = '^Returns the (.+?) of (.+?)\.?$';                                  To = 'Yields the $1 of $2.' }
     @{ From = '^Calculates the (.+?)\.?$';                                        To = 'Computes the $1.' }
     @{ From = '^Used in (.+?)\.?$';                                               To = 'Appears inside $1.' }
