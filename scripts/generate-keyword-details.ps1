@@ -86,10 +86,25 @@ Write-Host "Found $($htmFiles.Count) keyword .htm files"
 $parsedKeywords = @()
 $failures = @()
 
+$placeholderDescription = 'See the official MultiCharts documentation linked below for the full description and behavior of this keyword.'
+$paraphraseSkipped = 0
+$verbatimLintFailures = 0
+
 foreach ($f in $htmFiles) {
   try {
     $parsed = Parse-ChmFile $f.FullName
-    $paraphrased = Get-ParaphrasedDescription $parsed.Description
+
+    # Try to paraphrase the main description. If the paraphraser can't safely
+    # rewrite it (rule miss or 10-word verbatim run survived), fall back to a
+    # generic placeholder + the wiki link in the footer. This keeps coverage
+    # at 100% of keywords rather than dropping un-paraphraseable ones.
+    try {
+      $paraphrased = Get-ParaphrasedDescription $parsed.Description
+    } catch {
+      $paraphrased = $placeholderDescription
+      $paraphraseSkipped++
+    }
+
     $example = New-KeywordExample $parsed
 
     # Clean and paraphrase each parameter description before writing.
@@ -106,11 +121,33 @@ foreach ($f in $htmFiles) {
 
     $outPath = Write-KeywordDetailFile -Parsed $parsed -Description $paraphrased -Example $example -OutputRoot $DetailsRoot
 
-    # Verbatim lint
+    # Verbatim lint — last line of defense. If a leak got through, escalate:
+    # (1) rewrite description to the placeholder; if still leaking,
+    # (2) also blank out the Signature line and the per-parameter list. These
+    # come from Parse-Chm's regex extraction and occasionally contain large
+    # chunks of the CHM Usage prose verbatim. Replacing them with placeholders
+    # preserves the keyword file at the cost of less detail.
     $md = Get-Content $outPath -Raw
     $htm = Get-Content $f.FullName -Raw
     if (Test-VerbatimLint -MarkdownText $md -SourceHtmlText $htm) {
-      $failures += @{ File = $f.FullName; Reason = 'verbatim-lint' }
+      # Step 1: placeholder description.
+      Write-KeywordDetailFile -Parsed $parsed -Description $placeholderDescription -Example $example -OutputRoot $DetailsRoot | Out-Null
+      $verbatimLintFailures++
+      $md2 = Get-Content $outPath -Raw
+      if (Test-VerbatimLint -MarkdownText $md2 -SourceHtmlText $htm) {
+        # Step 2: also blank out Usage + Parameters.
+        $strippedParsed = @{
+          Name       = $parsed.Name
+          Category   = $parsed.Category
+          Usage      = 'See official docs for signature details.'
+          Parameters = @()
+        }
+        Write-KeywordDetailFile -Parsed $strippedParsed -Description $placeholderDescription -Example $example -OutputRoot $DetailsRoot | Out-Null
+        $md3 = Get-Content $outPath -Raw
+        if (Test-VerbatimLint -MarkdownText $md3 -SourceHtmlText $htm) {
+          $failures += @{ File = $f.FullName; Reason = 'verbatim-lint (persists even with stripped placeholder)' }
+        }
+      }
     }
     $parsedKeywords += $parsed
   } catch {
@@ -127,14 +164,16 @@ if (-not (Test-Path $TestsDir)) { New-Item -ItemType Directory -Path $TestsDir -
 New-PlaFixtures -Keywords $parsedKeywords -OutputDir $TestsDir
 Write-Host "Wrote .pla fixtures in: $TestsDir"
 
-# Report failures
+# Report stats
+Write-Host ""
+Write-Host "Generated $($parsedKeywords.Count) of $($htmFiles.Count) keyword files." -ForegroundColor Green
+Write-Host "  $paraphraseSkipped keyword(s) used the placeholder description (paraphrase rule miss)." -ForegroundColor Cyan
+Write-Host "  $verbatimLintFailures keyword(s) had a verbatim-lint hit and were rewritten with placeholder." -ForegroundColor Cyan
+
 if ($failures.Count -gt 0) {
   Write-Host ""
-  Write-Host "$($failures.Count) keyword(s) need manual authoring:" -ForegroundColor Yellow
+  Write-Host "$($failures.Count) keyword(s) hit a hard failure:" -ForegroundColor Yellow
   $failures | ForEach-Object {
     Write-Host "  $($_.File)  =>  $($_.Reason)" -ForegroundColor Yellow
   }
-} else {
-  Write-Host ""
-  Write-Host "All $($htmFiles.Count) keywords generated successfully." -ForegroundColor Green
 }

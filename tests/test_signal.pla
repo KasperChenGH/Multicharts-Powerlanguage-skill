@@ -1,0 +1,469 @@
+{ test_signal.pla -- exercises every keyword routed to Signal script type }
+Variables: Value1( 0 );
+
+If False Then Begin    { wrap every statement in an unreachable If/Then to verify syntax only }
+    { Strategy_Position: CurrentContracts }
+    Value1 = CurrentContracts;
+    { Strategy_Position: ContractProfit }
+    Value1 = ContractProfit;
+    { Strategy_Position: BarsSinceExit_Checked }
+    Value1 = BarsSinceExit_Checked;
+    { Strategy_Position: CurrentEntries }
+    Value1 = CurrentEntries;
+    { Strategy_Position: EntryDateTime }
+    Value1 = EntryDateTime;
+    { Strategy_Position: EntryDate }
+    Value1 = EntryDate;
+    { Strategy_Position: CurrentShares }
+    Value1 = CurrentShares;
+    { Strategy_Performance: TotalBarsWinTrades }
+    Value1 = TotalBarsWinTrades;
+    { Strategy_Performance: TotalBarsLosTrades }
+    Value1 = TotalBarsLosTrades;
+    { Strategy_Performance: TotalBarsEvenTrades }
+    Value1 = TotalBarsEvenTrades;
+    { Strategy_Performance: TotalTrades }
+    Value1 = TotalTrades;
+    { Strategy_Position: BarsSinceExit }
+    Value1 = BarsSinceExit;
+    { Strategy_Position: BarsSinceEntry_Checked }
+    Value1 = BarsSinceEntry_Checked;
+    { Strategy_Position: BarsSinceEntry }
+    Value1 = BarsSinceEntry;
+    { Strategy_Position: EntryDateTime_Checked }
+    Value1 = EntryDateTime_Checked;
+    { Strategy_Position: ExitDate_Checked }
+    Value1 = ExitDate_Checked;
+    { Strategy_Position: ExitDateTime_Checked }
+    Value1 = ExitDateTime_Checked;
+    { Strategy_Position: ExitDateTime }
+    Value1 = ExitDateTime;
+    { Strategy_Position: ExitName }
+    Value1 = ExitName;
+    { Strategy_Position: ExitTime }
+    Value1 = ExitTime;
+    { Strategy_Position: ExitPrice_Checked }
+    Value1 = ExitPrice_Checked;
+    { Strategy_Position: ExitPrice }
+    Value1 = ExitPrice;
+    { Strategy_Position: EntryPrice }
+    Value1 = EntryPrice;
+    { Strategy_Position: EntryName }
+    Value1 = EntryName;
+    { Strategy_Position: EntryDate_Checked }
+    Value1 = EntryDate_Checked;
+    { Strategy_Position: EntryPrice_Checked }
+    Value1 = EntryPrice_Checked;
+    { Strategy_Position: ExitDate }
+    Value1 = ExitDate;
+    { Strategy_Position: EntryTime_Checked }
+    Value1 = EntryTime_Checked;
+    { Strategy_Position: EntryTime }
+    Value1 = EntryTime;
+    { Strategy_Performance: i_AvgEntryPrice_at_Broker_for_The_Strategy }
+    Value1 = i_AvgEntryPrice_at_Broker_for_The_Strategy;
+    { Strategy_Performance: i_AvgEntryPrice_at_Broker }
+    Value1 = i_AvgEntryPrice_at_Broker;
+    { Strategy_Performance: i_AvgEntryPrice }
+    Value1 = i_AvgEntryPrice;
+    { Strategy_Performance: i_ClosedEquity }
+    Value1 = i_ClosedEquity;
+    { Strategy_Performance: i_MarketPosition }
+    Value1 = i_MarketPosition;
+    { Strategy_Performance: i_CurrentShares }
+    Value1 = i_CurrentShares;
+    { Strategy_Performance: i_CurrentContracts }
+    Value1 = i_CurrentContracts;
+    { Strategy_Performance: AvgEntryPrice }
+    Value1 = AvgEntryPrice;
+    { Strategy_Performance: AvgBarsWinTrade }
+    Value1 = AvgBarsWinTrade;
+    { Strategy_Performance: AvgBarsLosTrade }
+    Value1 = AvgBarsLosTrade;
+    { Strategy_Performance: AvgEntryPrice_at_Broker }
+    Value1 = AvgEntryPrice_at_Broker;
+    { Strategy_Performance: GrossProfit }
+    Value1 = GrossProfit;
+    { Strategy_Performance: GrossLoss }
+    Value1 = GrossLoss;
+    { Strategy_Performance: AvgEntryPrice_at_Broker_for_The_Strategy }
+    Value1 = AvgEntryPrice_at_Broker_for_The_Strategy;
+    { Strategy_Performance: i_OpenEquity }
+    Value1 = i_OpenEquity;
+    { Strategy_Performance: NumLosTrades }
+    Value1 = NumLosTrades;
+    { Strategy_Performance: NumEvenTrades }
+    Value1 = NumEvenTrades;
+    { Strategy_Performance: NetProfit }
+    Value1 = NetProfit;
+    { Strategy_Performance: NumWinTrades }
+    Value1 = NumWinTrades;
+    { Strategy_Performance: SetCustomFitnessValue }
+    Value1 = SetCustomFitnessValue;
+    { Strategy_Performance: SetCustomFitnessNamedValue }
+    Value1 = SetCustomFitnessNamedValue;
+    { Strategy_Performance: PercentProfit }
+    Value1 = PercentProfit;
+    { Strategy_Performance: MaxConsecLosers }
+    Value1 = MaxConsecLosers;
+    { Strategy_Performance: LargestWinTrade }
+    Value1 = LargestWinTrade;
+    { Strategy_Performance: LargestLosTrade }
+    Value1 = LargestLosTrade;
+    { Strategy_Performance: MaxConsecWinners }
+    Value1 = MaxConsecWinners;
+    { Strategy_Performance: MaxSharesHeld }
+    Value1 = MaxSharesHeld;
+    { Strategy_Performance: MaxIDDrawDown }
+    Value1 = MaxIDDrawDown;
+    { Strategy_Performance: MaxContractsHeld }
+    Value1 = MaxContractsHeld;
+    { Strategy_Position_Trades: PosTradeCount }
+    Value1 = PosTradeCount;
+    { Strategy_Position_Trades: PosTradeCommission }
+    Value1 = PosTradeCommission;
+    { Strategy_Position_Trades: OpenEntryTime }
+    Value1 = OpenEntryTime;
+    { Strategy_Position_Trades: PosTradeEntryBar }
+    Value1 = PosTradeEntryBar;
+    { Strategy_Position_Trades: PosTradeEntryName }
+    Value1 = PosTradeEntryName;
+    { Strategy_Position_Trades: PosTradeEntryDateTime }
+    Value1 = PosTradeEntryDateTime;
+    { Strategy_Position_Trades: PosTradeEntryCategory }
+    Value1 = PosTradeEntryCategory;
+    { Strategy_Position_Trades: OpenEntryMinProfit }
+    Value1 = OpenEntryMinProfit;
+    { Strategy_Position_Trades: OpenEntryMaxProfitPerContract }
+    Value1 = OpenEntryMaxProfitPerContract;
+    { Strategy_Position_Trades: OpenEntryMaxProfit }
+    Value1 = OpenEntryMaxProfit;
+    { Strategy_Position_Trades: OpenEntryMinProfitPerContract }
+    Value1 = OpenEntryMinProfitPerContract;
+    { Strategy_Position_Trades: OpenEntryProfitPerContract }
+    Value1 = OpenEntryProfitPerContract;
+    { Strategy_Position_Trades: OpenEntryProfit }
+    Value1 = OpenEntryProfit;
+    { Strategy_Position_Trades: OpenEntryPrice }
+    Value1 = OpenEntryPrice;
+    { Strategy_Position_Trades: PosTradeEntryPrice }
+    Value1 = PosTradeEntryPrice;
+    { Strategy_Properties: Commission }
+    Value1 = Commission;
+    { Strategy_Position_Trades: PosTradeSize }
+    Value1 = PosTradeSize;
+    { Strategy_Position_Trades: PosTradeProfit }
+    Value1 = PosTradeProfit;
+    { Strategy_Properties: GetStrategyName }
+    Value1 = GetStrategyName;
+    { Strategy_Properties: Slippage }
+    Value1 = Slippage;
+    { Strategy_Properties: Margin }
+    Value1 = Margin;
+    { Strategy_Properties: InterestRate }
+    Value1 = InterestRate;
+    { Strategy_Position_Trades: PosTradeExitDateTime }
+    Value1 = PosTradeExitDateTime;
+    { Strategy_Position_Trades: PosTradeExitCategory }
+    Value1 = PosTradeExitCategory;
+    { Strategy_Position_Trades: PosTradeExitBar }
+    Value1 = PosTradeExitBar;
+    { Strategy_Position_Trades: PosTradeExitName }
+    Value1 = PosTradeExitName;
+    { Strategy_Position_Trades: PosTradeIsOpen }
+    Value1 = PosTradeIsOpen;
+    { Strategy_Position_Trades: PosTradeIsLong }
+    Value1 = PosTradeIsLong;
+    { Strategy_Position_Trades: PosTradeExitPrice }
+    Value1 = PosTradeExitPrice;
+    { Strategy_Position: MaxContracts }
+    Value1 = MaxContracts;
+    { Strategy_Position: MaxContractProfit_Checked }
+    Value1 = MaxContractProfit_Checked;
+    { Strategy_Position: MaxContractProfit }
+    Value1 = MaxContractProfit;
+    { Strategy_Position: MaxContracts_Checked }
+    Value1 = MaxContracts_Checked;
+    { Strategy_Position: MaxPositionLoss }
+    Value1 = MaxPositionLoss;
+    { Strategy_Position: MaxEntries_Checked }
+    Value1 = MaxEntries_Checked;
+    { Strategy_Position: MaxEntries }
+    Value1 = MaxEntries;
+    { Strategy_Position: i_MarketPosition_at_Broker_for_The_Strategy }
+    Value1 = i_MarketPosition_at_Broker_for_The_Strategy;
+    { Strategy_Position: i_MarketPosition_at_Broker }
+    Value1 = i_MarketPosition_at_Broker;
+    { Strategy_Position: ExitTime_Checked }
+    Value1 = ExitTime_Checked;
+    { Strategy_Position: MarketPosition }
+    Value1 = MarketPosition;
+    { Strategy_Position: MarketPosition_Checked }
+    Value1 = MarketPosition_Checked;
+    { Strategy_Position: MarketPosition_at_Broker_for_The_Strategy }
+    Value1 = MarketPosition_at_Broker_for_The_Strategy;
+    { Strategy_Position: MarketPosition_at_Broker }
+    Value1 = MarketPosition_at_Broker;
+    { Strategy_Position: MaxPositionLoss_Checked }
+    Value1 = MaxPositionLoss_Checked;
+    { Strategy_Position_Synchronization: PlaceMarketOrder }
+    Value1 = PlaceMarketOrder;
+    { Strategy_Position_Synchronization: ChangeMarketPosition }
+    Value1 = ChangeMarketPosition;
+    { Strategy_Position: PositionProfit_Checked }
+    Value1 = PositionProfit_Checked;
+    { Strategy_Position_Trades: OpenEntriesCount }
+    Value1 = OpenEntriesCount;
+    { Strategy_Position_Trades: OpenEntryDate }
+    Value1 = OpenEntryDate;
+    { Strategy_Position_Trades: OpenEntryContracts }
+    Value1 = OpenEntryContracts;
+    { Strategy_Position_Trades: OpenEntryComission }
+    Value1 = OpenEntryComission;
+    { Strategy_Position: MaxPositionsAgo }
+    Value1 = MaxPositionsAgo;
+    { Strategy_Position: MaxPositionProfit_Checked }
+    Value1 = MaxPositionProfit_Checked;
+    { Strategy_Position: MaxPositionProfit }
+    Value1 = MaxPositionProfit;
+    { Strategy_Position: MaxShares }
+    Value1 = MaxShares;
+    { Strategy_Position: PositionProfit }
+    Value1 = PositionProfit;
+    { Strategy_Position: OpenPositionProfit }
+    Value1 = OpenPositionProfit;
+    { Strategy_Position: MaxShares_Checked }
+    Value1 = MaxShares_Checked;
+    { Portfolio_Money_Management: pmms_strategy_resume }
+    Value1 = pmms_strategy_resume( 14 );
+    { Portfolio_Money_Management: pmms_strategy_pause }
+    Value1 = pmms_strategy_pause( 14 );
+    { Portfolio_Money_Management: pmms_strategy_openprofit }
+    Value1 = pmms_strategy_openprofit( 14 );
+    { Portfolio_Money_Management: pmms_strategy_riskcapital }
+    Value1 = pmms_strategy_riskcapital( 14 );
+    { Portfolio_Money_Management: pmms_strategy_symbol }
+    Value1 = pmms_strategy_symbol( 14 );
+    { Portfolio_Money_Management: pmms_strategy_set_status }
+    Value1 = pmms_strategy_set_status( 14, "x" );
+    { Portfolio_Money_Management: pmms_strategy_set_entry_contracts }
+    Value1 = pmms_strategy_set_entry_contracts( 14, 14 );
+    { Portfolio_Money_Management: pmms_strategy_get_entry_contracts }
+    Value1 = pmms_strategy_get_entry_contracts( 14 );
+    { Portfolio_Money_Management: pmms_strategy_entryprice }
+    Value1 = pmms_strategy_entryprice( 14 );
+    { Portfolio_Money_Management: pmms_strategy_deny_short_entries }
+    Value1 = pmms_strategy_deny_short_entries;
+    { Portfolio_Money_Management: pmms_strategy_is_paused }
+    Value1 = pmms_strategy_is_paused( 14 );
+    { Portfolio_Money_Management: pmms_strategy_netprofit }
+    Value1 = pmms_strategy_netprofit( 14 );
+    { Portfolio_Money_Management: pmms_strategy_maxiddrawdown }
+    Value1 = pmms_strategy_maxiddrawdown( 14 );
+    { Portfolio_Money_Management: pmms_strategy_marketposition }
+    Value1 = pmms_strategy_marketposition( 14 );
+    { Portfolio_Money_Management: pmm_get_global_named_num }
+    Value1 = pmm_get_global_named_num( "x" );
+    { Portfolio_Strategy_Performance: Portfolio_GrossLoss }
+    Value1 = Portfolio_GrossLoss;
+    { Portfolio_Money_Management: pmm_set_my_status }
+    Value1 = pmm_set_my_status( "x" );
+    { Portfolio_Money_Management: pmm_set_my_named_str }
+    Value1 = pmm_set_my_named_str( "x", "x" );
+    { Portfolio_Strategy_Performance: Portfolio_GrossProfit }
+    Value1 = Portfolio_GrossProfit;
+    { Portfolio_Strategy_Performance: Portfolio_NetProfit }
+    Value1 = Portfolio_NetProfit;
+    { Portfolio_Strategy_Performance: Portfolio_MaxIDDrawdown }
+    Value1 = Portfolio_MaxIDDrawdown;
+    { Portfolio_Strategy_Performance: Portfolio_InvestedCapital }
+    Value1 = Portfolio_InvestedCapital;
+    { Portfolio_Money_Management: pmm_get_my_named_num }
+    Value1 = pmm_get_my_named_num( "x" );
+    { Portfolio_Money_Management: pmm_get_my_index }
+    Value1 = pmm_get_my_index;
+    { Portfolio_Money_Management: pmm_get_global_named_str }
+    Value1 = pmm_get_global_named_str( "x" );
+    { Portfolio_Money_Management: pmm_get_my_named_str }
+    Value1 = pmm_get_my_named_str( "x" );
+    { Portfolio_Money_Management: pmm_set_my_named_num }
+    Value1 = pmm_set_my_named_num( "x", 14 );
+    { Portfolio_Money_Management: pmm_set_global_named_str }
+    Value1 = pmm_set_global_named_str( "x", "x" );
+    { Portfolio_Money_Management: pmm_set_global_named_num }
+    Value1 = pmm_set_global_named_num( "x", 14 );
+    { Portfolio_Money_Management: pmms_strategies_in_positions_count }
+    Value1 = pmms_strategies_in_positions_count( Close );
+    { Portfolio_Money_Management: pmms_strategies_in_long_count }
+    Value1 = pmms_strategies_in_long_count( Close );
+    { Portfolio_Money_Management: pmms_strategies_get_by_symbol_name }
+    Value1 = pmms_strategies_get_by_symbol_name( "x" );
+    { Portfolio_Money_Management: pmms_strategies_in_short_count }
+    Value1 = pmms_strategies_in_short_count( Close );
+    { Portfolio_Money_Management: pmms_strategies_set_status_for_all }
+    Value1 = pmms_strategies_set_status_for_all( "x" );
+    { Portfolio_Money_Management: pmms_strategies_resume_all }
+    Value1 = pmms_strategies_resume_all;
+    { Portfolio_Money_Management: pmms_strategies_pause_all }
+    Value1 = pmms_strategies_pause_all;
+    { Portfolio_Money_Management: pmms_set_strategy_named_num }
+    Value1 = pmms_set_strategy_named_num( 14, "x", 14 );
+    { Portfolio_Money_Management: pmms_get_strategy_named_str }
+    Value1 = pmms_get_strategy_named_str( 14, "x" );
+    { Portfolio_Money_Management: pmms_get_strategy_named_num }
+    Value1 = pmms_get_strategy_named_num( 14, "x" );
+    { Portfolio_Money_Management: pmms_set_strategy_named_str }
+    Value1 = pmms_set_strategy_named_str( 14, "x", "x" );
+    { Portfolio_Money_Management: pmms_strategies_deny_entries_all }
+    Value1 = pmms_strategies_deny_entries_all;
+    { Portfolio_Money_Management: pmms_strategies_count }
+    Value1 = pmms_strategies_count;
+    { Portfolio_Money_Management: pmms_strategies_allow_entries_all }
+    Value1 = pmms_strategies_allow_entries_all;
+    { Portfolio_Money_Management: pmms_strategy_allow_entries }
+    Value1 = pmms_strategy_allow_entries( 14 );
+    { Portfolio_Money_Management: pmms_strategy_deny_entries }
+    Value1 = pmms_strategy_deny_entries( 14 );
+    { Portfolio_Money_Management: pmms_strategy_currentcontracts }
+    Value1 = pmms_strategy_currentcontracts( 14 );
+    { Portfolio_Money_Management: pmms_strategy_close_position_partial }
+    Value1 = pmms_strategy_close_position_partial( 14, True, 14 );
+    { Portfolio_Money_Management: pmms_strategy_deny_exits }
+    Value1 = pmms_strategy_deny_exits( 14 );
+    { Portfolio_Money_Management: pmms_strategy_deny_long_entries }
+    Value1 = pmms_strategy_deny_long_entries;
+    { Portfolio_Money_Management: pmms_strategy_deny_exit_from_short }
+    Value1 = pmms_strategy_deny_exit_from_short;
+    { Portfolio_Money_Management: pmms_strategy_deny_exit_from_long }
+    Value1 = pmms_strategy_deny_exit_from_long;
+    { Portfolio_Money_Management: pmms_strategy_allow_exit_from_short }
+    Value1 = pmms_strategy_allow_exit_from_short;
+    { Portfolio_Money_Management: pmms_strategy_allow_exit_from_long }
+    Value1 = pmms_strategy_allow_exit_from_long;
+    { Portfolio_Money_Management: pmms_strategy_allow_exits }
+    Value1 = pmms_strategy_allow_exits( 14 );
+    { Portfolio_Money_Management: pmms_strategy_allow_long_entries }
+    Value1 = pmms_strategy_allow_long_entries;
+    { Portfolio_Money_Management: pmms_strategy_close_position }
+    Value1 = pmms_strategy_close_position( 14 );
+    { Portfolio_Money_Management: pmms_strategy_avgentryprice }
+    Value1 = pmms_strategy_avgentryprice( 14 );
+    { Portfolio_Money_Management: pmms_strategy_allow_short_entries }
+    Value1 = pmms_strategy_allow_short_entries;
+    { Strategy_Orders: SetBreakEven }
+    // SetBreakEven -- see official docs
+    { Strategy_Orders: SellShort }
+    SellShort ( "SellShort_T" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: Sell }
+    Sell ( "Sell_T" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: SetBreakEven_pt }
+    // SetBreakEven_pt -- see official docs
+    { Strategy_Orders: SetPercentTrailing }
+    // SetPercentTrailing -- see official docs
+    { Strategy_Orders: SetExitOnClose }
+    // SetExitOnClose -- see official docs
+    { Strategy_Orders: SetDollarTrailing }
+    // SetDollarTrailing -- see official docs
+    { Strategy_Orders: Entry }
+    // Entry -- see official docs
+    { Strategy_Orders: Cover }
+    // Cover -- see official docs
+    { Strategy_Orders: Contracts }
+    Buy ( "C" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: Higher }
+    // Higher -- see official docs
+    { Strategy_Orders: Market }
+    Buy ( "MLS" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: Lower }
+    // Lower -- see official docs
+    { Strategy_Orders: Limit }
+    Buy ( "MLS" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: SetPercentTrailing_pt }
+    // SetPercentTrailing_pt -- see official docs
+    { Strategy_Orders: Shares }
+    // Shares -- see official docs
+    { Strategy_Orders: Share }
+    // Share -- see official docs
+    { Strategy_Orders: SetTrailingStop_pt }
+    // SetTrailingStop_pt -- see official docs
+    { Strategy_Orders: Short }
+    // Short -- see official docs
+    { Strategy_Performance: AvgBarsEvenTrade }
+    Value1 = AvgBarsEvenTrade;
+    { Strategy_Orders: Total }
+    // Total -- see official docs
+    { Strategy_Orders: Stop }
+    Buy ( "MLS" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: SetStopContract }
+    // SetStopContract -- see official docs
+    { Strategy_Orders: SetProfitTarget_pt }
+    // SetProfitTarget_pt -- see official docs
+    { Strategy_Orders: SetProfitTarget }
+    // SetProfitTarget -- see official docs
+    { Strategy_Orders: SetStopLoss }
+    // SetStopLoss -- see official docs
+    { Strategy_Orders: SetStopShare }
+    // SetStopShare -- see official docs
+    { Strategy_Orders: SetStopPosition }
+    // SetStopPosition -- see official docs
+    { Strategy_Orders: SetStopLoss_pt }
+    // SetStopLoss_pt -- see official docs
+    { Portfolio_Strategy_Position: Portfolio_SetMaxPotentialLossPerContract }
+    Value1 = Portfolio_SetMaxPotentialLossPerContract;
+    { Portfolio_Strategy_Position: Portfolio_OpenPositionProfit }
+    Value1 = Portfolio_OpenPositionProfit;
+    { Portfolio_Strategy_Position: Portfolio_MaxOpenPositionPotentialLoss }
+    Value1 = Portfolio_MaxOpenPositionPotentialLoss;
+    { Portfolio_Strategy_Properties: PortfolioEntriesPriority }
+    Value1 = PortfolioEntriesPriority;
+    { Portfolio_Strategy_Properties: Portfolio_InterestRate }
+    Value1 = Portfolio_InterestRate;
+    { Portfolio_Strategy_Properties: Portfolio_GetMaxPotentialLossPerContract }
+    Value1 = Portfolio_GetMaxPotentialLossPerContract;
+    { Portfolio_Strategy_Properties: Portfolio_GetMarginPerContract }
+    Value1 = Portfolio_GetMarginPerContract;
+    { Portfolio_Strategy_Performance: Portfolio_PercentProfit }
+    Value1 = Portfolio_PercentProfit;
+    { Portfolio_Strategy_Performance: Portfolio_NumWinTrades }
+    Value1 = Portfolio_NumWinTrades;
+    { Portfolio_Strategy_Performance: Portfolio_NumLossTrades }
+    Value1 = Portfolio_NumLossTrades;
+    { Portfolio_Strategy_Performance: Portfolio_StrategyDrawdown }
+    Value1 = Portfolio_StrategyDrawdown;
+    { Portfolio_Strategy_Position: Portfolio_CurrentEntries }
+    Value1 = Portfolio_CurrentEntries;
+    { Portfolio_Strategy_Position: Portfolio_CalcMaxPotentialLossForEntry }
+    Value1 = Portfolio_CalcMaxPotentialLossForEntry;
+    { Portfolio_Strategy_Performance: Portfolio_TotalTrades }
+    Value1 = Portfolio_TotalTrades;
+    { Portfolio_Strategy_Properties: Portfolio_MaxRiskEquityPerPosPercent }
+    Value1 = Portfolio_MaxRiskEquityPerPosPercent;
+    { Strategy_Events: RejectedOrderStopPrice }
+    Value1 = RejectedOrderStopPrice;
+    { Strategy_Events: RejectedOrderLimitPrice }
+    Value1 = RejectedOrderLimitPrice;
+    { Strategy_Events: RejectedOrderContracts }
+    Value1 = RejectedOrderContracts;
+    { Strategy_Orders: All }
+    Sell All Contracts Next Bar Market;
+    { Strategy_Orders: Contract }
+    Buy ( "C" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: BuyToCover }
+    BuyToCover ( "BuyToCover_T" ) 1 Contract Next Bar Market;
+    { Strategy_Orders: Buy }
+    Buy ( "Buy_T" ) 1 Contract Next Bar Market;
+    { Strategy_Events: FilledOrderAction }
+    Value1 = FilledOrderAction;
+    { Portfolio_Strategy_Properties: Portfolio_TotalMaxRiskEquityPercent }
+    Value1 = Portfolio_TotalMaxRiskEquityPercent;
+    { Portfolio_Strategy_Properties: Portfolio_MinAcceptableRate }
+    Value1 = Portfolio_MinAcceptableRate;
+    { Strategy_Events: FilledOrderContracts }
+    Value1 = FilledOrderContracts;
+    { Strategy_Events: RejectedOrderCategory }
+    Value1 = RejectedOrderCategory;
+    { Strategy_Events: RejectedOrderAction }
+    Value1 = RejectedOrderAction;
+    { Strategy_Events: FilledOrderPrice }
+    Value1 = FilledOrderPrice;
+End;

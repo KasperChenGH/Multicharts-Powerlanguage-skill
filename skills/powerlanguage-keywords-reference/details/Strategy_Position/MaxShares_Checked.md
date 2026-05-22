@@ -1,0 +1,13 @@
+# MaxShares_Checked
+
+**Category:** Strategy_Position
+**Signature:** ``
+
+See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
+
+**Example (illustrative)**
+```
+Value1 = MaxShares_Checked;
+```
+
+*Official docs:* https://www.multicharts.com/trading-software/index.php?title=MaxShares_Checked
