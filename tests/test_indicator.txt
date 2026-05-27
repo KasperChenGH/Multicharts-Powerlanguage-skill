@@ -191,7 +191,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Execution_Control: Abort }
     // Abort is a language construct (Execution_Control); see official docs for usage.
     { Environment_Information: Is64BitProcess }
-    Value1 = Is64BitProcess;
+    Condition1 = Is64BitProcess;
     { Environment_Information: getTPOinfo }
     Value1 = getTPOinfo;
     { Environment_Information: GetCurrency }
@@ -199,7 +199,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: GetUserID }
     Value1 = GetUserID;
     { Environment_Information: Is64BitOperatingSystem }
-    Value1 = Is64BitOperatingSystem;
+    Condition1 = Is64BitOperatingSystem;
     { Environment_Information: GetUserName }
     // GetUserName returns a string; see official docs for usage.
     { Execution_Control: RecalcLastBarAfter }

@@ -120,7 +120,7 @@ function Get-KeywordStatement {
     'CheckAlert','MarketPosition_at_Broker_for_The_Strategy'
   )
   $looksLikeBoolean = ($name -match '(?i)(Pressed|Enabled)$') -or
-                      ($name -match '^(?i)(Is|Has|Can)[A-Z]')
+                      ($name -match '^(?i)(Is|Has|Can)[A-Z0-9]')
   if (($booleanReturningNames -contains $name) -or $looksLikeBoolean) {
     return "Condition1 = $name;"
   }
