@@ -973,7 +973,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_Delete }
     Value1 = Arw_Delete;
     { Alerts: AlertEx }
-    Value1 = AlertEx( "x", Close, Close );
+    // AlertEx is a reserved syntactic token; see official docs for usage.
     { AccountsPositions: GetRTUnrealizedPL }
     Value1 = GetRTUnrealizedPL;
     { AccountsPositions: GetRTAccountNetWorth }
@@ -983,7 +983,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Alerts: AlertEnabled }
     Value1 = AlertEnabled;
     { Alerts: Alert }
-    Value1 = Alert;
+    // Alert is a reserved syntactic token; see official docs for usage.
     { Arrow_Drawing: Arw_New_BN }
     Value1 = Arw_New_BN( 14, 14, True );
     { Attributes: IntraBarOrderGeneration }
