@@ -187,9 +187,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: SetMaxBarsBack }
     // SetMaxBarsBack is a setter (takes at least one value argument); see official docs.
     { Execution_Control: CommandLine }
-    Value1 = CommandLine;
+    // CommandLine is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: Abort }
-    Value1 = Abort;
+    // Abort is a language construct (Execution_Control); see official docs for usage.
     { Environment_Information: Is64BitProcess }
     Value1 = Is64BitProcess;
     { Environment_Information: getTPOinfo }
@@ -203,27 +203,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: GetUserName }
     // GetUserName returns a string; see official docs for usage.
     { Execution_Control: RecalcLastBarAfter }
-    Value1 = RecalcLastBarAfter;
+    // RecalcLastBarAfter is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: RaiseRunTimeError }
-    Value1 = RaiseRunTimeError;
+    // RaiseRunTimeError is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: ReCalculate }
-    Value1 = ReCalculate;
+    // ReCalculate is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: VerifyLicense }
-    Value1 = VerifyLicense;
+    // VerifyLicense is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: SetFPCompareAccuracy }
-    // SetFPCompareAccuracy is a setter (takes at least one value argument); see official docs.
+    // SetFPCompareAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcVeryLowAccuracy }
-    Value1 = fpcVeryLowAccuracy;
+    // fpcVeryLowAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcHighAccuracy }
-    Value1 = fpcHighAccuracy;
+    // fpcHighAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcExactAccuracy }
-    Value1 = fpcExactAccuracy;
+    // fpcExactAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcLowAccuracy }
-    Value1 = fpcLowAccuracy;
+    // fpcLowAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcVeryHighAccuracy }
-    Value1 = fpcVeryHighAccuracy;
+    // fpcVeryHighAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcMedAccuracy }
-    Value1 = fpcMedAccuracy;
+    // fpcMedAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Dynamic_Arrays: Array_SetBooleanValue }
     Value1 = Array_SetBooleanValue;
     { Dynamic_Arrays: Array_IndexOf }
@@ -269,7 +269,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Dynamic_Arrays: Array_Sum }
     Value1 = Array_Sum;
     { Execution_Control: #Return }
-    // #Return is a preprocessor directive (#-prefixed); see official docs for usage.
+    // #Return is a language construct (Execution_Control); see official docs for usage.
     { Math_and_Trig: Sign }
     Value1 = Sign;
     { Math_and_Trig: Round }
