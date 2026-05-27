@@ -99,9 +99,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Performance: NumWinTrades }
     Value1 = NumWinTrades;
     { Strategy_Performance: SetCustomFitnessValue }
-    Value1 = SetCustomFitnessValue;
+    // SetCustomFitnessValue is a setter (takes at least one value argument); see official docs.
     { Strategy_Performance: SetCustomFitnessNamedValue }
-    Value1 = SetCustomFitnessNamedValue;
+    // SetCustomFitnessNamedValue is a setter (takes at least one value argument); see official docs.
     { Strategy_Performance: PercentProfit }
     Value1 = PercentProfit;
     { Strategy_Performance: MaxConsecLosers }
@@ -351,19 +351,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_allow_short_entries }
     Value1 = pmms_strategy_allow_short_entries;
     { Strategy_Orders: SetBreakEven }
-    // SetBreakEven -- see official docs
+    // SetBreakEven is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SellShort }
     SellShort ( "SellShort_T" ) 1 Contract Next Bar Market;
     { Strategy_Orders: Sell }
     Sell ( "Sell_T" ) 1 Contract Next Bar Market;
     { Strategy_Orders: SetBreakEven_pt }
-    // SetBreakEven_pt -- see official docs
+    // SetBreakEven_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetPercentTrailing }
-    // SetPercentTrailing -- see official docs
+    // SetPercentTrailing is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetExitOnClose }
-    // SetExitOnClose -- see official docs
+    // SetExitOnClose is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetDollarTrailing }
-    // SetDollarTrailing -- see official docs
+    // SetDollarTrailing is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: Entry }
     // Entry -- see official docs
     { Strategy_Orders: Cover }
@@ -379,13 +379,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: Limit }
     Buy ( "MLS" ) 1 Contract Next Bar Market;
     { Strategy_Orders: SetPercentTrailing_pt }
-    // SetPercentTrailing_pt -- see official docs
+    // SetPercentTrailing_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: Shares }
     // Shares -- see official docs
     { Strategy_Orders: Share }
     // Share -- see official docs
     { Strategy_Orders: SetTrailingStop_pt }
-    // SetTrailingStop_pt -- see official docs
+    // SetTrailingStop_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: Short }
     // Short -- see official docs
     { Strategy_Performance: AvgBarsEvenTrade }
@@ -395,19 +395,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: Stop }
     Buy ( "MLS" ) 1 Contract Next Bar Market;
     { Strategy_Orders: SetStopContract }
-    // SetStopContract -- see official docs
+    // SetStopContract is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetProfitTarget_pt }
-    // SetProfitTarget_pt -- see official docs
+    // SetProfitTarget_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetProfitTarget }
-    // SetProfitTarget -- see official docs
+    // SetProfitTarget is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopLoss }
-    // SetStopLoss -- see official docs
+    // SetStopLoss is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopShare }
-    // SetStopShare -- see official docs
+    // SetStopShare is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopPosition }
-    // SetStopPosition -- see official docs
+    // SetStopPosition is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopLoss_pt }
-    // SetStopLoss_pt -- see official docs
+    // SetStopLoss_pt is a setter (takes at least one value argument); see official docs.
     { Portfolio_Strategy_Position: Portfolio_SetMaxPotentialLossPerContract }
     Value1 = Portfolio_SetMaxPotentialLossPerContract;
     { Portfolio_Strategy_Position: Portfolio_OpenPositionProfit }

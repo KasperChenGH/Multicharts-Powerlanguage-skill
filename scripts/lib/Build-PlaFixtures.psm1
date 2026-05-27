@@ -133,6 +133,13 @@ function Get-KeywordStatement {
     return "// $name is a drawing-object accessor (takes a drawing-object ID); see official docs."
   }
 
+  # Setter functions (Set*) always take at least one argument — the value to
+  # set. Parse-Chm sometimes reports zero params for them. Statement-shaped,
+  # not value-returning. Skip with a safe comment.
+  if ($name -match '^Set[A-Z]') {
+    return "// $name is a setter (takes at least one value argument); see official docs."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {

@@ -3,15 +3,15 @@
 
 If False Then Begin    { wrap every statement in an unreachable If/Then to verify syntax only }
     { Plotting: SetPlotColor }
-    // SetPlotColor -- see official docs
+    // SetPlotColor is a setter (takes at least one value argument); see official docs.
     { Plotting: SetPlotBGColor }
-    // SetPlotBGColor -- see official docs
+    // SetPlotBGColor is a setter (takes at least one value argument); see official docs.
     { Plotting: setplotstyle }
-    // setplotstyle -- see official docs
+    // setplotstyle is a setter (takes at least one value argument); see official docs.
     { Quote_Fields: AskSize }
     Value1 = AskSize;
     { Plotting: SetPlotWidth }
-    // SetPlotWidth -- see official docs
+    // SetPlotWidth is a setter (takes at least one value argument); see official docs.
     { Plotting: PlotPB }
     // PlotPB -- see official docs
     { Plotting: I_setplotvalue }
@@ -185,7 +185,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: MaxBarsBack }
     Value1 = MaxBarsBack;
     { Environment_Information: SetMaxBarsBack }
-    Value1 = SetMaxBarsBack;
+    // SetMaxBarsBack is a setter (takes at least one value argument); see official docs.
     { Execution_Control: CommandLine }
     Value1 = CommandLine;
     { Execution_Control: Abort }
@@ -211,7 +211,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Execution_Control: VerifyLicense }
     Value1 = VerifyLicense;
     { Execution_Control: SetFPCompareAccuracy }
-    Value1 = SetFPCompareAccuracy;
+    // SetFPCompareAccuracy is a setter (takes at least one value argument); see official docs.
     { Execution_Control: fpcVeryLowAccuracy }
     Value1 = fpcVeryLowAccuracy;
     { Execution_Control: fpcHighAccuracy }
