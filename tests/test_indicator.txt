@@ -830,7 +830,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Call }
     // Call is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: C }
-    Value1 = C( Close );
+    // C is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DownTicks }
     Value1 = DownTicks;
     { Data_Information_General: DeltaType }
