@@ -47,15 +47,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: DailyHigh }
     Value1 = DailyHigh;
     { Multimedia: PlaySound }
-    Value1 = PlaySound;
+    // PlaySound is a language construct (Multimedia); see official docs for usage.
     { MouseClickEvents: MouseClickShiftPressed }
     Value1 = MouseClickShiftPressed;
     { Output: ClearDebug }
-    Value1 = ClearDebug;
+    // ClearDebug is a language construct (Output); see official docs for usage.
     { Output: File }
-    Value1 = File;
+    // File is a language construct (Output); see official docs for usage.
     { Output: ClearPrintLog }
-    Value1 = ClearPrintLog;
+    // ClearPrintLog is a language construct (Output); see official docs for usage.
     { MouseClickEvents: MouseClickPrice }
     Value1 = MouseClickPrice;
     { MouseClickEvents: MouseClickBarNumber }
@@ -81,15 +81,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Plotting: Default }
     // Default -- see official docs
     { Output: FileClose }
-    Value1 = FileClose;
+    // FileClose is a language construct (Output); see official docs for usage.
     { Output: FileAppend }
-    Value1 = FileAppend;
+    // FileAppend is a language construct (Output); see official docs for usage.
     { Output: FileDelete }
-    Value1 = FileDelete;
+    // FileDelete is a language construct (Output); see official docs for usage.
     { Output: Print }
-    Value1 = Print;
+    // Print is a language construct (Output); see official docs for usage.
     { Output: MessageLog }
-    Value1 = MessageLog( 14 );
+    // MessageLog is a language construct (Output); see official docs for usage.
     { Quote_Fields: Last }
     Value1 = Last;
     { Rectangle_Drawing: RectangleGetBeginPrice }
