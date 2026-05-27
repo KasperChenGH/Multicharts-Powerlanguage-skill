@@ -90,6 +90,15 @@ function Get-KeywordStatement {
     return "// $name is a reserved syntactic token; see official docs for usage."
   }
 
+  # Signal/portfolio-only keywords that land in Indicator-mapped categories.
+  # Using them in an Indicator causes "X is not applicable to this type of study".
+  $signalOnlyKeywords = @(
+    'Portfolio_CurrencyCode','StrategyCurrencyCode'
+  )
+  if ($signalOnlyKeywords -contains $name) {
+    return "// $name is signal/portfolio-only; not applicable to Indicator studies."
+  }
+
   # Multi-word keyword names (e.g. "DateTime bar update") cannot be used as
   # identifiers in expressions. PowerLanguage parses only the first token and
   # then sees the rest as stray syntax. These show up because Parse-Chm

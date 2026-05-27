@@ -854,13 +854,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: DateTime }
     Value1 = DateTime;
     { Currency_Codes: Portfolio_CurrencyCode }
-    Value1 = Portfolio_CurrencyCode;
+    // Portfolio_CurrencyCode is signal/portfolio-only; not applicable to Indicator studies.
     { Currency_Codes: NZD }
     Value1 = NZD;
     { Currency_Codes: SEK }
     Value1 = SEK;
     { Currency_Codes: StrategyCurrencyCode }
-    Value1 = StrategyCurrencyCode;
+    // StrategyCurrencyCode is signal/portfolio-only; not applicable to Indicator studies.
     { Currency_Codes: SGD }
     Value1 = SGD;
     { Currency_Codes: None }
