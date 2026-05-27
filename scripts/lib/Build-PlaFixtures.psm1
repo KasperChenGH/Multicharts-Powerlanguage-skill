@@ -77,7 +77,11 @@ function Get-KeywordStatement {
   # that otherwise contain real values (e.g. Data_Information_General), so we
   # filter by keyword name rather than category.
   $reservedTokens = @(
-    'Data','Call','Put','Strike','Length','OptionType','DeltaType','RevSize','BoxSize'
+    'Data','Call','Put','Strike','Length','OptionType','DeltaType','RevSize','BoxSize',
+    # Connector words from Data_Information_General that overlap with Miscellaneous_keywords
+    'Day','Days','Point','Points','Tick','Ticks','Ago','Next','This','Today','Yesterday',
+    # Single-letter aliases that PowerLanguage may parse as reserved
+    'D','I'
   )
   if ($reservedTokens -contains $name) {
     return "// $name is a reserved syntactic token; see official docs for usage."

@@ -813,7 +813,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Close }
     Value1 = Close;
     { Data_Information_General: D }
-    Value1 = D;
+    // D is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Data }
     // Data is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DailyLimit }
@@ -841,7 +841,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: ExpirationDateFromVendor }
     Value1 = ExpirationDateFromVendor;
     { Data_Information_General: Days }
-    Value1 = Days;
+    // Days is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Date }
     Value1 = Date;
     { Data_Information_General: DataCompression }
@@ -849,7 +849,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: DateTime }
     Value1 = DateTime;
     { Data_Information_General: Day }
-    Value1 = Day;
+    // Day is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DateTime bar update }
     Value1 = DateTime bar update;
     { Currency_Codes: Portfolio_CurrencyCode }
@@ -893,7 +893,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Currency_Codes: USD }
     Value1 = USD;
     { Data_Information_General: Ago }
-    Value1 = Ago;
+    // Ago is a reserved syntactic token; see official docs for usage.
     { Currency_Codes: ZAR }
     Value1 = ZAR;
     { Arrow_Drawing: Arw_GetSize }
@@ -1279,9 +1279,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: TickID }
     Value1 = TickID;
     { Data_Information_General: This }
-    Value1 = This;
+    // This is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Ticks }
-    Value1 = Ticks;
+    // Ticks is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Time_s }
     Value1 = Time_s;
     { Data_Information_General: Time }
@@ -1307,7 +1307,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: O }
     Value1 = O;
     { Data_Information_General: Next }
-    Value1 = Next;
+    // Next is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: IntervalType_ex }
     Value1 = IntervalType_ex;
     { Data_Information_General: H }
@@ -1319,7 +1319,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: IntervalType }
     Value1 = IntervalType;
     { Data_Information_General: I }
-    Value1 = I;
+    // I is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Put }
     // Put is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: PriceScale }
@@ -1339,11 +1339,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: OptionType }
     // OptionType is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Points }
-    Value1 = Points;
+    // Points is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Point }
-    Value1 = Point;
+    // Point is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Today }
-    Value1 = Today;
+    // Today is a reserved syntactic token; see official docs for usage.
     { Date_and_Time_routines: FormatTime }
     Value1 = FormatTime( "x" );
     { Date_and_Time_routines: FormatDate }
@@ -1409,7 +1409,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: calcdatetime }
     Value1 = calcdatetime;
     { Data_Information_General: Yesterday }
-    Value1 = Yesterday;
+    // Yesterday is a reserved syntactic token; see official docs for usage.
     { Date_and_Time_routines: DayOfWeekFromDateTime }
     Value1 = DayOfWeekFromDateTime;
     { Date_and_Time_routines: DayOfWeek }
