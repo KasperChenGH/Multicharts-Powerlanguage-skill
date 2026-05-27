@@ -1346,9 +1346,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Today }
     // Today is a reserved syntactic token; see official docs for usage.
     { Date_and_Time_routines: FormatTime }
-    Value1 = FormatTime( "x", 14 );
+    // FormatTime returns a string; see official docs for usage.
     { Date_and_Time_routines: FormatDate }
-    Value1 = FormatDate( "x", 14 );
+    // FormatDate returns a string; see official docs for usage.
     { Date_and_Time_routines: Friday }
     Value1 = Friday;
     { Date_and_Time_routines: HoursFromDateTime }
