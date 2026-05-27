@@ -189,12 +189,23 @@ function Get-KeywordStatement {
       return "// $name -- see official docs"
     }
     'Math_and_Trig' {
-      # Parse-Chm sometimes misses parameter detection for Math functions —
-      # almost none are zero-arg constants, so default to a 1-arg numeric call.
-      # True zero-arg math constants are vanishingly rare (PI is one).
+      # Parse-Chm sometimes misses parameter detection (params inline in the
+      # Usage signature rather than in a separate block). Use the signature
+      # itself: count commas inside the parens to derive arg count.
       if ($name -in @('PI','E','Pi','Euler')) { return "Value1 = $name;" }
-      if ($params.Count -le 1)              { return "Value1 = $name( Close );" }
-      return "Value1 = $name( Close, 14 );"
+      $argCount = 1
+      if ($Kw.Usage -match '\(([^)]*)\)') {
+        $inner = $Matches[1].Trim()
+        if ([string]::IsNullOrEmpty($inner)) { $argCount = 0 }
+        else { $argCount = (($inner -split ',').Count) }
+      }
+      # Build $argCount placeholder args — Close for the first, 14 / 2 / etc. for the rest.
+      $args = @()
+      for ($i = 0; $i -lt $argCount; $i++) {
+        $args += if ($i -eq 0) { 'Close' } else { '2' }
+      }
+      if ($argCount -eq 0) { return "Value1 = $name;" }
+      return "Value1 = $name( $($args -join ', ') );"
     }
     'Plotting' {
       if ($name -match '^Plot\d')           { return "$name( Close );" }

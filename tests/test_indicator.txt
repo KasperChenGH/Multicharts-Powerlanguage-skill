@@ -274,7 +274,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Sign }
     Value1 = Sign( Close );
     { Math_and_Trig: Round }
-    Value1 = Round( Close );
+    Value1 = Round( Close, 2 );
     { Math_and_Trig: Sine }
     Value1 = Sine( Close );
     { Math_and_Trig: SquareRoot }
@@ -284,13 +284,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Random }
     Value1 = Random( Close );
     { Math_and_Trig: NthMaxList }
-    Value1 = NthMaxList( Close );
+    Value1 = NthMaxList( Close, 2, 2, 2, 2 );
     { Math_and_Trig: Neg }
     Value1 = Neg( Close );
     { Math_and_Trig: NthMinList }
-    Value1 = NthMinList( Close );
+    Value1 = NthMinList( Close, 2, 2, 2, 2 );
     { Math_and_Trig: Power }
-    Value1 = Power( Close );
+    Value1 = Power( Close, 2 );
     { Math_and_Trig: Pos }
     Value1 = Pos( Close );
     { Miscellaneous_keywords: Market }
@@ -308,7 +308,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Tangent }
     Value1 = Tangent( Close );
     { Math_and_Trig: SumList }
-    Value1 = SumList( Close );
+    Value1 = SumList( Close, 2, 2, 2 );
     { Miscellaneous_keywords: Ago }
     // Ago is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Bars }
@@ -320,7 +320,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: AbsValue }
     Value1 = AbsValue( Close );
     { Math_and_Trig: AvgList }
-    Value1 = AvgList( Close );
+    Value1 = AvgList( Close, 2, 2, 2 );
     { Math_and_Trig: Cosine }
     Value1 = Cosine( Close );
     { Math_and_Trig: Ceiling }
@@ -338,15 +338,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { ExpertCommentary: CommentaryCL }
     // CommentaryCL is a language construct (ExpertCommentary); see official docs for usage.
     { Math_and_Trig: MaxList2 }
-    Value1 = MaxList2( Close );
+    Value1 = MaxList2( Close, 2, 2, 2 );
     { Math_and_Trig: MaxList }
-    Value1 = MaxList( Close );
+    Value1 = MaxList( Close, 2, 2, 2 );
     { Math_and_Trig: MinList }
-    Value1 = MinList( Close );
+    Value1 = MinList( Close, 2, 2, 2 );
     { Math_and_Trig: Mod }
-    Value1 = Mod( Close );
+    Value1 = Mod( Close, 2 );
     { Math_and_Trig: MinList2 }
-    Value1 = MinList2( Close );
+    Value1 = MinList2( Close, 2, 2, 2 );
     { Math_and_Trig: Log }
     Value1 = Log( Close );
     { Math_and_Trig: ExpValue }
