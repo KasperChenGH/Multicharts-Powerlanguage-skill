@@ -815,7 +815,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: D }
     Value1 = D;
     { Data_Information_General: Data }
-    Value1 = Data;
+    // Data is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DailyLimit }
     Value1 = DailyLimit;
     { Data_Information_General: Category }
@@ -825,15 +825,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: BarType_uid }
     Value1 = BarType_uid;
     { Data_Information_General: BoxSize }
-    Value1 = BoxSize( "x" );
+    // BoxSize is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Call }
-    Value1 = Call;
+    // Call is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: C }
     Value1 = C;
     { Data_Information_General: DownTicks }
     Value1 = DownTicks;
     { Data_Information_General: DeltaType }
-    Value1 = DeltaType;
+    // DeltaType is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: ExpirationDate }
     Value1 = ExpirationDate;
     { Data_Information_General: GetExchangeName }
@@ -1269,7 +1269,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Symbol_Close }
     Value1 = Symbol_Close;
     { Data_Information_General: Strike }
-    Value1 = Strike;
+    // Strike is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Symbol_CurrentBar }
     Value1 = Symbol_CurrentBar;
     { Data_Information_General: Symbol_DownTicks }
@@ -1321,11 +1321,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: I }
     Value1 = I;
     { Data_Information_General: Put }
-    Value1 = Put;
+    // Put is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: PriceScale }
     Value1 = PriceScale;
     { Data_Information_General: RevSize }
-    Value1 = RevSize;
+    // RevSize is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: SessionLastBar }
     Value1 = SessionLastBar;
     { Data_Information_General: ScrollToBar }
@@ -1337,7 +1337,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Open }
     Value1 = Open;
     { Data_Information_General: OptionType }
-    Value1 = OptionType;
+    // OptionType is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Points }
     Value1 = Points;
     { Data_Information_General: Point }

@@ -71,6 +71,18 @@ function Get-KeywordStatement {
     return "// $name is a preprocessor directive (#-prefixed); see official docs for usage."
   }
 
+  # Specific reserved-word keywords that the parser treats as syntactic tokens
+  # rather than identifiers — they appear inside compound constructs like
+  # "Close of Data2", "Call Option", "Strike Price". They surface in categories
+  # that otherwise contain real values (e.g. Data_Information_General), so we
+  # filter by keyword name rather than category.
+  $reservedTokens = @(
+    'Data','Call','Put','Strike','Length','OptionType','DeltaType','RevSize','BoxSize'
+  )
+  if ($reservedTokens -contains $name) {
+    return "// $name is a reserved syntactic token; see official docs for usage."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {
