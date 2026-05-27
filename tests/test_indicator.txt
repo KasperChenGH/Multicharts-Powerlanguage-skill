@@ -942,15 +942,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_GetTextSize }
     // Arw_GetTextSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { AccountsPositions: GetPositionQuantity }
-    Value1 = GetPositionQuantity( Close, 14 );
+    Value1 = GetPositionQuantity( "x", "x" );
     { AccountsPositions: GetPositionOpenPL }
-    Value1 = GetPositionOpenPL( Close, 14 );
+    Value1 = GetPositionOpenPL( "x", "x" );
     { AccountsPositions: GetPositionSymbol }
     // GetPositionSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetRTAccountEquity }
     Value1 = GetRTAccountEquity( Close );
     { AccountsPositions: GetPositionTotalCost }
-    Value1 = GetPositionTotalCost( Close, 14 );
+    Value1 = GetPositionTotalCost( "x", "x" );
     { AccountsPositions: GetPositionBrokerSymbol }
     // GetPositionBrokerSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetAccountID }
@@ -960,7 +960,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetNumAccounts }
     Value1 = GetNumAccounts;
     { AccountsPositions: GetPositionAveragePrice }
-    Value1 = GetPositionAveragePrice( Close, 14 );
+    Value1 = GetPositionAveragePrice( "x", "x" );
     { AccountsPositions: GetNumPositions }
     Value1 = GetNumPositions( Close );
     { Alerts: CheckAlert }

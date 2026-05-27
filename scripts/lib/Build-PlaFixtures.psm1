@@ -241,10 +241,11 @@ function Get-KeywordStatement {
 
       if ($argCount -eq 0) { return "Value1 = $name;" }
 
-      # Heuristic: function-name prefix hints arg types. StringTo*/StrTo* take
-      # string args (often multiple — the input value AND the format spec).
+      # Heuristic: function-name prefix hints arg types.
+      # - StringTo*/StrTo*: all args are strings (input value AND format spec)
+      # - GetPosition*: args are (Symbol:string, Account:string)
       # Default of Close/14 fails with "Incorrect argument type".
-      $allArgsString = $name -match '^(StringTo|StrTo)'
+      $allArgsString = $name -match '^(StringTo|StrTo|GetPosition)'
 
       $argv = @()
       for ($i = 0; $i -lt $argCount; $i++) {
