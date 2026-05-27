@@ -264,7 +264,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_marketposition }
     Value1 = pmms_strategy_marketposition( Close );
     { Portfolio_Money_Management: pmm_get_global_named_num }
-    Value1 = pmm_get_global_named_num( Close );
+    Value1 = pmm_get_global_named_num( "x" );
     { Portfolio_Strategy_Performance: Portfolio_GrossLoss }
     Value1 = Portfolio_GrossLoss;
     { Portfolio_Money_Management: pmm_set_my_status }
@@ -280,13 +280,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Strategy_Performance: Portfolio_InvestedCapital }
     Value1 = Portfolio_InvestedCapital;
     { Portfolio_Money_Management: pmm_get_my_named_num }
-    Value1 = pmm_get_my_named_num( Close );
+    Value1 = pmm_get_my_named_num( "x" );
     { Portfolio_Money_Management: pmm_get_my_index }
     Value1 = pmm_get_my_index;
     { Portfolio_Money_Management: pmm_get_global_named_str }
-    Value1 = pmm_get_global_named_str( Close );
+    // pmm_get_global_named_str returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmm_get_my_named_str }
-    Value1 = pmm_get_my_named_str( Close );
+    // pmm_get_my_named_str returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmm_set_my_named_num }
     // pmm_set_my_named_num is a setter; see official docs.
     { Portfolio_Money_Management: pmm_set_global_named_str }
@@ -310,9 +310,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_set_strategy_named_num }
     // pmms_set_strategy_named_num is a setter; see official docs.
     { Portfolio_Money_Management: pmms_get_strategy_named_str }
-    Value1 = pmms_get_strategy_named_str( Close, 14 );
+    // pmms_get_strategy_named_str returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmms_get_strategy_named_num }
-    Value1 = pmms_get_strategy_named_num( Close, 14 );
+    Value1 = pmms_get_strategy_named_num( 1, "x" );
     { Portfolio_Money_Management: pmms_set_strategy_named_str }
     // pmms_set_strategy_named_str is a setter; see official docs.
     { Portfolio_Money_Management: pmms_strategies_deny_entries_all }

@@ -129,7 +129,10 @@ function Get-KeywordStatement {
     # Other string-returning names
     'BarType_uid','BarType','BarType_ex',
     # Account info string returners
-    'GetAccountID','GetAccount','GetPositionBrokerSymbol'
+    'GetAccountID','GetAccount','GetPositionBrokerSymbol',
+    # PMM named-value string returners
+    'pmm_get_global_named_str','pmm_get_my_named_str',
+    'pmms_get_strategy_named_str','pmms_strategies_get_by_symbol_name'
   )
   $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root|ToStr|ToString|ToString_Ms|CodeToStr|DateStr|TimeStr)$' -or
                      $name -match '^(?i)Format(Time|Date|DateTime)'
@@ -270,6 +273,12 @@ function Get-KeywordStatement {
 
       if ($argCount -eq 0) { return "Value1 = $name;" }
 
+      # PMM strategy getters: first arg is numeric StrategyIndex, rest are strings.
+      if ($name -match '^pmms_get_strategy_named_') {
+        $argv = @('1'); for ($i = 1; $i -lt $argCount; $i++) { $argv += '"x"' }
+        return "Value1 = $name( $($argv -join ', ') );"
+      }
+
       # Heuristic: function-name prefix hints arg types.
       # - StringTo*/StrTo*: all args are strings (input value AND format spec)
       # - GetPosition*/GetRT*Account*: AccountsPositions args are strings
@@ -277,7 +286,8 @@ function Get-KeywordStatement {
       # - Category AccountsPositions: any function with args takes string args.
       # Default of Close/14 fails with "Incorrect argument type".
       $allArgsString = ($name -match '^(StringTo|StrTo|GetPosition|GetRT)') -or
-                       ($cat -eq 'AccountsPositions')
+                       ($cat -eq 'AccountsPositions') -or
+                       ($name -match '^pmm_get_\w+_named_')
 
       $argv = @()
       for ($i = 0; $i -lt $argCount; $i++) {
