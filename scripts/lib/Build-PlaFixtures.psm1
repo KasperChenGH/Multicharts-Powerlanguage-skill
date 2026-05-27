@@ -112,6 +112,19 @@ function Get-KeywordStatement {
     return "// $name returns a string; see official docs for usage."
   }
 
+  # Boolean-returning keywords assigned to numeric Value1 trip
+  # "Types are not compatible". Route them to Condition1 (the built-in
+  # boolean variable) so they still exercise the keyword.
+  $booleanReturningNames = @(
+    'MouseClickShiftPressed','MouseClickCtrlPressed','AlertEnabled',
+    'CheckAlert','MarketPosition_at_Broker_for_The_Strategy'
+  )
+  $looksLikeBoolean = ($name -match '(?i)(Pressed|Enabled)$') -or
+                      ($name -match '^(?i)(Is|Has|Can)[A-Z]')
+  if (($booleanReturningNames -contains $name) -or $looksLikeBoolean) {
+    return "Condition1 = $name;"
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {

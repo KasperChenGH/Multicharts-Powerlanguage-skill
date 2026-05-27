@@ -49,7 +49,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Multimedia: PlaySound }
     // PlaySound is a language construct (Multimedia); see official docs for usage.
     { MouseClickEvents: MouseClickShiftPressed }
-    Value1 = MouseClickShiftPressed;
+    Condition1 = MouseClickShiftPressed;
     { Output: ClearDebug }
     // ClearDebug is a language construct (Output); see official docs for usage.
     { Output: File }
@@ -63,7 +63,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Miscellaneous_keywords: Yesterday }
     // Yesterday is a language construct (Miscellaneous_keywords); see official docs for usage.
     { MouseClickEvents: MouseClickCtrlPressed }
-    Value1 = MouseClickCtrlPressed;
+    Condition1 = MouseClickCtrlPressed;
     { MouseClickEvents: MouseClickDateTime }
     Value1 = MouseClickDateTime;
     { MouseClickEvents: MouseClickDataNumber }
@@ -963,7 +963,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetNumPositions }
     Value1 = GetNumPositions;
     { Alerts: CheckAlert }
-    Value1 = CheckAlert;
+    Condition1 = CheckAlert;
     { Alerts: Cancel Alert }
     // Cancel Alert (multi-word keyword); see official docs for usage.
     { Arrow_Drawing: Arw_Anchor_to_Bars }
@@ -981,7 +981,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: InitialCapital }
     Value1 = InitialCapital;
     { Alerts: AlertEnabled }
-    Value1 = AlertEnabled;
+    Condition1 = AlertEnabled;
     { Alerts: Alert }
     // Alert is a reserved syntactic token; see official docs for usage.
     { Arrow_Drawing: Arw_New_BN }
