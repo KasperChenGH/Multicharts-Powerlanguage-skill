@@ -80,8 +80,8 @@ function Get-KeywordStatement {
     'Data','Call','Put','Strike','Length','OptionType','DeltaType','RevSize','BoxSize',
     # Connector words from Data_Information_General that overlap with Miscellaneous_keywords
     'Bar','Bars','Day','Days','Point','Points','Tick','Ticks','Ago','Next','This','Today','Yesterday',
-    # Single-letter data-series aliases (C=Close, D=Date, I=OpenInt, T=Time, etc.)
-    'C','D','I','T',
+    # Single-letter data-series aliases (C=Close, D=Date, H=High, I=OpenInt, L=Low, O=Open, T=Time, V=Volume)
+    'C','D','H','I','L','O','T','V',
     # Statement-shaped keywords that require '(' even when CHM reports zero
     # parameters in our parser (e.g. Alert("text");, AlertEx(...);)
     'Alert','AlertEx'

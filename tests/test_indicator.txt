@@ -1302,17 +1302,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Low }
     Value1 = Low;
     { Data_Information_General: L }
-    Value1 = L( Close );
+    // L is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: MinMove }
     Value1 = MinMove;
     { Data_Information_General: O }
-    Value1 = O( Close );
+    // O is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Next }
     // Next is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: IntervalType_ex }
     Value1 = IntervalType_ex;
     { Data_Information_General: H }
-    Value1 = H( Close );
+    // H is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: GetSymbolName }
     // GetSymbolName returns a string; see official docs for usage.
     { Data_Information_General: High }
@@ -1402,7 +1402,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: ComputerDateTime }
     Value1 = ComputerDateTime;
     { Data_Information_General: V }
-    Value1 = V( Close );
+    // V is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: UpTicks }
     Value1 = UpTicks;
     { Data_Information_General: Volume }
