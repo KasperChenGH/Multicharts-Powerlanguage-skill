@@ -140,25 +140,25 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: q_ExchangeListed }
     // q_ExchangeListed returns a string; see official docs for usage.
     { Quote_Fields: q_Date }
-    Value1 = q_Date( Close );
+    Value1 = q_Date;
     { Quote_Fields: q_Last }
-    Value1 = q_Last( Close );
+    Value1 = q_Last;
     { Quote_Fields: q_PreviousClose }
-    Value1 = q_PreviousClose( Close );
+    Value1 = q_PreviousClose;
     { Quote_Fields: q_OpenInterest }
-    Value1 = q_OpenInterest( Close );
+    Value1 = q_OpenInterest;
     { Quote_Fields: q_BigPointValue }
-    Value1 = q_BigPointValue( Close );
+    Value1 = q_BigPointValue;
     { Quote_Fields: q_Ask }
-    Value1 = q_Ask( Close );
+    Value1 = q_Ask;
     { Quote_Fields: PrevClose }
     Value1 = PrevClose;
     { Quote_Fields: q_asksize }
-    Value1 = q_asksize( Close );
+    Value1 = q_asksize;
     { Quote_Fields: q_bidsize }
-    Value1 = q_bidsize( Close );
+    Value1 = q_bidsize;
     { Quote_Fields: q_Bid }
-    Value1 = q_Bid( Close );
+    Value1 = q_Bid;
     { Quote_Fields: Symbol }
     // Symbol returns a string; see official docs for usage.
     { Quote_Fields: RTSymbolName }
@@ -174,13 +174,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: q_Time_Dt }
     Value1 = q_Time_Dt;
     { Quote_Fields: q_Time }
-    Value1 = q_Time( Close );
+    Value1 = q_Time;
     { Quote_Fields: q_Time_s }
-    Value1 = q_Time_s( Close );
+    Value1 = q_Time_s;
     { Quote_Fields: q_tradevolume }
-    Value1 = q_tradevolume( Close );
+    Value1 = q_tradevolume;
     { Quote_Fields: q_TotalVolume }
-    Value1 = q_TotalVolume( Close );
+    Value1 = q_TotalVolume;
     { Environment_Information: MaxBarsForward }
     Value1 = MaxBarsForward;
     { Environment_Information: MaxBarsBack }
@@ -540,27 +540,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: TL_GetValue_s }
     // TL_GetValue_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: Sess2FirstBarTime }
-    Value1 = Sess2FirstBarTime( Close );
+    Value1 = Sess2FirstBarTime;
     { Sessions: Sess2EndTime }
-    Value1 = Sess2EndTime( Close );
+    Value1 = Sess2EndTime;
     { Sessions: Sess2StartTime }
-    Value1 = Sess2StartTime( Close );
+    Value1 = Sess2StartTime;
     { Sessions: SessionCountMS }
-    Value1 = SessionCountMS( Close );
+    Value1 = SessionCountMS;
     { Sessions: SessionCount }
     Value1 = SessionCount( Close );
     { Sessions: Sess1StartTime }
-    Value1 = Sess1StartTime( Close );
+    Value1 = Sess1StartTime;
     { Sessions: AutoSession }
-    Value1 = AutoSession( Close );
+    Value1 = AutoSession;
     { Rectangle_Drawing: RectangleSetStyle }
     // RectangleSetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: RegularSession }
-    Value1 = RegularSession( Close );
+    Value1 = RegularSession;
     { Sessions: Sess1FirstBarTime }
-    Value1 = Sess1FirstBarTime( Close );
+    Value1 = Sess1FirstBarTime;
     { Sessions: Sess1EndTime }
-    Value1 = Sess1EndTime( Close );
+    Value1 = Sess1EndTime;
     { Sessions: SessionStartTimeMS }
     Value1 = SessionStartTimeMS( Close );
     { Sessions: SessionStartTime }
@@ -818,7 +818,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Data }
     // Data is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DailyLimit }
-    Value1 = DailyLimit( Close );
+    Value1 = DailyLimit;
     { Data_Information_General: Category }
     Value1 = Category;
     { Data_Information_General: BigPointValue }
@@ -846,7 +846,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Date }
     Value1 = Date;
     { Data_Information_General: DataCompression }
-    Value1 = DataCompression( Close );
+    Value1 = DataCompression;
     { Data_Information_General: DateTime bar update }
     // DateTime bar update (multi-word keyword); see official docs for usage.
     { Data_Information_General: Day }
@@ -1358,15 +1358,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: EncodeTime }
     Value1 = EncodeTime( Close, 14, 14, 14 );
     { Date_and_Time_routines: El_DateToDateTime }
-    Value1 = El_DateToDateTime( Close );
+    Value1 = El_DateToDateTime;
     { Date_and_Time_routines: El_DateStr }
     // El_DateStr returns a string; see official docs for usage.
     { Date_and_Time_routines: EL_TimeToDateTime }
-    Value1 = EL_TimeToDateTime( Close );
+    Value1 = EL_TimeToDateTime;
     { Date_and_Time_routines: EncodeDate }
     Value1 = EncodeDate( Close, 14, 14 );
     { Date_and_Time_routines: EL_TimeToDateTime_s }
-    Value1 = EL_TimeToDateTime_s( Close );
+    Value1 = EL_TimeToDateTime_s;
     { Date_and_Time_routines: MilliSecondsFromDateTime }
     Value1 = MilliSecondsFromDateTime( Close );
     { Date_and_Time_routines: LastCalcSSTime }
