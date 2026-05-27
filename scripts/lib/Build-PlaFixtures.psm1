@@ -142,7 +142,7 @@ function Get-KeywordStatement {
   # boolean variable) so they still exercise the keyword.
   $booleanReturningNames = @(
     'MouseClickShiftPressed','MouseClickCtrlPressed','AlertEnabled',
-    'CheckAlert','MarketPosition_at_Broker_for_The_Strategy',
+    'CheckAlert',
     'SessionLastBar','SessionFirstBar','LastBarOnChart',
     'PosTradeIsOpen','PosTradeIsLong'
   )
