@@ -1358,15 +1358,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: EncodeTime }
     Value1 = EncodeTime( Close, 14, 14, 14 );
     { Date_and_Time_routines: El_DateToDateTime }
-    Value1 = El_DateToDateTime;
+    Value1 = El_DateToDateTime( Close );
     { Date_and_Time_routines: El_DateStr }
     // El_DateStr returns a string; see official docs for usage.
     { Date_and_Time_routines: EL_TimeToDateTime }
-    Value1 = EL_TimeToDateTime;
+    Value1 = EL_TimeToDateTime( Close );
     { Date_and_Time_routines: EncodeDate }
     Value1 = EncodeDate( Close, 14, 14 );
     { Date_and_Time_routines: EL_TimeToDateTime_s }
-    Value1 = EL_TimeToDateTime_s;
+    Value1 = EL_TimeToDateTime_s( Close );
     { Date_and_Time_routines: MilliSecondsFromDateTime }
     Value1 = MilliSecondsFromDateTime( Close );
     { Date_and_Time_routines: LastCalcSSTime }
