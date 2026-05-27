@@ -208,9 +208,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: MaxPositionLoss_Checked }
     Value1 = MaxPositionLoss_Checked( Close );
     { Strategy_Position_Synchronization: PlaceMarketOrder }
-    PlaceMarketOrder( 1, 0, 0 );
+    PlaceMarketOrder( True, True, 1 );
     { Strategy_Position_Synchronization: ChangeMarketPosition }
-    ChangeMarketPosition( 1, 0, 0 );
+    ChangeMarketPosition( 1, Close, "x" );
     { Strategy_Position: PositionProfit_Checked }
     Value1 = PositionProfit_Checked( Close );
     { Strategy_Position_Trades: OpenEntriesCount }

@@ -185,23 +185,12 @@ function Get-KeywordStatement {
   # Procedure keywords: action functions that take arguments but do NOT
   # return a value. Assigning them to Value1 causes "Function must have
   # a return value". Call as standalone statements instead.
-  $procedureKeywords = @(
-    'ScrollToBar',
-    'PlaceMarketOrder','ChangeMarketPosition'
-  )
-  if ($procedureKeywords -contains $name) {
-    $usageClean = $Kw.Usage -replace '\[\s*Data\s*\(\s*[^)]*\s*\)\s*\]', ''
-    $argCount = 0
-    if ($usageClean -match '\(([^)]*)\)') {
-      $inner = $Matches[1].Trim()
-      if (-not [string]::IsNullOrEmpty($inner)) { $argCount = (($inner -split ',').Count) }
-    }
-    $argv = @()
-    for ($i = 0; $i -lt $argCount; $i++) {
-      $argv += if ($i -eq 0) { '1' } else { '0' }
-    }
-    if ($argCount -eq 0) { return "$name;" }
-    return "$name( $($argv -join ', ') );"
+  # Procedure keywords: action functions with no return value.
+  # Hardcoded calls because arg types are mixed (bool/string/numeric).
+  switch ($name) {
+    'ScrollToBar'          { return 'ScrollToBar( 1, 0 );' }
+    'PlaceMarketOrder'     { return 'PlaceMarketOrder( True, True, 1 );' }
+    'ChangeMarketPosition' { return 'ChangeMarketPosition( 1, Close, "x" );' }
   }
 
   switch ($cat) {
