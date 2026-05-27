@@ -954,9 +954,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetPositionBrokerSymbol }
     // GetPositionBrokerSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetAccountID }
-    Value1 = GetAccountID;
+    // GetAccountID returns a string; see official docs for usage.
     { AccountsPositions: GetAccount }
-    Value1 = GetAccount( Close );
+    // GetAccount returns a string; see official docs for usage.
     { AccountsPositions: GetNumAccounts }
     Value1 = GetNumAccounts;
     { AccountsPositions: GetPositionAveragePrice }
