@@ -1,5 +1,6 @@
 { test_signal.txt -- exercises every keyword routed to Signal script type }
 { Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
+Arrays: pl_test_bools[10]( false ), pl_test_floats[10]( 0.0 ), pl_test_ints[10]( 0 ), pl_test_strs[10]( "x" );
 
 If False Then Begin    { wrap every statement in an unreachable If/Then to verify syntax only }
     { Strategy_Position: CurrentContracts }

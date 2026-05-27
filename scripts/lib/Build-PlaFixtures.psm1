@@ -59,7 +59,7 @@ function Get-KeywordStatement {
   # operators, control-flow keywords, script-level attributes) that cannot
   # appear as values in `Value1 = X;`. Emit a comment so the compile-test still
   # exercises the keyword name without producing a parse error.
-  if ($cat -in @('Declaration','Comparison_and_Loops','Attributes','ExpertCommentary','DLL_Calling','Output','Multimedia','Miscellaneous_keywords','Execution_Control','Dynamic_Arrays')) {
+  if ($cat -in @('Declaration','Comparison_and_Loops','Attributes','ExpertCommentary','DLL_Calling','Output','Multimedia','Miscellaneous_keywords','Execution_Control')) {
     return "// $name is a language construct ($cat); see official docs for usage."
   }
 
@@ -153,6 +153,32 @@ function Get-KeywordStatement {
   }
 
   switch ($cat) {
+    'Dynamic_Arrays' {
+      # Uses pre-declared arrays from the file header: pl_test_bools, pl_test_floats,
+      # pl_test_ints, pl_test_strs.
+      switch ($name) {
+        'Array_GetBooleanValue' { return 'If Array_GetBooleanValue( pl_test_bools, 0 ) Then Begin End;' }
+        'Array_GetFloatValue'   { return 'Value1 = Array_GetFloatValue( pl_test_floats, 0 );' }
+        'Array_GetIntegerValue' { return 'Value1 = Array_GetIntegerValue( pl_test_ints, 0 );' }
+        'Array_GetStringValue'  { return '// Array_GetStringValue returns a string; see official docs.' }
+        'Array_SetBooleanValue' { return 'Array_SetBooleanValue( pl_test_bools, 0, True );' }
+        'Array_SetFloatValue'   { return 'Array_SetFloatValue( pl_test_floats, 0, 1.5 );' }
+        'Array_SetIntegerValue' { return 'Array_SetIntegerValue( pl_test_ints, 0, 42 );' }
+        'Array_SetStringValue'  { return 'Array_SetStringValue( pl_test_strs, 0, "x" );' }
+        'Array_GetMaxIndex'     { return 'Value1 = Array_GetMaxIndex( pl_test_ints );' }
+        'Array_SetMaxIndex'     { return 'Array_SetMaxIndex( pl_test_ints, 20 );' }
+        'Array_GetType'         { return 'Value1 = Array_GetType( pl_test_ints );' }
+        'Array_IndexOf'         { return 'Value1 = Array_IndexOf( pl_test_ints, 5 );' }
+        'Array_Contains'        { return 'If Array_Contains( pl_test_ints, 5 ) Then Begin End;' }
+        'Array_Compare'         { return 'Value1 = Array_Compare( pl_test_ints, pl_test_ints );' }
+        'Array_Copy'            { return 'Array_Copy( pl_test_ints, 0, pl_test_ints, 0, 5 );' }
+        'Array_Sort'            { return 'Array_Sort( pl_test_ints );' }
+        'Array_Sum'             { return 'Value1 = Array_Sum( pl_test_floats );' }
+        'Array_SetValRange'     { return 'Array_SetValRange( pl_test_ints, 0, 0, 5 );' }
+        'Fill_Array'            { return 'Fill_Array( pl_test_ints, 0 );' }
+        default                 { return "// $name (Dynamic_Arrays); see official docs." }
+      }
+    }
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {
         return "$name ( ""${name}_T"" ) 1 Contract Next Bar Market;"
@@ -206,9 +232,11 @@ function New-PlaFixtures {
 
   # Note: Value1..Value10000 are pre-declared built-in numeric variables in
   # PowerLanguage — no `Variables: Value1(0);` declaration is needed.
+  # The Arrays: block provides typed array refs for Dynamic_Arrays usage examples.
+  $arrayDecls = "Arrays: pl_test_bools[10]( false ), pl_test_floats[10]( 0.0 ), pl_test_ints[10]( 0 ), pl_test_strs[10]( ""x"" );`r`n"
   $headerByType = @{
-    'Indicator' = "{ test_indicator.txt -- exercises every keyword routed to Indicator script type }`r`n{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }`r`n"
-    'Signal'    = "{ test_signal.txt -- exercises every keyword routed to Signal script type }`r`n{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }`r`n"
+    'Indicator' = "{ test_indicator.txt -- exercises every keyword routed to Indicator script type }`r`n{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }`r`n${arrayDecls}"
+    'Signal'    = "{ test_signal.txt -- exercises every keyword routed to Signal script type }`r`n{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }`r`n${arrayDecls}"
     'Function'  = "{ test_function.txt -- function return idioms }`r`n{ Paste this whole file into a new Function in PowerLanguage Editor and Verify (F3). }`r`n"
   }
 
