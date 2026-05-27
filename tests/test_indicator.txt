@@ -720,31 +720,31 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Dynamic_Arrays: Array_Copy }
     Value1 = Array_Copy;
     { Comparison_and_Loops: For }
-    Value1 = For;
+    // For is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: False }
-    Value1 = False;
+    // False is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: If }
-    Value1 = If;
+    // If is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Or }
-    Value1 = Or;
+    // Or is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Not }
-    Value1 = Not;
+    // Not is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: End }
-    Value1 = End;
+    // End is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Cross }
-    Value1 = Cross;
+    // Cross is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: case }
-    Value1 = case;
+    // case is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Crosses }
-    Value1 = Crosses;
+    // Crosses is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Else }
-    Value1 = Else;
+    // Else is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: DownTo }
-    Value1 = DownTo;
+    // DownTo is a language construct (Comparison_and_Loops); see official docs for usage.
     { Currency_Codes: AUD }
     Value1 = AUD;
     { Comparison_and_Loops: While }
-    Value1 = While;
+    // While is a language construct (Comparison_and_Loops); see official docs for usage.
     { Currency_Codes: CAD }
     Value1 = CAD;
     { Currency_Codes: Convert_Currency }
@@ -752,17 +752,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Currency_Codes: CHF }
     Value1 = CHF;
     { Comparison_and_Loops: Under }
-    Value1 = Under;
+    // Under is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: switch }
-    Value1 = switch;
+    // switch is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Over }
-    Value1 = Over;
+    // Over is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Then }
-    Value1 = Then;
+    // Then is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: True }
-    Value1 = True;
+    // True is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: To }
-    Value1 = To;
+    // To is a language construct (Comparison_and_Loops); see official docs for usage.
     { Colors: Green }
     Value1 = Green;
     { Colors: GradientColor }
@@ -786,15 +786,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Colors: GetBValue }
     Value1 = GetBValue;
     { Comparison_and_Loops: And }
-    Value1 = And;
+    // And is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Above }
-    Value1 = Above;
+    // Above is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Begin }
-    Value1 = Begin;
+    // Begin is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Break }
-    Value1 = Break;
+    // Break is a language construct (Comparison_and_Loops); see official docs for usage.
     { Comparison_and_Loops: Below }
-    Value1 = Below;
+    // Below is a language construct (Comparison_and_Loops); see official docs for usage.
     { Colors: Yellow }
     Value1 = Yellow;
     { Colors: RGB }
@@ -988,27 +988,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_New_BN }
     Value1 = Arw_New_BN( 14, 14, True );
     { Attributes: IntraBarOrderGeneration }
-    Value1 = IntraBarOrderGeneration;
+    // IntraBarOrderGeneration is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnTimer }
-    Value1 = AllowSendOrdersOnTimer;
+    // AllowSendOrdersOnTimer is a language construct (Attributes); see official docs for usage.
     { Attributes: LegacyColorValue }
-    Value1 = LegacyColorValue;
+    // LegacyColorValue is a language construct (Attributes); see official docs for usage.
     { Attributes: RecoverDrawings }
-    Value1 = RecoverDrawings;
+    // RecoverDrawings is a language construct (Attributes); see official docs for usage.
     { Attributes: ProcessMouseEvents }
-    Value1 = ProcessMouseEvents;
+    // ProcessMouseEvents is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnTick }
-    Value1 = AllowSendOrdersOnTick;
+    // AllowSendOrdersOnTick is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnMouseEvents }
-    Value1 = AllowSendOrdersOnMouseEvents;
+    // AllowSendOrdersOnMouseEvents is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnBrokerPositionChange }
-    Value1 = AllowSendOrdersOnBrokerPositionChange;
+    // AllowSendOrdersOnBrokerPositionChange is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnOrderFilled }
-    Value1 = AllowSendOrdersOnOrderFilled;
+    // AllowSendOrdersOnOrderFilled is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnPortfolioCloseButton }
-    Value1 = AllowSendOrdersOnPortfolioCloseButton;
+    // AllowSendOrdersOnPortfolioCloseButton is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnOrderReject }
-    Value1 = AllowSendOrdersOnOrderReject;
+    // AllowSendOrdersOnOrderReject is a language construct (Attributes); see official docs for usage.
     { Colors: DarkCyan }
     Value1 = DarkCyan;
     { Colors: DarkBrown }
@@ -1024,7 +1024,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Colors: ARGB }
     Value1 = ARGB;
     { Attributes: SameExitFromOneEntryOnce }
-    Value1 = SameExitFromOneEntryOnce;
+    // SameExitFromOneEntryOnce is a language construct (Attributes); see official docs for usage.
     { Colors: Black }
     Value1 = Black;
     { Colors: Cyan }
@@ -1060,7 +1060,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_SetTextSize }
     Value1 = Arw_SetTextSize;
     { Attributes: AllowSendOrdersAlways }
-    Value1 = AllowSendOrdersAlways;
+    // AllowSendOrdersAlways is a language construct (Attributes); see official docs for usage.
     { Arrow_Drawing: MC_Arw_GetActive }
     Value1 = MC_Arw_GetActive;
     { Arrow_Drawing: Arw_SetTextBGColor }
@@ -1078,49 +1078,49 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: GetRTSymbolName }
     Value1 = GetRTSymbolName;
     { Declaration: RecalcPersist }
-    Value1 = RecalcPersist;
+    // RecalcPersist is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericSimple }
-    Value1 = NumericSimple;
+    // NumericSimple is a language construct (Declaration); see official docs for usage.
     { Declaration: String }
-    Value1 = String;
+    // String is a language construct (Declaration); see official docs for usage.
     { Declaration: StringArrayRef }
-    Value1 = StringArrayRef( Close );
+    // StringArrayRef is a language construct (Declaration); see official docs for usage.
     { Declaration: StringArray }
-    Value1 = StringArray( Close );
+    // StringArray is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericSeries }
-    Value1 = NumericSeries;
+    // NumericSeries is a language construct (Declaration); see official docs for usage.
     { Declaration: Numeric }
-    Value1 = Numeric;
+    // Numeric is a language construct (Declaration); see official docs for usage.
     { Declaration: IntraBarPersist }
-    Value1 = IntraBarPersist;
+    // IntraBarPersist is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericArray }
-    Value1 = NumericArray( Close );
+    // NumericArray is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericRef }
-    Value1 = NumericRef;
+    // NumericRef is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericArrayRef }
-    Value1 = NumericArrayRef( Close );
+    // NumericArrayRef is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalseSeries }
-    Value1 = TrueFalseSeries;
+    // TrueFalseSeries is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalseRef }
-    Value1 = TrueFalseRef;
+    // TrueFalseRef is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalseSimple }
-    Value1 = TrueFalseSimple;
+    // TrueFalseSimple is a language construct (Declaration); see official docs for usage.
     { Declaration: Variable }
-    Value1 = Variable( 14 );
+    // Variable is a language construct (Declaration); see official docs for usage.
     { Declaration: Var }
-    Value1 = Var;
+    // Var is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalseArrayRef }
-    Value1 = TrueFalseArrayRef( Close );
+    // TrueFalseArrayRef is a language construct (Declaration); see official docs for usage.
     { Declaration: StringSeries }
-    Value1 = StringSeries;
+    // StringSeries is a language construct (Declaration); see official docs for usage.
     { Declaration: StringRef }
-    Value1 = StringRef;
+    // StringRef is a language construct (Declaration); see official docs for usage.
     { Declaration: StringSimple }
-    Value1 = StringSimple;
+    // StringSimple is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalseArray }
-    Value1 = TrueFalseArray( Close );
+    // TrueFalseArray is a language construct (Declaration); see official docs for usage.
     { Declaration: TrueFalse }
-    Value1 = TrueFalse;
+    // TrueFalse is a language construct (Declaration); see official docs for usage.
     { Date_and_Time_routines: Sunday }
     Value1 = Sunday;
     { Date_and_Time_routines: StringToTime }
@@ -1144,15 +1144,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: StringToDate }
     Value1 = StringToDate;
     { Declaration: Array }
-    Value1 = Array( 14, 14 );
+    // Array is a language construct (Declaration); see official docs for usage.
     { Date_and_Time_routines: YearFromDateTime }
     Value1 = YearFromDateTime;
     { Declaration: Arrays }
-    Value1 = Arrays;
+    // Arrays is a language construct (Declaration); see official docs for usage.
     { Declaration: Inputs }
-    Value1 = Inputs;
+    // Inputs is a language construct (Declaration); see official docs for usage.
     { Declaration: Input }
-    Value1 = Input( 14 );
+    // Input is a language construct (Declaration); see official docs for usage.
     { Date_and_Time_routines: Year }
     Value1 = Year;
     { Date_and_Time_routines: Time_s2Time }
@@ -1166,7 +1166,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: updatedatetime }
     Value1 = updatedatetime;
     { Declaration: Variables }
-    Value1 = Variables;
+    // Variables is a language construct (Declaration); see official docs for usage.
     { DLL_Calling: Unsigned }
     Value1 = Unsigned;
     { DLL_Calling: ThreadSafe }
@@ -1226,7 +1226,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { DLL_Calling: ArraySize }
     Value1 = ArraySize;
     { Declaration: Vars }
-    Value1 = Vars;
+    // Vars is a language construct (Declaration); see official docs for usage.
     { DLL_Calling: ArrayStartAddr }
     Value1 = ArrayStartAddr;
     { DLL_Calling: Byte }

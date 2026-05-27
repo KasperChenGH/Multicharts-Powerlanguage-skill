@@ -55,6 +55,14 @@ function Get-KeywordStatement {
   # Skip-word category: emit a comment referencing the keyword without invoking it.
   if ($cat -eq 'Skip_Words') { return "// $name appears inside other constructs." }
 
+  # Pure-syntax categories: their entries are language constructs (type names,
+  # operators, control-flow keywords, script-level attributes) that cannot
+  # appear as values in `Value1 = X;`. Emit a comment so the compile-test still
+  # exercises the keyword name without producing a parse error.
+  if ($cat -in @('Declaration','Comparison_and_Loops','Attributes')) {
+    return "// $name is a language construct ($cat); see official docs for usage."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {
