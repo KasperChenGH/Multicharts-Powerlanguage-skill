@@ -243,9 +243,12 @@ function Get-KeywordStatement {
 
       # Heuristic: function-name prefix hints arg types.
       # - StringTo*/StrTo*: all args are strings (input value AND format spec)
-      # - GetPosition*: args are (Symbol:string, Account:string)
+      # - GetPosition*/GetRT*Account*: AccountsPositions args are strings
+      #   (Symbol, Account both passed as text).
+      # - Category AccountsPositions: any function with args takes string args.
       # Default of Close/14 fails with "Incorrect argument type".
-      $allArgsString = $name -match '^(StringTo|StrTo|GetPosition)'
+      $allArgsString = ($name -match '^(StringTo|StrTo|GetPosition|GetRT)') -or
+                       ($cat -eq 'AccountsPositions')
 
       $argv = @()
       for ($i = 0; $i -lt $argCount; $i++) {

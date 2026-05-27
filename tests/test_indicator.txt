@@ -948,7 +948,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetPositionSymbol }
     // GetPositionSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetRTAccountEquity }
-    Value1 = GetRTAccountEquity( Close );
+    Value1 = GetRTAccountEquity( "x" );
     { AccountsPositions: GetPositionTotalCost }
     Value1 = GetPositionTotalCost( "x", "x" );
     { AccountsPositions: GetPositionBrokerSymbol }
@@ -962,7 +962,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetPositionAveragePrice }
     Value1 = GetPositionAveragePrice( "x", "x" );
     { AccountsPositions: GetNumPositions }
-    Value1 = GetNumPositions( Close );
+    Value1 = GetNumPositions( "x" );
     { Alerts: CheckAlert }
     If CheckAlert Then Begin End;
     { Alerts: Cancel Alert }
@@ -976,9 +976,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Alerts: AlertEx }
     // AlertEx is a reserved syntactic token; see official docs for usage.
     { AccountsPositions: GetRTUnrealizedPL }
-    Value1 = GetRTUnrealizedPL( Close );
+    Value1 = GetRTUnrealizedPL( "x" );
     { AccountsPositions: GetRTAccountNetWorth }
-    Value1 = GetRTAccountNetWorth( Close );
+    Value1 = GetRTAccountNetWorth( "x" );
     { AccountsPositions: InitialCapital }
     Value1 = InitialCapital;
     { Alerts: AlertEnabled }
