@@ -107,7 +107,9 @@ function Get-KeywordStatement {
     'GetRTSymbolName','TradeDate','SymbolCurrencyCode',
     'q_ExchangeListed','q_Description',
     # Environment-info string returners
-    'GetCurrency','GetCountry','GetCDRomDrive','GetUserName','GetAppInfo'
+    'GetCurrency','GetCountry','GetCDRomDrive','GetUserName','GetAppInfo',
+    # Other string-returning names
+    'BarType_uid','BarType','BarType_ex'
   )
   $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root|ToStr|CodeToStr)$'
   if (($stringReturningNames -contains $name) -or $looksLikeString) {
