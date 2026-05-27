@@ -84,7 +84,9 @@ function Get-KeywordStatement {
     'C','D','H','I','L','O','T','V',
     # Statement-shaped keywords that require '(' even when CHM reports zero
     # parameters in our parser (e.g. Alert("text");, AlertEx(...);)
-    'Alert','AlertEx'
+    'Alert','AlertEx',
+    # Portfolio attribute directives (used in [Attr = N] form, not as values)
+    'PortfolioEntriesPriority'
   )
   if ($reservedTokens -contains $name) {
     return "// $name is a reserved syntactic token; see official docs for usage."

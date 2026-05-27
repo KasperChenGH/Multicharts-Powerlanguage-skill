@@ -416,7 +416,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Strategy_Position: Portfolio_MaxOpenPositionPotentialLoss }
     Value1 = Portfolio_MaxOpenPositionPotentialLoss;
     { Portfolio_Strategy_Properties: PortfolioEntriesPriority }
-    Value1 = PortfolioEntriesPriority;
+    // PortfolioEntriesPriority is a reserved syntactic token; see official docs for usage.
     { Portfolio_Strategy_Properties: Portfolio_InterestRate }
     Value1 = Portfolio_InterestRate;
     { Portfolio_Strategy_Properties: Portfolio_GetMaxPotentialLossPerContract }
