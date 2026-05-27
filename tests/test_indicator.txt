@@ -1128,7 +1128,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: Thursday }
     Value1 = Thursday;
     { Date_and_Time_routines: TimeToString }
-    Value1 = TimeToString( Close );
+    // TimeToString returns a string; see official docs for usage.
     { Date_and_Time_routines: Time2Time_s }
     Value1 = Time2Time_s( Close );
     { Date_and_Time_routines: StringToDTFormatted }
@@ -1158,7 +1158,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: Time_s2Time }
     Value1 = Time_s2Time( Close );
     { Date_and_Time_routines: TimeToString_ms }
-    Value1 = TimeToString_ms( Close );
+    // TimeToString_ms returns a string; see official docs for usage.
     { Date_and_Time_routines: Tuesday }
     Value1 = Tuesday;
     { Date_and_Time_routines: Wednesday }
@@ -1424,13 +1424,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: DayOfMonth }
     Value1 = DayOfMonth( Close );
     { Date_and_Time_routines: DateTimeToString_Ms }
-    Value1 = DateTimeToString_Ms( Close );
+    // DateTimeToString_Ms returns a string; see official docs for usage.
     { Date_and_Time_routines: DateTimeToString }
-    Value1 = DateTimeToString( Close );
+    // DateTimeToString returns a string; see official docs for usage.
     { Date_and_Time_routines: DateToJulian }
     Value1 = DateToJulian( Close );
     { Date_and_Time_routines: DayFromDateTime }
     Value1 = DayFromDateTime( Close );
     { Date_and_Time_routines: DateToString }
-    Value1 = DateToString( Close );
+    // DateToString returns a string; see official docs for usage.
 End;

@@ -113,7 +113,7 @@ function Get-KeywordStatement {
     # Account info string returners
     'GetAccountID','GetAccount','GetPositionBrokerSymbol'
   )
-  $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root|ToStr|CodeToStr)$'
+  $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root|ToStr|ToString|ToString_Ms|CodeToStr)$'
   if (($stringReturningNames -contains $name) -or $looksLikeString) {
     return "// $name returns a string; see official docs for usage."
   }
