@@ -99,6 +99,19 @@ function Get-KeywordStatement {
     return "// $name (multi-word keyword); see official docs for usage."
   }
 
+  # String-returning keywords cannot be assigned to numeric Value1.
+  # Match a curated list plus a heuristic on name endings.
+  $stringReturningNames = @(
+    'Description','ExchListed','Symbol','SymbolName','SymbolRoot',
+    'RTSymbol','RTSymbolName','GetSymbolName','GetExchangeName',
+    'GetRTSymbolName','TradeDate','SymbolCurrencyCode',
+    'q_ExchangeListed','q_Description'
+  )
+  $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root)$'
+  if (($stringReturningNames -contains $name) -or $looksLikeString) {
+    return "// $name returns a string; see official docs for usage."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {

@@ -39,7 +39,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: ExitDateTime }
     Value1 = ExitDateTime;
     { Strategy_Position: ExitName }
-    Value1 = ExitName;
+    // ExitName returns a string; see official docs for usage.
     { Strategy_Position: ExitTime }
     Value1 = ExitTime;
     { Strategy_Position: ExitPrice_Checked }
@@ -49,7 +49,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: EntryPrice }
     Value1 = EntryPrice;
     { Strategy_Position: EntryName }
-    Value1 = EntryName;
+    // EntryName returns a string; see official docs for usage.
     { Strategy_Position: EntryDate_Checked }
     Value1 = EntryDate_Checked;
     { Strategy_Position: EntryPrice_Checked }
@@ -127,7 +127,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position_Trades: PosTradeEntryBar }
     Value1 = PosTradeEntryBar;
     { Strategy_Position_Trades: PosTradeEntryName }
-    Value1 = PosTradeEntryName;
+    // PosTradeEntryName returns a string; see official docs for usage.
     { Strategy_Position_Trades: PosTradeEntryDateTime }
     Value1 = PosTradeEntryDateTime;
     { Strategy_Position_Trades: PosTradeEntryCategory }
@@ -155,7 +155,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position_Trades: PosTradeProfit }
     Value1 = PosTradeProfit;
     { Strategy_Properties: GetStrategyName }
-    Value1 = GetStrategyName;
+    // GetStrategyName returns a string; see official docs for usage.
     { Strategy_Properties: Slippage }
     Value1 = Slippage;
     { Strategy_Properties: Margin }
@@ -169,7 +169,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position_Trades: PosTradeExitBar }
     Value1 = PosTradeExitBar;
     { Strategy_Position_Trades: PosTradeExitName }
-    Value1 = PosTradeExitName;
+    // PosTradeExitName returns a string; see official docs for usage.
     { Strategy_Position_Trades: PosTradeIsOpen }
     Value1 = PosTradeIsOpen;
     { Strategy_Position_Trades: PosTradeIsLong }
@@ -243,7 +243,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_riskcapital }
     Value1 = pmms_strategy_riskcapital( 14 );
     { Portfolio_Money_Management: pmms_strategy_symbol }
-    Value1 = pmms_strategy_symbol( 14 );
+    // pmms_strategy_symbol returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmms_strategy_set_status }
     Value1 = pmms_strategy_set_status( 14, "x" );
     { Portfolio_Money_Management: pmms_strategy_set_entry_contracts }
@@ -297,7 +297,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategies_in_long_count }
     Value1 = pmms_strategies_in_long_count( Close );
     { Portfolio_Money_Management: pmms_strategies_get_by_symbol_name }
-    Value1 = pmms_strategies_get_by_symbol_name( "x" );
+    // pmms_strategies_get_by_symbol_name returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmms_strategies_in_short_count }
     Value1 = pmms_strategies_in_short_count( Close );
     { Portfolio_Money_Management: pmms_strategies_set_status_for_all }

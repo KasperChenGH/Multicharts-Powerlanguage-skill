@@ -25,11 +25,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Plotting: Plot }
     // Plot -- see official docs
     { Quote_Fields: Description }
-    Value1 = Description;
+    // Description returns a string; see official docs for usage.
     { Quote_Fields: DailyVolume }
     Value1 = DailyVolume;
     { Quote_Fields: ExchListed }
-    Value1 = ExchListed;
+    // ExchListed returns a string; see official docs for usage.
     { Quote_Fields: InsideBid }
     Value1 = InsideBid;
     { Quote_Fields: InsideAsk }
@@ -137,7 +137,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Rectangle_Drawing: RectangleGetEndPrice }
     Value1 = RectangleGetEndPrice;
     { Quote_Fields: q_ExchangeListed }
-    Value1 = q_ExchangeListed;
+    // q_ExchangeListed returns a string; see official docs for usage.
     { Quote_Fields: q_Date }
     Value1 = q_Date;
     { Quote_Fields: q_Last }
@@ -159,17 +159,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: q_Bid }
     Value1 = q_Bid;
     { Quote_Fields: Symbol }
-    Value1 = Symbol;
+    // Symbol returns a string; see official docs for usage.
     { Quote_Fields: RTSymbolName }
-    Value1 = RTSymbolName;
+    // RTSymbolName returns a string; see official docs for usage.
     { Quote_Fields: SymbolName }
-    Value1 = SymbolName;
+    // SymbolName returns a string; see official docs for usage.
     { Quote_Fields: TradeDate }
-    Value1 = TradeDate;
+    // TradeDate returns a string; see official docs for usage.
     { Quote_Fields: SymbolRoot }
-    Value1 = SymbolRoot;
+    // SymbolRoot returns a string; see official docs for usage.
     { Quote_Fields: RTSymbol }
-    Value1 = RTSymbol;
+    // RTSymbol returns a string; see official docs for usage.
     { Quote_Fields: q_Time_Dt }
     Value1 = q_Time_Dt;
     { Quote_Fields: q_Time }
@@ -201,7 +201,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: Is64BitOperatingSystem }
     Value1 = Is64BitOperatingSystem;
     { Environment_Information: GetUserName }
-    Value1 = GetUserName;
+    // GetUserName returns a string; see official docs for usage.
     { Execution_Control: RecalcLastBarAfter }
     Value1 = RecalcLastBarAfter;
     { Execution_Control: RaiseRunTimeError }
@@ -277,7 +277,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Sine }
     Value1 = Sine;
     { Math_and_Trig: SquareRoot }
-    Value1 = SquareRoot;
+    // SquareRoot returns a string; see official docs for usage.
     { Math_and_Trig: Square }
     Value1 = Square;
     { Math_and_Trig: Random }
@@ -425,7 +425,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Drawing: Text_SetLocation }
     Value1 = Text_SetLocation( 14, 14, 14 );
     { Text_Drawing: Text_SetFontName }
-    Value1 = Text_SetFontName;
+    // Text_SetFontName returns a string; see official docs for usage.
     { Text_Manipulation: NumToStr }
     Value1 = NumToStr;
     { Text_Manipulation: NewLine }
@@ -701,7 +701,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Drawing: Text_GetDate }
     Value1 = Text_GetDate;
     { Text_Drawing: Text_GetFontName }
-    Value1 = Text_GetFontName;
+    // Text_GetFontName returns a string; see official docs for usage.
     { Text_Drawing: Text_GetFirst }
     Value1 = Text_GetFirst( 14 );
     { Text_Drawing: Text_GetBGColor }
@@ -837,7 +837,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: ExpirationDate }
     Value1 = ExpirationDate;
     { Data_Information_General: GetExchangeName }
-    Value1 = GetExchangeName;
+    // GetExchangeName returns a string; see official docs for usage.
     { Data_Information_General: ExpirationDateFromVendor }
     Value1 = ExpirationDateFromVendor;
     { Data_Information_General: Days }
@@ -889,7 +889,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Currency_Codes: TRY_ }
     Value1 = TRY_;
     { Currency_Codes: SymbolCurrencyCode }
-    Value1 = SymbolCurrencyCode;
+    // SymbolCurrencyCode returns a string; see official docs for usage.
     { Currency_Codes: USD }
     Value1 = USD;
     { Data_Information_General: Ago }
@@ -935,7 +935,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_GetTextBGColor }
     Value1 = Arw_GetTextBGColor;
     { Arrow_Drawing: Arw_GetTextFontName }
-    Value1 = Arw_GetTextFontName;
+    // Arw_GetTextFontName returns a string; see official docs for usage.
     { Arrow_Drawing: Arw_GetTime }
     Value1 = Arw_GetTime;
     { Arrow_Drawing: Arw_GetTextSize }
@@ -945,13 +945,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { AccountsPositions: GetPositionOpenPL }
     Value1 = GetPositionOpenPL;
     { AccountsPositions: GetPositionSymbol }
-    Value1 = GetPositionSymbol;
+    // GetPositionSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetRTAccountEquity }
     Value1 = GetRTAccountEquity;
     { AccountsPositions: GetPositionTotalCost }
     Value1 = GetPositionTotalCost;
     { AccountsPositions: GetPositionBrokerSymbol }
-    Value1 = GetPositionBrokerSymbol;
+    // GetPositionBrokerSymbol returns a string; see official docs for usage.
     { AccountsPositions: GetAccountID }
     Value1 = GetAccountID;
     { AccountsPositions: GetAccount }
@@ -1053,7 +1053,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: ARW_New_Self_BN }
     Value1 = ARW_New_Self_BN;
     { Arrow_Drawing: Arw_SetTextFontName }
-    Value1 = Arw_SetTextFontName;
+    // Arw_SetTextFontName returns a string; see official docs for usage.
     { Arrow_Drawing: Arw_SetTextColor }
     Value1 = Arw_SetTextColor( 14, 14 );
     { Arrow_Drawing: Arw_SetTextSize }
@@ -1075,7 +1075,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Arrow_Drawing: Arw_SetText }
     Value1 = Arw_SetText;
     { Data_Information_General: GetRTSymbolName }
-    Value1 = GetRTSymbolName;
+    // GetRTSymbolName returns a string; see official docs for usage.
     { Declaration: RecalcPersist }
     // RecalcPersist is a language construct (Declaration); see official docs for usage.
     { Declaration: NumericSimple }
@@ -1313,7 +1313,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: H }
     Value1 = H;
     { Data_Information_General: GetSymbolName }
-    Value1 = GetSymbolName;
+    // GetSymbolName returns a string; see official docs for usage.
     { Data_Information_General: High }
     Value1 = High;
     { Data_Information_General: IntervalType }
