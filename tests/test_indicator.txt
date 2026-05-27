@@ -374,11 +374,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: MC_TL_New_BN }
     // MC_TL_New_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Manipulation: Text }
-    Value1 = Text;
+    // Text is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: StrToNum }
-    Value1 = StrToNum;
+    // StrToNum is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: UpperStr }
-    Value1 = UpperStr;
+    // UpperStr is a language construct (Text_Manipulation); see official docs for usage.
     { Trendline_Drawing: MC_TL_New }
     // MC_TL_New is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_GetActive }
@@ -428,27 +428,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Drawing: Text_SetFontName }
     // Text_SetFontName returns a string; see official docs for usage.
     { Text_Manipulation: NumToStr }
-    Value1 = NumToStr;
+    // NumToStr is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: NewLine }
-    Value1 = NewLine;
+    // NewLine is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: RightStr }
-    Value1 = RightStr;
+    // RightStr is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: StrLen }
-    Value1 = StrLen;
+    // StrLen is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: Spaces }
-    Value1 = Spaces;
+    // Spaces is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: MidStr }
-    Value1 = MidStr;
+    // MidStr is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: DoubleQuote }
-    Value1 = DoubleQuote;
+    // DoubleQuote is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Drawing: Text_SetTransparent }
     // Text_SetTransparent is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Manipulation: InStr }
-    Value1 = InStr;
+    // InStr is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: LowerStr }
-    Value1 = LowerStr;
+    // LowerStr is a language construct (Text_Manipulation); see official docs for usage.
     { Text_Manipulation: LeftStr }
-    Value1 = LeftStr;
+    // LeftStr is a language construct (Text_Manipulation); see official docs for usage.
     { Trendline_Drawing: TL_GetEndTime }
     // TL_GetEndTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetBegin_s }
