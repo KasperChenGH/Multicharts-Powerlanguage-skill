@@ -1328,7 +1328,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: RevSize }
     // RevSize is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: SessionLastBar }
-    Value1 = SessionLastBar;
+    If SessionLastBar Then Begin End;
     { Data_Information_General: ScrollToBar }
     Value1 = ScrollToBar( Close, 14 );
     { Data_Information_General: PointValue }

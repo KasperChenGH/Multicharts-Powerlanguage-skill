@@ -123,7 +123,8 @@ function Get-KeywordStatement {
   # boolean variable) so they still exercise the keyword.
   $booleanReturningNames = @(
     'MouseClickShiftPressed','MouseClickCtrlPressed','AlertEnabled',
-    'CheckAlert','MarketPosition_at_Broker_for_The_Strategy'
+    'CheckAlert','MarketPosition_at_Broker_for_The_Strategy',
+    'SessionLastBar','SessionFirstBar','LastBarOnChart'
   )
   $looksLikeBoolean = ($name -match '(?i)(Pressed|Enabled)$') -or
                       ($name -match '^(?i)(Is|Has|Can)[A-Z0-9]') -or
