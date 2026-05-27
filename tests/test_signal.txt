@@ -16,7 +16,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: EntryDate }
     Value1 = EntryDate( Close );
     { Strategy_Position: CurrentShares }
-    // CurrentShares is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = CurrentShares( Close );
     { Strategy_Performance: TotalBarsWinTrades }
     Value1 = TotalBarsWinTrades;
     { Strategy_Performance: TotalBarsLosTrades }
@@ -62,19 +62,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: EntryTime }
     Value1 = EntryTime( Close );
     { Strategy_Performance: i_AvgEntryPrice_at_Broker_for_The_Strategy }
-    // i_AvgEntryPrice_at_Broker_for_The_Strategy is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = i_AvgEntryPrice_at_Broker_for_The_Strategy( Close );
     { Strategy_Performance: i_AvgEntryPrice_at_Broker }
-    // i_AvgEntryPrice_at_Broker is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = i_AvgEntryPrice_at_Broker( Close );
     { Strategy_Performance: i_AvgEntryPrice }
-    // i_AvgEntryPrice is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = i_AvgEntryPrice( Close );
     { Strategy_Performance: i_ClosedEquity }
     Value1 = i_ClosedEquity;
     { Strategy_Performance: i_MarketPosition }
     Value1 = i_MarketPosition;
     { Strategy_Performance: i_CurrentShares }
-    // i_CurrentShares is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = i_CurrentShares( Close );
     { Strategy_Performance: i_CurrentContracts }
-    // i_CurrentContracts is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = i_CurrentContracts( Close );
     { Strategy_Performance: AvgEntryPrice }
     Value1 = AvgEntryPrice;
     { Strategy_Performance: AvgBarsWinTrade }
@@ -114,7 +114,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Performance: MaxConsecWinners }
     Value1 = MaxConsecWinners;
     { Strategy_Performance: MaxSharesHeld }
-    // MaxSharesHeld is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = MaxSharesHeld( Close );
     { Strategy_Performance: MaxIDDrawDown }
     Value1 = MaxIDDrawDown;
     { Strategy_Performance: MaxContractsHeld }
@@ -214,7 +214,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: PositionProfit_Checked }
     Value1 = PositionProfit_Checked( Close );
     { Strategy_Position_Trades: OpenEntriesCount }
-    // OpenEntriesCount is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = OpenEntriesCount( Close );
     { Strategy_Position_Trades: OpenEntryDate }
     Value1 = OpenEntryDate( Close );
     { Strategy_Position_Trades: OpenEntryContracts }
@@ -228,13 +228,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: MaxPositionProfit }
     Value1 = MaxPositionProfit( Close );
     { Strategy_Position: MaxShares }
-    // MaxShares is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = MaxShares( Close );
     { Strategy_Position: PositionProfit }
     Value1 = PositionProfit( Close );
     { Strategy_Position: OpenPositionProfit }
     Value1 = OpenPositionProfit;
     { Strategy_Position: MaxShares_Checked }
-    // MaxShares_Checked is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = MaxShares_Checked( Close );
     { Portfolio_Money_Management: pmms_strategy_resume }
     Value1 = pmms_strategy_resume( Close );
     { Portfolio_Money_Management: pmms_strategy_pause }
@@ -246,7 +246,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_symbol }
     // pmms_strategy_symbol returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmms_strategy_set_status }
-    Value1 = pmms_strategy_set_status( Close, "x" );
+    Value1 = pmms_strategy_set_status( Close, 14 );
     { Portfolio_Money_Management: pmms_strategy_set_entry_contracts }
     Value1 = pmms_strategy_set_entry_contracts( Close, 14 );
     { Portfolio_Money_Management: pmms_strategy_get_entry_contracts }
@@ -254,7 +254,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_entryprice }
     Value1 = pmms_strategy_entryprice( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_short_entries }
-    Value1 = pmms_strategy_deny_short_entries;
+    Value1 = pmms_strategy_deny_short_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_is_paused }
     Value1 = pmms_strategy_is_paused( Close );
     { Portfolio_Money_Management: pmms_strategy_netprofit }
@@ -264,13 +264,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_marketposition }
     Value1 = pmms_strategy_marketposition( Close );
     { Portfolio_Money_Management: pmm_get_global_named_num }
-    Value1 = pmm_get_global_named_num( "x" );
+    Value1 = pmm_get_global_named_num( Close );
     { Portfolio_Strategy_Performance: Portfolio_GrossLoss }
     Value1 = Portfolio_GrossLoss;
     { Portfolio_Money_Management: pmm_set_my_status }
-    Value1 = pmm_set_my_status( "x" );
+    Value1 = pmm_set_my_status( Close );
     { Portfolio_Money_Management: pmm_set_my_named_str }
-    Value1 = pmm_set_my_named_str( "x", "x" );
+    Value1 = pmm_set_my_named_str( Close, 14 );
     { Portfolio_Strategy_Performance: Portfolio_GrossProfit }
     Value1 = Portfolio_GrossProfit;
     { Portfolio_Strategy_Performance: Portfolio_NetProfit }
@@ -280,19 +280,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Strategy_Performance: Portfolio_InvestedCapital }
     Value1 = Portfolio_InvestedCapital;
     { Portfolio_Money_Management: pmm_get_my_named_num }
-    Value1 = pmm_get_my_named_num( "x" );
+    Value1 = pmm_get_my_named_num( Close );
     { Portfolio_Money_Management: pmm_get_my_index }
     Value1 = pmm_get_my_index;
     { Portfolio_Money_Management: pmm_get_global_named_str }
-    Value1 = pmm_get_global_named_str( "x" );
+    Value1 = pmm_get_global_named_str( Close );
     { Portfolio_Money_Management: pmm_get_my_named_str }
-    Value1 = pmm_get_my_named_str( "x" );
+    Value1 = pmm_get_my_named_str( Close );
     { Portfolio_Money_Management: pmm_set_my_named_num }
-    Value1 = pmm_set_my_named_num( "x", 14 );
+    Value1 = pmm_set_my_named_num( Close, 14 );
     { Portfolio_Money_Management: pmm_set_global_named_str }
-    Value1 = pmm_set_global_named_str( "x", "x" );
+    Value1 = pmm_set_global_named_str( Close, 14 );
     { Portfolio_Money_Management: pmm_set_global_named_num }
-    Value1 = pmm_set_global_named_num( "x", 14 );
+    Value1 = pmm_set_global_named_num( Close, 14 );
     { Portfolio_Money_Management: pmms_strategies_in_positions_count }
     Value1 = pmms_strategies_in_positions_count( Close );
     { Portfolio_Money_Management: pmms_strategies_in_long_count }
@@ -302,19 +302,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategies_in_short_count }
     Value1 = pmms_strategies_in_short_count( Close );
     { Portfolio_Money_Management: pmms_strategies_set_status_for_all }
-    Value1 = pmms_strategies_set_status_for_all( "x" );
+    Value1 = pmms_strategies_set_status_for_all( Close );
     { Portfolio_Money_Management: pmms_strategies_resume_all }
     Value1 = pmms_strategies_resume_all;
     { Portfolio_Money_Management: pmms_strategies_pause_all }
     Value1 = pmms_strategies_pause_all;
     { Portfolio_Money_Management: pmms_set_strategy_named_num }
-    Value1 = pmms_set_strategy_named_num( Close, "x", 14 );
+    Value1 = pmms_set_strategy_named_num( Close, 14, 14 );
     { Portfolio_Money_Management: pmms_get_strategy_named_str }
-    Value1 = pmms_get_strategy_named_str( Close, "x" );
+    Value1 = pmms_get_strategy_named_str( Close, 14 );
     { Portfolio_Money_Management: pmms_get_strategy_named_num }
-    Value1 = pmms_get_strategy_named_num( Close, "x" );
+    Value1 = pmms_get_strategy_named_num( Close, 14 );
     { Portfolio_Money_Management: pmms_set_strategy_named_str }
-    Value1 = pmms_set_strategy_named_str( Close, "x", "x" );
+    Value1 = pmms_set_strategy_named_str( Close, 14, 14 );
     { Portfolio_Money_Management: pmms_strategies_deny_entries_all }
     Value1 = pmms_strategies_deny_entries_all;
     { Portfolio_Money_Management: pmms_strategies_count }
@@ -328,29 +328,29 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_currentcontracts }
     Value1 = pmms_strategy_currentcontracts( Close );
     { Portfolio_Money_Management: pmms_strategy_close_position_partial }
-    Value1 = pmms_strategy_close_position_partial( Close, True, 14 );
+    Value1 = pmms_strategy_close_position_partial( Close, 14, 14 );
     { Portfolio_Money_Management: pmms_strategy_deny_exits }
     Value1 = pmms_strategy_deny_exits( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_long_entries }
-    Value1 = pmms_strategy_deny_long_entries;
+    Value1 = pmms_strategy_deny_long_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_exit_from_short }
-    Value1 = pmms_strategy_deny_exit_from_short;
+    Value1 = pmms_strategy_deny_exit_from_short( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_exit_from_long }
-    Value1 = pmms_strategy_deny_exit_from_long;
+    Value1 = pmms_strategy_deny_exit_from_long( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exit_from_short }
-    Value1 = pmms_strategy_allow_exit_from_short;
+    Value1 = pmms_strategy_allow_exit_from_short( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exit_from_long }
-    Value1 = pmms_strategy_allow_exit_from_long;
+    Value1 = pmms_strategy_allow_exit_from_long( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exits }
     Value1 = pmms_strategy_allow_exits( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_long_entries }
-    Value1 = pmms_strategy_allow_long_entries;
+    Value1 = pmms_strategy_allow_long_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_close_position }
     Value1 = pmms_strategy_close_position( Close );
     { Portfolio_Money_Management: pmms_strategy_avgentryprice }
     Value1 = pmms_strategy_avgentryprice( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_short_entries }
-    Value1 = pmms_strategy_allow_short_entries;
+    Value1 = pmms_strategy_allow_short_entries( Close );
     { Strategy_Orders: SetBreakEven }
     // SetBreakEven is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SellShort }
@@ -384,7 +384,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: Shares }
     // Shares -- see official docs
     { Strategy_Orders: Share }
-    // Share is documented as an alias/redirect; see official docs for the canonical signature.
+    // Share -- see official docs
     { Strategy_Orders: SetTrailingStop_pt }
     // SetTrailingStop_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: Short }
@@ -404,7 +404,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: SetStopLoss }
     // SetStopLoss is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopShare }
-    // SetStopShare is documented as an alias/redirect; see official docs for the canonical signature.
+    // SetStopShare is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopPosition }
     // SetStopPosition is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopLoss_pt }
@@ -448,7 +448,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: All }
     Sell All Contracts Next Bar Market;
     { Strategy_Orders: Contract }
-    // Contract is documented as an alias/redirect; see official docs for the canonical signature.
+    Buy ( "C" ) 1 Contract Next Bar Market;
     { Strategy_Orders: BuyToCover }
     BuyToCover ( "BuyToCover_T" ) 1 Contract Next Bar Market;
     { Strategy_Orders: Buy }

@@ -14,7 +14,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Plotting: SetPlotWidth }
     // SetPlotWidth is a setter (takes at least one value argument); see official docs.
     { Plotting: PlotPB }
-    // PlotPB is documented as an alias/redirect; see official docs for the canonical signature.
+    // PlotPB -- see official docs
     { Plotting: I_setplotvalue }
     // I_setplotvalue -- see official docs
     { Plotting: I_getplotvalue }
@@ -140,27 +140,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: q_ExchangeListed }
     // q_ExchangeListed returns a string; see official docs for usage.
     { Quote_Fields: q_Date }
-    Value1 = q_Date;
+    Value1 = q_Date( Close );
     { Quote_Fields: q_Last }
-    Value1 = q_Last;
+    Value1 = q_Last( Close );
     { Quote_Fields: q_PreviousClose }
-    Value1 = q_PreviousClose;
+    Value1 = q_PreviousClose( Close );
     { Quote_Fields: q_OpenInterest }
-    Value1 = q_OpenInterest;
+    Value1 = q_OpenInterest( Close );
     { Quote_Fields: q_BigPointValue }
-    Value1 = q_BigPointValue;
+    Value1 = q_BigPointValue( Close );
     { Quote_Fields: q_Ask }
-    Value1 = q_Ask;
+    Value1 = q_Ask( Close );
     { Quote_Fields: PrevClose }
     Value1 = PrevClose;
     { Quote_Fields: q_asksize }
-    Value1 = q_asksize;
+    Value1 = q_asksize( Close );
     { Quote_Fields: q_bidsize }
-    Value1 = q_bidsize;
+    Value1 = q_bidsize( Close );
     { Quote_Fields: q_Bid }
-    Value1 = q_Bid;
+    Value1 = q_Bid( Close );
     { Quote_Fields: Symbol }
-    // Symbol is documented as an alias/redirect; see official docs for the canonical signature.
+    // Symbol returns a string; see official docs for usage.
     { Quote_Fields: RTSymbolName }
     // RTSymbolName returns a string; see official docs for usage.
     { Quote_Fields: SymbolName }
@@ -170,27 +170,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: SymbolRoot }
     // SymbolRoot returns a string; see official docs for usage.
     { Quote_Fields: RTSymbol }
-    // RTSymbol is documented as an alias/redirect; see official docs for the canonical signature.
+    // RTSymbol returns a string; see official docs for usage.
     { Quote_Fields: q_Time_Dt }
     Value1 = q_Time_Dt;
     { Quote_Fields: q_Time }
-    Value1 = q_Time;
+    Value1 = q_Time( Close );
     { Quote_Fields: q_Time_s }
-    // q_Time_s is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = q_Time_s( Close );
     { Quote_Fields: q_tradevolume }
-    Value1 = q_tradevolume;
+    Value1 = q_tradevolume( Close );
     { Quote_Fields: q_TotalVolume }
-    Value1 = q_TotalVolume;
+    Value1 = q_TotalVolume( Close );
     { Environment_Information: MaxBarsForward }
     Value1 = MaxBarsForward;
     { Environment_Information: MaxBarsBack }
     Value1 = MaxBarsBack;
     { Environment_Information: SetMaxBarsBack }
     // SetMaxBarsBack is a setter (takes at least one value argument); see official docs.
-    { Execution_Control: CommandLine }
-    // CommandLine is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: Abort }
     // Abort is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: #Return }
+    // #Return is a language construct (Execution_Control); see official docs for usage.
     { Environment_Information: Is64BitProcess }
     If Is64BitProcess Then Begin End;
     { Environment_Information: getTPOinfo }
@@ -203,28 +203,28 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     If Is64BitOperatingSystem Then Begin End;
     { Environment_Information: GetUserName }
     // GetUserName returns a string; see official docs for usage.
-    { Execution_Control: RecalcLastBarAfter }
-    // RecalcLastBarAfter is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: RaiseRunTimeError }
     // RaiseRunTimeError is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: ReCalculate }
-    // ReCalculate is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: VerifyLicense }
-    // VerifyLicense is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: SetFPCompareAccuracy }
-    // SetFPCompareAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcVeryLowAccuracy }
     // fpcVeryLowAccuracy is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: fpcHighAccuracy }
-    // fpcHighAccuracy is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: fpcExactAccuracy }
-    // fpcExactAccuracy is a language construct (Execution_Control); see official docs for usage.
-    { Execution_Control: fpcLowAccuracy }
-    // fpcLowAccuracy is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: RecalcLastBarAfter }
+    // RecalcLastBarAfter is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: SetFPCompareAccuracy }
+    // SetFPCompareAccuracy is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: ReCalculate }
+    // ReCalculate is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcVeryHighAccuracy }
     // fpcVeryHighAccuracy is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: fpcExactAccuracy }
+    // fpcExactAccuracy is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: CommandLine }
+    // CommandLine is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: fpcHighAccuracy }
+    // fpcHighAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Execution_Control: fpcMedAccuracy }
     // fpcMedAccuracy is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: fpcLowAccuracy }
+    // fpcLowAccuracy is a language construct (Execution_Control); see official docs for usage.
     { Dynamic_Arrays: Array_SetBooleanValue }
     Array_SetBooleanValue( pl_test_bools, 0, True );
     { Dynamic_Arrays: Array_IndexOf }
@@ -269,8 +269,8 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     Fill_Array( pl_test_ints, 0 );
     { Dynamic_Arrays: Array_Sum }
     Value1 = Array_Sum( pl_test_floats, 0, 5 );
-    { Execution_Control: #Return }
-    // #Return is a language construct (Execution_Control); see official docs for usage.
+    { Execution_Control: VerifyLicense }
+    // VerifyLicense is a language construct (Execution_Control); see official docs for usage.
     { Math_and_Trig: Sign }
     Value1 = Sign( Close );
     { Math_and_Trig: Round }
@@ -292,7 +292,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Power }
     Value1 = Power( Close, 2 );
     { Math_and_Trig: Pos }
-    // Pos is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = Pos( Close );
     { Miscellaneous_keywords: Market }
     // Market is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Contracts }
@@ -325,18 +325,18 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     Value1 = Cosine( Close );
     { Math_and_Trig: Ceiling }
     Value1 = Ceiling( Close );
+    { ExpertCommentary: CommentaryEnabled }
+    // CommentaryEnabled is a language construct (ExpertCommentary); see official docs for usage.
+    { ExpertCommentary: AtCommentaryBar }
+    // AtCommentaryBar is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: #BeginCmtry }
     // #BeginCmtry is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CheckCommentary }
     // CheckCommentary is a language construct (ExpertCommentary); see official docs for usage.
-    { ExpertCommentary: AtCommentaryBar }
-    // AtCommentaryBar is a language construct (ExpertCommentary); see official docs for usage.
-    { ExpertCommentary: Commentary }
-    // Commentary is a language construct (ExpertCommentary); see official docs for usage.
-    { ExpertCommentary: CommentaryEnabled }
-    // CommentaryEnabled is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CommentaryCL }
     // CommentaryCL is a language construct (ExpertCommentary); see official docs for usage.
+    { ExpertCommentary: Commentary }
+    // Commentary is a language construct (ExpertCommentary); see official docs for usage.
     { Math_and_Trig: MaxList2 }
     Value1 = MaxList2( Close, 2, 2, 2 );
     { Math_and_Trig: MaxList }
@@ -540,27 +540,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: TL_GetValue_s }
     // TL_GetValue_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: Sess2FirstBarTime }
-    Value1 = Sess2FirstBarTime;
+    Value1 = Sess2FirstBarTime( Close );
     { Sessions: Sess2EndTime }
-    Value1 = Sess2EndTime;
+    Value1 = Sess2EndTime( Close );
     { Sessions: Sess2StartTime }
-    Value1 = Sess2StartTime;
+    Value1 = Sess2StartTime( Close );
     { Sessions: SessionCountMS }
-    Value1 = SessionCountMS;
+    Value1 = SessionCountMS( Close );
     { Sessions: SessionCount }
     Value1 = SessionCount( Close );
     { Sessions: Sess1StartTime }
-    Value1 = Sess1StartTime;
+    Value1 = Sess1StartTime( Close );
     { Sessions: AutoSession }
-    Value1 = AutoSession;
+    Value1 = AutoSession( Close );
     { Rectangle_Drawing: RectangleSetStyle }
     // RectangleSetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: RegularSession }
-    Value1 = RegularSession;
+    Value1 = RegularSession( Close );
     { Sessions: Sess1FirstBarTime }
-    Value1 = Sess1FirstBarTime;
+    Value1 = Sess1FirstBarTime( Close );
     { Sessions: Sess1EndTime }
-    Value1 = Sess1EndTime;
+    Value1 = Sess1EndTime( Close );
     { Sessions: SessionStartTimeMS }
     Value1 = SessionStartTimeMS( Close );
     { Sessions: SessionStartTime }
@@ -576,7 +576,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Sessions: SessionEndDayMS }
     Value1 = SessionEndDayMS( Close );
     { Sessions: SessionEndDay }
-    Value1 = SessionEndDay( Close, 14 );
+    Value1 = SessionEndDay;
     { Sessions: SessionEndTime }
     Value1 = SessionEndTime( Close, 14 );
     { Sessions: SessionStartDay }
@@ -818,7 +818,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Data }
     // Data is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DailyLimit }
-    Value1 = DailyLimit;
+    Value1 = DailyLimit( Close );
     { Data_Information_General: Category }
     Value1 = Category;
     { Data_Information_General: BigPointValue }
@@ -830,7 +830,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Call }
     // Call is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: C }
-    // C is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = C( Close );
     { Data_Information_General: DownTicks }
     Value1 = DownTicks;
     { Data_Information_General: DeltaType }
@@ -846,13 +846,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Date }
     Value1 = Date;
     { Data_Information_General: DataCompression }
-    // DataCompression is documented as an alias/redirect; see official docs for the canonical signature.
-    { Data_Information_General: DateTime }
-    Value1 = DateTime;
-    { Data_Information_General: Day }
-    // Day is a reserved syntactic token; see official docs for usage.
+    Value1 = DataCompression( Close );
     { Data_Information_General: DateTime bar update }
     // DateTime bar update (multi-word keyword); see official docs for usage.
+    { Data_Information_General: Day }
+    // Day is a reserved syntactic token; see official docs for usage.
+    { Data_Information_General: DateTime }
+    Value1 = DateTime;
     { Currency_Codes: Portfolio_CurrencyCode }
     Value1 = Portfolio_CurrencyCode;
     { Currency_Codes: NZD }
@@ -1167,28 +1167,28 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     Value1 = updatedatetime;
     { Declaration: Variables }
     // Variables is a language construct (Declaration); see official docs for usage.
-    { DLL_Calling: Unsigned }
-    // Unsigned is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: ThreadSafe }
     // ThreadSafe is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: VarSize }
-    // VarSize is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: Void }
-    // Void is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: VarStartAddr }
-    // VarStartAddr is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: Self }
     // Self is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPWORD }
-    // LPWORD is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPSTR }
-    // LPSTR is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: Method }
-    // Method is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Unsigned }
+    // Unsigned is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: VarStartAddr }
+    // VarStartAddr is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: VarSize }
+    // VarSize is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: OnDestroy }
     // OnDestroy is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPSTR }
+    // LPSTR is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPLong }
+    // LPLong is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPWORD }
+    // LPWORD is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: OnCreate }
     // OnCreate is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Method }
+    // Method is a language construct (DLL_Calling); see official docs for usage.
     { DOM: DOM_BidSize }
     Value1 = DOM_BidSize( Close );
     { DOM: DOM_BidsCount }
@@ -1201,60 +1201,60 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     Value1 = Array_Compare( pl_test_ints, 0, pl_test_ints, 0, 5 );
     { DOM: DOM_BidPrice }
     Value1 = DOM_BidPrice( Close );
-    { DLL_Calling: #Events }
-    // #Events is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: WORD }
     // WORD is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Void }
+    // Void is a language construct (DLL_Calling); see official docs for usage.
     { DOM: DOM_AskPrice }
     Value1 = DOM_AskPrice( Close );
     { DOM: DOM_AskSize }
     Value1 = DOM_AskSize( Close );
     { DOM: DOM_AsksCount }
     Value1 = DOM_AsksCount;
-    { DLL_Calling: Double }
-    // Double is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: DefineDLLFunc }
     // DefineDLLFunc is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: DWORD }
-    // DWORD is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: Float }
-    // Float is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: External }
-    // External is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: Char }
     // Char is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: ArraySize }
-    // ArraySize is a language construct (DLL_Calling); see official docs for usage.
-    { Declaration: Vars }
-    // Vars is a language construct (Declaration); see official docs for usage.
-    { DLL_Calling: ArrayStartAddr }
-    // ArrayStartAddr is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Double }
+    // Double is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: External }
+    // External is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: DWORD }
+    // DWORD is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: Byte }
     // Byte is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: #Events }
+    // #Events is a language construct (DLL_Calling); see official docs for usage.
+    { Declaration: Vars }
+    // Vars is a language construct (Declaration); see official docs for usage.
+    { DLL_Calling: ArraySize }
+    // ArraySize is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: Bool }
     // Bool is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPDWORD }
-    // LPDWORD is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: ArrayStartAddr }
+    // ArrayStartAddr is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: LPDouble }
     // LPDouble is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPFloat }
-    // LPFloat is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPLong }
-    // LPLong is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: LPInt }
-    // LPInt is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: LPByte }
     // LPByte is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: Int }
-    // Int is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: iEasyLanguageObject }
-    // iEasyLanguageObject is a language construct (DLL_Calling); see official docs for usage.
-    { DLL_Calling: Int64 }
-    // Int64 is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPDWORD }
+    // LPDWORD is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPInt }
+    // LPInt is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: LPFloat }
+    // LPFloat is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: LPBool }
     // LPBool is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: iEasyLanguageObject }
+    // iEasyLanguageObject is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Float }
+    // Float is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Int }
+    // Int is a language construct (DLL_Calling); see official docs for usage.
     { DLL_Calling: Long }
     // Long is a language construct (DLL_Calling); see official docs for usage.
+    { DLL_Calling: Int64 }
+    // Int64 is a language construct (DLL_Calling); see official docs for usage.
     { Data_Information_General: Symbol_Low }
     Value1 = Symbol_Low;
     { Data_Information_General: Symbol_Length }
@@ -1288,7 +1288,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Time }
     Value1 = Time;
     { Data_Information_General: T }
-    Value1 = T;
+    Value1 = T( Close );
     { Data_Information_General: Symbol_Time }
     Value1 = Symbol_Time;
     { Data_Information_General: Symbol_Ticks }
@@ -1302,17 +1302,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Low }
     Value1 = Low;
     { Data_Information_General: L }
-    // L is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = L( Close );
     { Data_Information_General: MinMove }
     Value1 = MinMove;
     { Data_Information_General: O }
-    // O is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = O( Close );
     { Data_Information_General: Next }
     // Next is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: IntervalType_ex }
     Value1 = IntervalType_ex;
     { Data_Information_General: H }
-    // H is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = H( Close );
     { Data_Information_General: GetSymbolName }
     // GetSymbolName returns a string; see official docs for usage.
     { Data_Information_General: High }
@@ -1330,7 +1330,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: SessionLastBar }
     If SessionLastBar Then Begin End;
     { Data_Information_General: ScrollToBar }
-    Value1 = ScrollToBar( Close, 14 );
+    ScrollToBar( 1, 0 );
     { Data_Information_General: PointValue }
     Value1 = PointValue;
     { Data_Information_General: OpenInt }
@@ -1358,15 +1358,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: EncodeTime }
     Value1 = EncodeTime( Close, 14, 14, 14 );
     { Date_and_Time_routines: El_DateToDateTime }
-    // El_DateToDateTime is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = El_DateToDateTime( Close );
     { Date_and_Time_routines: El_DateStr }
     // El_DateStr returns a string; see official docs for usage.
     { Date_and_Time_routines: EL_TimeToDateTime }
-    // EL_TimeToDateTime is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = EL_TimeToDateTime( Close );
     { Date_and_Time_routines: EncodeDate }
     Value1 = EncodeDate( Close, 14, 14 );
     { Date_and_Time_routines: EL_TimeToDateTime_s }
-    // EL_TimeToDateTime_s is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = EL_TimeToDateTime_s( Close );
     { Date_and_Time_routines: MilliSecondsFromDateTime }
     Value1 = MilliSecondsFromDateTime( Close );
     { Date_and_Time_routines: LastCalcSSTime }
@@ -1402,7 +1402,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: ComputerDateTime }
     Value1 = ComputerDateTime;
     { Data_Information_General: V }
-    // V is documented as an alias/redirect; see official docs for the canonical signature.
+    Value1 = V( Close );
     { Data_Information_General: UpTicks }
     Value1 = UpTicks;
     { Data_Information_General: Volume }

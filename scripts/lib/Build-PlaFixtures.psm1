@@ -165,6 +165,27 @@ function Get-KeywordStatement {
     return "// $name (lowercase-prefix function, takes at least one argument); see official docs."
   }
 
+  # Procedure keywords: action functions that take arguments but do NOT
+  # return a value. Assigning them to Value1 causes "Function must have
+  # a return value". Call as standalone statements instead.
+  $procedureKeywords = @(
+    'ScrollToBar'
+  )
+  if ($procedureKeywords -contains $name) {
+    $usageClean = $Kw.Usage -replace '\[\s*Data\s*\(\s*[^)]*\s*\)\s*\]', ''
+    $argCount = 0
+    if ($usageClean -match '\(([^)]*)\)') {
+      $inner = $Matches[1].Trim()
+      if (-not [string]::IsNullOrEmpty($inner)) { $argCount = (($inner -split ',').Count) }
+    }
+    $argv = @()
+    for ($i = 0; $i -lt $argCount; $i++) {
+      $argv += if ($i -eq 0) { '1' } else { '0' }
+    }
+    if ($argCount -eq 0) { return "$name;" }
+    return "$name( $($argv -join ', ') );"
+  }
+
   switch ($cat) {
     'Dynamic_Arrays' {
       # Uses pre-declared arrays from the file header: pl_test_bools, pl_test_floats,
