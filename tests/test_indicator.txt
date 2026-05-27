@@ -808,7 +808,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Colors: Transparent }
     Value1 = Transparent;
     { Currency_Codes: CurrencyCodeToStr }
-    Value1 = CurrencyCodeToStr( Close );
+    // CurrencyCodeToStr returns a string; see official docs for usage.
     { Data_Information_General: CurrentBar }
     Value1 = CurrentBar;
     { Data_Information_General: Close }

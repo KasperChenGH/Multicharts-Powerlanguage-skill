@@ -109,7 +109,7 @@ function Get-KeywordStatement {
     # Environment-info string returners
     'GetCurrency','GetCountry','GetCDRomDrive','GetUserName','GetAppInfo'
   )
-  $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root)$'
+  $looksLikeString = $name -match '(?i)(Name|Description|Symbol|Listed|Exchange|Root|ToStr|CodeToStr)$'
   if (($stringReturningNames -contains $name) -or $looksLikeString) {
     return "// $name returns a string; see official docs for usage."
   }
