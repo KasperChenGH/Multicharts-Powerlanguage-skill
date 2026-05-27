@@ -1288,7 +1288,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Time }
     Value1 = Time;
     { Data_Information_General: T }
-    Value1 = T( Close );
+    // T is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: Symbol_Time }
     Value1 = Symbol_Time;
     { Data_Information_General: Symbol_Ticks }

@@ -80,8 +80,8 @@ function Get-KeywordStatement {
     'Data','Call','Put','Strike','Length','OptionType','DeltaType','RevSize','BoxSize',
     # Connector words from Data_Information_General that overlap with Miscellaneous_keywords
     'Bar','Bars','Day','Days','Point','Points','Tick','Ticks','Ago','Next','This','Today','Yesterday',
-    # Single-letter aliases that PowerLanguage may parse as reserved
-    'C','D','I',
+    # Single-letter data-series aliases (C=Close, D=Date, I=OpenInt, T=Time, etc.)
+    'C','D','I','T',
     # Statement-shaped keywords that require '(' even when CHM reports zero
     # parameters in our parser (e.g. Alert("text");, AlertEx(...);)
     'Alert','AlertEx'
