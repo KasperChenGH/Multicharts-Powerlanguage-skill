@@ -362,17 +362,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Rectangle_Drawing: RectangleGetNext }
     // RectangleGetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self }
-    Value1 = MC_TL_New_Self;
+    // MC_TL_New_Self is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_DT }
-    Value1 = MC_TL_New_DT;
+    // MC_TL_New_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self_BN }
-    Value1 = MC_TL_New_Self_BN;
+    // MC_TL_New_Self_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_Anchor_to_Bars }
     // TL_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self_DT }
-    Value1 = MC_TL_New_Self_DT;
+    // MC_TL_New_Self_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_BN }
-    Value1 = MC_TL_New_BN;
+    // MC_TL_New_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Manipulation: Text }
     Value1 = Text;
     { Text_Manipulation: StrToNum }
@@ -380,9 +380,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Manipulation: UpperStr }
     Value1 = UpperStr;
     { Trendline_Drawing: MC_TL_New }
-    Value1 = MC_TL_New;
+    // MC_TL_New is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_GetActive }
-    Value1 = MC_TL_GetActive;
+    // MC_TL_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBegin_BN }
     // TL_GetBegin_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBeginVal }
@@ -680,7 +680,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Skip_Words: The }
     // The appears inside other constructs.
     { Text_Drawing: MC_Text_GetActive }
-    Value1 = MC_Text_GetActive;
+    // MC_Text_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Skip_Words: Was }
     // Was appears inside other constructs.
     { Skip_Words: On }
@@ -1062,7 +1062,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Attributes: AllowSendOrdersAlways }
     // AllowSendOrdersAlways is a language construct (Attributes); see official docs for usage.
     { Arrow_Drawing: MC_Arw_GetActive }
-    Value1 = MC_Arw_GetActive;
+    // MC_Arw_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetTextBGColor }
     // Arw_SetTextBGColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetSize }
