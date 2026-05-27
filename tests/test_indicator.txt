@@ -195,7 +195,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: getTPOinfo }
     // getTPOinfo (lowercase-prefix function, takes at least one argument); see official docs.
     { Environment_Information: GetCurrency }
-    Value1 = GetCurrency;
+    // GetCurrency returns a string; see official docs for usage.
     { Environment_Information: GetUserID }
     Value1 = GetUserID;
     { Environment_Information: Is64BitOperatingSystem }
@@ -251,11 +251,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: CurrentDataNumber }
     Value1 = CurrentDataNumber;
     { Environment_Information: GetAppInfo }
-    Value1 = GetAppInfo;
+    // GetAppInfo returns a string; see official docs for usage.
     { Environment_Information: GetCountry }
-    Value1 = GetCountry;
+    // GetCountry returns a string; see official docs for usage.
     { Environment_Information: GetCDRomDrive }
-    Value1 = GetCDRomDrive;
+    // GetCDRomDrive returns a string; see official docs for usage.
     { Environment_Information: BaseDataNumber }
     Value1 = BaseDataNumber;
     { Dynamic_Arrays: Array_SetValRange }
