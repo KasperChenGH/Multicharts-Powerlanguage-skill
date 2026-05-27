@@ -172,9 +172,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position_Trades: PosTradeExitName }
     // PosTradeExitName returns a string; see official docs for usage.
     { Strategy_Position_Trades: PosTradeIsOpen }
-    Value1 = PosTradeIsOpen( Close, 14 );
+    If PosTradeIsOpen( 1, 0 ) Then Begin End;
     { Strategy_Position_Trades: PosTradeIsLong }
-    Value1 = PosTradeIsLong( Close, 14 );
+    If PosTradeIsLong( 1, 0 ) Then Begin End;
     { Strategy_Position_Trades: PosTradeExitPrice }
     Value1 = PosTradeExitPrice( Close, 14 );
     { Strategy_Position: MaxContracts }

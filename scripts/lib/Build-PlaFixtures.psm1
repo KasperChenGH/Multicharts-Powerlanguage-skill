@@ -143,16 +143,22 @@ function Get-KeywordStatement {
   $booleanReturningNames = @(
     'MouseClickShiftPressed','MouseClickCtrlPressed','AlertEnabled',
     'CheckAlert','MarketPosition_at_Broker_for_The_Strategy',
-    'SessionLastBar','SessionFirstBar','LastBarOnChart'
+    'SessionLastBar','SessionFirstBar','LastBarOnChart',
+    'PosTradeIsOpen','PosTradeIsLong'
   )
   $looksLikeBoolean = ($name -match '(?i)(Pressed|Enabled)$') -or
                       ($name -match '^(?i)(Is|Has|Can)[A-Z0-9]') -or
                       ($name -match '(?i)_(Is|Has|Can)[A-Z0-9]')
   if (($booleanReturningNames -contains $name) -or $looksLikeBoolean) {
-    # Use an If-condition form that compiles whether the return type is
-    # TrueFalse OR numeric 0/1. Direct "Condition1 = X;" fails when X
-    # is actually a numeric flag rather than a TrueFalse.
-    return "If $name Then Begin End;"
+    $usageClean = $Kw.Usage -replace '\[\s*Data\s*\(\s*[^)]*\s*\)\s*\]', ''
+    $boolArgCount = 0
+    if ($usageClean -match '\(([^)]*)\)') {
+      $inner = $Matches[1].Trim()
+      if (-not [string]::IsNullOrEmpty($inner)) { $boolArgCount = (($inner -split ',').Count) }
+    }
+    if ($boolArgCount -eq 0) { return "If $name Then Begin End;" }
+    $argv = @(); for ($i = 0; $i -lt $boolArgCount; $i++) { $argv += if ($i -eq 0) { '1' } else { '0' } }
+    return "If $name( $($argv -join ', ') ) Then Begin End;"
   }
 
   # Drawing-object accessors (Rectangle/TL/Arw/Text Get*/Set*/Delete*/Active*)
