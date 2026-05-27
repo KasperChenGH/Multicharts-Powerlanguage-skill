@@ -77,7 +77,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Plotting: GetPlotWidth }
     // GetPlotWidth -- see official docs
     { Plotting: getplotstyle }
-    // getplotstyle -- see official docs
+    // getplotstyle (lowercase-prefix function, takes at least one argument); see official docs.
     { Plotting: Default }
     // Default -- see official docs
     { Output: FileClose }
@@ -193,7 +193,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Environment_Information: Is64BitProcess }
     If Is64BitProcess Then Begin End;
     { Environment_Information: getTPOinfo }
-    Value1 = getTPOinfo;
+    // getTPOinfo (lowercase-prefix function, takes at least one argument); see official docs.
     { Environment_Information: GetCurrency }
     Value1 = GetCurrency;
     { Environment_Information: GetUserID }

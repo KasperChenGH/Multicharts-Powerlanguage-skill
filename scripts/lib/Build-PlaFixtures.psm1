@@ -143,6 +143,13 @@ function Get-KeywordStatement {
     return "// $name is a setter (takes at least one value argument); see official docs."
   }
 
+  # Lowercase-prefix get* (e.g. getTPOinfo, getappinfo) — non-standard
+  # naming usually indicates a parameter-taking function where Parse-Chm
+  # didn't pick up the params correctly. Skip with a safe comment.
+  if ($name -cmatch '^(get|init|raise)[A-Za-z]') {
+    return "// $name (lowercase-prefix function, takes at least one argument); see official docs."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {
