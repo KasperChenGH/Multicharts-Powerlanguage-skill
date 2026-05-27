@@ -254,7 +254,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_entryprice }
     Value1 = pmms_strategy_entryprice( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_short_entries }
-    Value1 = pmms_strategy_deny_short_entries;
+    Value1 = pmms_strategy_deny_short_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_is_paused }
     Value1 = pmms_strategy_is_paused( Close );
     { Portfolio_Money_Management: pmms_strategy_netprofit }
@@ -332,25 +332,25 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_deny_exits }
     Value1 = pmms_strategy_deny_exits( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_long_entries }
-    Value1 = pmms_strategy_deny_long_entries;
+    Value1 = pmms_strategy_deny_long_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_exit_from_short }
-    Value1 = pmms_strategy_deny_exit_from_short;
+    Value1 = pmms_strategy_deny_exit_from_short( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_exit_from_long }
-    Value1 = pmms_strategy_deny_exit_from_long;
+    Value1 = pmms_strategy_deny_exit_from_long( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exit_from_short }
-    Value1 = pmms_strategy_allow_exit_from_short;
+    Value1 = pmms_strategy_allow_exit_from_short( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exit_from_long }
-    Value1 = pmms_strategy_allow_exit_from_long;
+    Value1 = pmms_strategy_allow_exit_from_long( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_exits }
     Value1 = pmms_strategy_allow_exits( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_long_entries }
-    Value1 = pmms_strategy_allow_long_entries;
+    Value1 = pmms_strategy_allow_long_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_close_position }
     Value1 = pmms_strategy_close_position( Close );
     { Portfolio_Money_Management: pmms_strategy_avgentryprice }
     Value1 = pmms_strategy_avgentryprice( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_short_entries }
-    Value1 = pmms_strategy_allow_short_entries;
+    Value1 = pmms_strategy_allow_short_entries( Close );
     { Strategy_Orders: SetBreakEven }
     // SetBreakEven is a setter; see official docs.
     { Strategy_Orders: SellShort }
