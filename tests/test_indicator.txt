@@ -1194,7 +1194,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { DOM: DOM_BidsCount }
     Value1 = DOM_BidsCount;
     { DOM: DOM_IsConnected }
-    Value1 = DOM_IsConnected;
+    If DOM_IsConnected Then Begin End;
     { Dynamic_Arrays: Array_Contains }
     If Array_Contains( pl_test_ints, 5 ) Then Begin End;
     { Dynamic_Arrays: Array_Compare }

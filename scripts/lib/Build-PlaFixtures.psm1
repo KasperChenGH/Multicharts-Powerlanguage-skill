@@ -126,7 +126,8 @@ function Get-KeywordStatement {
     'CheckAlert','MarketPosition_at_Broker_for_The_Strategy'
   )
   $looksLikeBoolean = ($name -match '(?i)(Pressed|Enabled)$') -or
-                      ($name -match '^(?i)(Is|Has|Can)[A-Z0-9]')
+                      ($name -match '^(?i)(Is|Has|Can)[A-Z0-9]') -or
+                      ($name -match '(?i)_(Is|Has|Can)[A-Z0-9]')
   if (($booleanReturningNames -contains $name) -or $looksLikeBoolean) {
     # Use an If-condition form that compiles whether the return type is
     # TrueFalse OR numeric 0/1. Direct "Condition1 = X;" fails when X
