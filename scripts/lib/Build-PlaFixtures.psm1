@@ -189,8 +189,11 @@ function Get-KeywordStatement {
       return "// $name -- see official docs"
     }
     'Math_and_Trig' {
-      if ($params.Count -eq 0)              { return "Value1 = $name;" }
-      if ($params.Count -eq 1)              { return "Value1 = $name( Close );" }
+      # Parse-Chm sometimes misses parameter detection for Math functions —
+      # almost none are zero-arg constants, so default to a 1-arg numeric call.
+      # True zero-arg math constants are vanishingly rare (PI is one).
+      if ($name -in @('PI','E','Pi','Euler')) { return "Value1 = $name;" }
+      if ($params.Count -le 1)              { return "Value1 = $name( Close );" }
       return "Value1 = $name( Close, 14 );"
     }
     'Plotting' {

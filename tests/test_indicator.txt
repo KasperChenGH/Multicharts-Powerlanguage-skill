@@ -272,27 +272,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Execution_Control: #Return }
     // #Return is a language construct (Execution_Control); see official docs for usage.
     { Math_and_Trig: Sign }
-    Value1 = Sign;
+    Value1 = Sign( Close );
     { Math_and_Trig: Round }
-    Value1 = Round;
+    Value1 = Round( Close );
     { Math_and_Trig: Sine }
-    Value1 = Sine;
+    Value1 = Sine( Close );
     { Math_and_Trig: SquareRoot }
     // SquareRoot returns a string; see official docs for usage.
     { Math_and_Trig: Square }
-    Value1 = Square;
+    Value1 = Square( Close );
     { Math_and_Trig: Random }
-    Value1 = Random;
+    Value1 = Random( Close );
     { Math_and_Trig: NthMaxList }
-    Value1 = NthMaxList;
+    Value1 = NthMaxList( Close );
     { Math_and_Trig: Neg }
-    Value1 = Neg;
+    Value1 = Neg( Close );
     { Math_and_Trig: NthMinList }
-    Value1 = NthMinList;
+    Value1 = NthMinList( Close );
     { Math_and_Trig: Power }
-    Value1 = Power;
+    Value1 = Power( Close );
     { Math_and_Trig: Pos }
-    Value1 = Pos;
+    Value1 = Pos( Close );
     { Miscellaneous_keywords: Market }
     // Market is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Contracts }
@@ -306,9 +306,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Miscellaneous_keywords: Contract }
     // Contract is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Math_and_Trig: Tangent }
-    Value1 = Tangent;
+    Value1 = Tangent( Close );
     { Math_and_Trig: SumList }
-    Value1 = SumList;
+    Value1 = SumList( Close );
     { Miscellaneous_keywords: Ago }
     // Ago is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Bars }
@@ -316,15 +316,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Miscellaneous_keywords: Bar }
     // Bar is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Math_and_Trig: ArcTangent }
-    Value1 = ArcTangent;
+    Value1 = ArcTangent( Close );
     { Math_and_Trig: AbsValue }
-    Value1 = AbsValue;
+    Value1 = AbsValue( Close );
     { Math_and_Trig: AvgList }
-    Value1 = AvgList;
+    Value1 = AvgList( Close );
     { Math_and_Trig: Cosine }
-    Value1 = Cosine;
+    Value1 = Cosine( Close );
     { Math_and_Trig: Ceiling }
-    Value1 = Ceiling;
+    Value1 = Ceiling( Close );
     { ExpertCommentary: #BeginCmtry }
     // #BeginCmtry is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CheckCommentary }
@@ -338,27 +338,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { ExpertCommentary: CommentaryCL }
     // CommentaryCL is a language construct (ExpertCommentary); see official docs for usage.
     { Math_and_Trig: MaxList2 }
-    Value1 = MaxList2;
+    Value1 = MaxList2( Close );
     { Math_and_Trig: MaxList }
-    Value1 = MaxList;
+    Value1 = MaxList( Close );
     { Math_and_Trig: MinList }
-    Value1 = MinList;
+    Value1 = MinList( Close );
     { Math_and_Trig: Mod }
-    Value1 = Mod;
+    Value1 = Mod( Close );
     { Math_and_Trig: MinList2 }
-    Value1 = MinList2;
+    Value1 = MinList2( Close );
     { Math_and_Trig: Log }
-    Value1 = Log;
+    Value1 = Log( Close );
     { Math_and_Trig: ExpValue }
-    Value1 = ExpValue;
+    Value1 = ExpValue( Close );
     { Math_and_Trig: Cotangent }
-    Value1 = Cotangent;
+    Value1 = Cotangent( Close );
     { Math_and_Trig: Floor }
-    Value1 = Floor;
+    Value1 = Floor( Close );
     { Math_and_Trig: IntPortion }
-    Value1 = IntPortion;
+    Value1 = IntPortion( Close );
     { Math_and_Trig: FracPortion }
-    Value1 = FracPortion;
+    Value1 = FracPortion( Close );
     { Rectangle_Drawing: RectangleGetNext }
     // RectangleGetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self }
