@@ -59,8 +59,16 @@ function Get-KeywordStatement {
   # operators, control-flow keywords, script-level attributes) that cannot
   # appear as values in `Value1 = X;`. Emit a comment so the compile-test still
   # exercises the keyword name without producing a parse error.
-  if ($cat -in @('Declaration','Comparison_and_Loops','Attributes')) {
+  if ($cat -in @('Declaration','Comparison_and_Loops','Attributes','ExpertCommentary')) {
     return "// $name is a language construct ($cat); see official docs for usage."
+  }
+
+  # Preprocessor-style directive keywords (e.g. #BeginCmtry, #EndCmtry, #Return,
+  # #Events) open paired blocks or special syntactic positions and cannot appear
+  # as values. #BeginCmtry in particular starts a multi-line commentary block
+  # that runs until #EndCmtry, which would swallow everything to EOF.
+  if ($name -like '#*') {
+    return "// $name is a preprocessor directive (#-prefixed); see official docs for usage."
   }
 
   switch ($cat) {

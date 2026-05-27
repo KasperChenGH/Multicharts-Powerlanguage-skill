@@ -270,7 +270,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Dynamic_Arrays: Array_Sum }
     Value1 = Array_Sum;
     { Execution_Control: #Return }
-    Value1 = #Return;
+    // #Return is a preprocessor directive (#-prefixed); see official docs for usage.
     { Math_and_Trig: Sign }
     Value1 = Sign;
     { Math_and_Trig: Round }
@@ -326,17 +326,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Ceiling }
     Value1 = Ceiling;
     { ExpertCommentary: #BeginCmtry }
-    Value1 = #BeginCmtry;
+    // #BeginCmtry is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CheckCommentary }
-    Value1 = CheckCommentary;
+    // CheckCommentary is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: AtCommentaryBar }
-    Value1 = AtCommentaryBar;
+    // AtCommentaryBar is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: Commentary }
-    Value1 = Commentary;
+    // Commentary is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CommentaryEnabled }
-    Value1 = CommentaryEnabled;
+    // CommentaryEnabled is a language construct (ExpertCommentary); see official docs for usage.
     { ExpertCommentary: CommentaryCL }
-    Value1 = CommentaryCL;
+    // CommentaryCL is a language construct (ExpertCommentary); see official docs for usage.
     { Math_and_Trig: MaxList2 }
     Value1 = MaxList2;
     { Math_and_Trig: MaxList }
@@ -1202,7 +1202,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { DOM: DOM_BidPrice }
     Value1 = DOM_BidPrice;
     { DLL_Calling: #Events }
-    Value1 = #Events;
+    // #Events is a preprocessor directive (#-prefixed); see official docs for usage.
     { DLL_Calling: WORD }
     Value1 = WORD;
     { DOM: DOM_AskPrice }
