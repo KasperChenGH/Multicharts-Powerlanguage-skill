@@ -1,4 +1,7 @@
-# Category -> script-type mapping. Keywords in a category emit into that script's .pla.
+# Category -> script-type mapping. Keywords in a category emit into that script's .txt.
+# Note: the output files are plain-text PowerLanguage source, NOT the .pla archive
+# format (which is a binary export bundle). The maintainer PASTES the contents
+# into a new Indicator/Signal/Function study in PowerLanguage Editor and verifies.
 $script:CategoryScriptType = @{
   'AccountsPositions'                  = 'Indicator'
   'Alerts'                              = 'Indicator'
@@ -105,9 +108,9 @@ function New-PlaFixtures {
   }
 
   $headerByType = @{
-    'Indicator' = "{ test_indicator.pla -- exercises every keyword routed to Indicator script type }`r`nVariables: Value1( 0 );`r`n"
-    'Signal'    = "{ test_signal.pla -- exercises every keyword routed to Signal script type }`r`nVariables: Value1( 0 );`r`n"
-    'Function'  = "{ test_function.pla -- function return idioms }`r`nVariables: Value1( 0 );`r`nVariables: result( 0 );`r`nresult = Value1;`r`n"
+    'Indicator' = "{ test_indicator.txt -- exercises every keyword routed to Indicator script type }`r`n{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`n"
+    'Signal'    = "{ test_signal.txt -- exercises every keyword routed to Signal script type }`r`n{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`n"
+    'Function'  = "{ test_function.txt -- function return idioms }`r`n{ Paste this whole file into a new Function in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`nVariables: result( 0 );`r`nresult = Value1;`r`n"
   }
 
   foreach ($type in 'Indicator','Signal','Function') {
@@ -120,7 +123,7 @@ function New-PlaFixtures {
     }
     [void]$sb.AppendLine('End;')
 
-    $outPath = Join-Path $OutputDir "test_$($type.ToLower()).pla"
+    $outPath = Join-Path $OutputDir "test_$($type.ToLower()).txt"
     $utf8NoBom = New-Object System.Text.UTF8Encoding($false)
     [System.IO.File]::WriteAllText($outPath, $sb.ToString(), $utf8NoBom)
   }

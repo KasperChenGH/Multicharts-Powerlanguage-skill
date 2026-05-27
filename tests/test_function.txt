@@ -1,4 +1,5 @@
-{ test_function.pla -- function return idioms }
+{ test_function.txt -- function return idioms }
+{ Paste this whole file into a new Function in PowerLanguage Editor and Verify (F3). }
 Variables: Value1( 0 );
 Variables: result( 0 );
 result = Value1;

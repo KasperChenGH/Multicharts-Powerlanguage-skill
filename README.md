@@ -19,6 +19,19 @@ Three skills that auto-activate based on what you're asking Claude to do:
 
 After install, the three skills auto-trigger when relevant. You don't have to invoke them manually — when you ask Claude something about MultiCharts or PowerLanguage, the right skill activates.
 
+## Verifying keyword signatures (maintainer only)
+
+`tests/test_indicator.txt`, `tests/test_signal.txt`, and `tests/test_function.txt` are plain-text PowerLanguage source files that exercise every keyword inside an unreachable `If False Then Begin … End;` block — so the compiler verifies syntax without executing anything. They are NOT `.pla` archives; they cannot be imported via File → Import.
+
+To run the compile-test, for each file:
+
+1. Open MultiCharts → PowerLanguage Editor → File → New → choose the matching script type (Indicator / Signal / Function).
+2. Open the corresponding `tests/test_*.txt` in any text editor, copy all (Ctrl+A → Ctrl+C).
+3. Paste into the new study (Ctrl+A → Ctrl+V replaces the template).
+4. Press **F3** (Verify). Expected: 0 errors, 0 warnings.
+
+This is a maintainer-only sanity check; end users never need to run it.
+
 ## How it works
 
 Skills are markdown files with YAML frontmatter (a `name` and a `description`). Claude reads each plugin's skill descriptions and decides on the fly which to invoke. There are no install-time scripts, no runtime hooks, and no platform-specific tooling — the plugin works identically on Windows, macOS, and Linux.
