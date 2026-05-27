@@ -93,49 +93,49 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: Last }
     Value1 = Last;
     { Rectangle_Drawing: RectangleGetBeginPrice }
-    Value1 = RectangleGetBeginPrice;
+    // RectangleGetBeginPrice is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetBeginDate }
-    Value1 = RectangleGetBeginDate;
+    // RectangleGetBeginDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetBeginTime }
-    Value1 = RectangleGetBeginTime;
+    // RectangleGetBeginTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetBegin_BN }
-    Value1 = RectangleGetBegin_BN;
+    // RectangleGetBegin_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetBeginTime_s }
-    Value1 = RectangleGetBeginTime_s;
+    // RectangleGetBeginTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetAnchorToBars }
-    Value1 = RectangleGetAnchorToBars;
+    // RectangleGetAnchorToBars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Quote_Fields: TradeVolume }
     Value1 = TradeVolume;
     { Quote_Fields: TradeTime }
     Value1 = TradeTime;
     { Rectangle_Drawing: RectangleAnchorToBars }
-    Value1 = RectangleAnchorToBars;
+    // RectangleAnchorToBars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetActive }
-    Value1 = RectangleGetActive;
+    // RectangleGetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleDelete }
-    Value1 = RectangleDelete;
+    // RectangleDelete is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEnd_DT }
-    Value1 = RectangleGetEnd_DT;
+    // RectangleGetEnd_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEnd_BN }
-    Value1 = RectangleGetEnd_BN;
+    // RectangleGetEnd_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetFillColor }
-    Value1 = RectangleGetFillColor;
+    // RectangleGetFillColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetLock }
-    Value1 = RectangleGetLock;
+    // RectangleGetLock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetFirst }
-    Value1 = RectangleGetFirst( 14 );
+    // RectangleGetFirst is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEndTime_s }
-    Value1 = RectangleGetEndTime_s;
+    // RectangleGetEndTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetColor }
-    Value1 = RectangleGetColor;
+    // RectangleGetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetBegin_DT }
-    Value1 = RectangleGetBegin_DT;
+    // RectangleGetBegin_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEndDate }
-    Value1 = RectangleGetEndDate;
+    // RectangleGetEndDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEndTime }
-    Value1 = RectangleGetEndTime;
+    // RectangleGetEndTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetEndPrice }
-    Value1 = RectangleGetEndPrice;
+    // RectangleGetEndPrice is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Quote_Fields: q_ExchangeListed }
     // q_ExchangeListed returns a string; see official docs for usage.
     { Quote_Fields: q_Date }
@@ -359,7 +359,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: FracPortion }
     Value1 = FracPortion;
     { Rectangle_Drawing: RectangleGetNext }
-    Value1 = RectangleGetNext( 14, 14 );
+    // RectangleGetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self }
     Value1 = MC_TL_New_Self;
     { Trendline_Drawing: MC_TL_New_DT }
@@ -367,7 +367,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: MC_TL_New_Self_BN }
     Value1 = MC_TL_New_Self_BN;
     { Trendline_Drawing: TL_Anchor_to_Bars }
-    Value1 = TL_Anchor_to_Bars;
+    // TL_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: MC_TL_New_Self_DT }
     Value1 = MC_TL_New_Self_DT;
     { Trendline_Drawing: MC_TL_New_BN }
@@ -383,47 +383,47 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: MC_TL_GetActive }
     Value1 = MC_TL_GetActive;
     { Trendline_Drawing: TL_GetBegin_BN }
-    Value1 = TL_GetBegin_BN;
+    // TL_GetBegin_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBeginVal }
-    Value1 = TL_GetBeginVal;
+    // TL_GetBeginVal is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBegin_Dt }
-    Value1 = TL_GetBegin_Dt;
+    // TL_GetBegin_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetEndDate }
-    Value1 = TL_GetEndDate;
+    // TL_GetEndDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetColor }
-    Value1 = TL_GetColor;
+    // TL_GetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBeginTime_s }
-    Value1 = TL_GetBeginTime_s;
+    // TL_GetBeginTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetActive }
-    Value1 = TL_GetActive;
+    // TL_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_Delete }
-    Value1 = TL_Delete;
+    // TL_Delete is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetAlert }
-    Value1 = TL_GetAlert;
+    // TL_GetAlert is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBeginTime }
-    Value1 = TL_GetBeginTime;
+    // TL_GetBeginTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetBeginDate }
-    Value1 = TL_GetBeginDate;
+    // TL_GetBeginDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetLocation_s }
-    Value1 = Text_SetLocation_s( 14, 14, 14 );
+    // Text_SetLocation_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetLocation_DT }
-    Value1 = Text_SetLocation_DT( 14, 14, 14 );
+    // Text_SetLocation_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetSize }
-    Value1 = Text_SetSize;
+    // Text_SetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetStyle }
-    Value1 = Text_SetStyle( 14, 14, 14 );
+    // Text_SetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetString }
-    Value1 = Text_SetString;
+    // Text_SetString is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetLocation_BN }
-    Value1 = Text_SetLocation_BN( 14, 14, 14 );
+    // Text_SetLocation_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetBorder }
-    Value1 = Text_SetBorder;
+    // Text_SetBorder is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetBGColor }
-    Value1 = Text_SetBGColor( 14, 14 );
+    // Text_SetBGColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetColor }
-    Value1 = Text_SetColor( 14, 14 );
+    // Text_SetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetLocation }
-    Value1 = Text_SetLocation( 14, 14, 14 );
+    // Text_SetLocation is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetFontName }
     // Text_SetFontName returns a string; see official docs for usage.
     { Text_Manipulation: NumToStr }
@@ -441,7 +441,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Manipulation: DoubleQuote }
     Value1 = DoubleQuote;
     { Text_Drawing: Text_SetTransparent }
-    Value1 = Text_SetTransparent( Close, True );
+    // Text_SetTransparent is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Manipulation: InStr }
     Value1 = InStr;
     { Text_Manipulation: LowerStr }
@@ -449,29 +449,29 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Text_Manipulation: LeftStr }
     Value1 = LeftStr;
     { Trendline_Drawing: TL_GetEndTime }
-    Value1 = TL_GetEndTime;
+    // TL_GetEndTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetBegin_s }
-    Value1 = TL_SetBegin_s( 14, 14, 14 );
+    // TL_SetBegin_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetBegin_DT }
-    Value1 = TL_SetBegin_DT( 14, 14, 14 );
+    // TL_SetBegin_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetColor }
-    Value1 = TL_SetColor( 14, 14 );
+    // TL_SetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetEnd_BN }
-    Value1 = TL_SetEnd_BN( 14, 14, 14 );
+    // TL_SetEnd_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetEnd }
-    Value1 = TL_SetEnd( 14, 14, 14 );
+    // TL_SetEnd is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetBegin_BN }
-    Value1 = TL_SetBegin_BN( 14, 14, 14 );
+    // TL_SetBegin_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_Self_Dt }
-    Value1 = TL_New_Self_Dt( 14, 14, 14 );
+    // TL_New_Self_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_Self_BN }
-    Value1 = TL_New_Self_BN;
+    // TL_New_Self_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_Self_s }
-    Value1 = TL_New_Self_s( 14, 14, 14 );
+    // TL_New_Self_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetBegin }
-    Value1 = TL_SetBegin( 14, 14, 14 );
+    // TL_SetBegin is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetAlert }
-    Value1 = TL_SetAlert( 14, 14 );
+    // TL_SetAlert is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: Tool_Dashed2 }
     Value1 = Tool_Dashed2;
     { Trendline_Drawing: Tool_Dashed }
@@ -483,61 +483,61 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Trendline_Drawing: Tool_Dotted }
     Value1 = Tool_Dotted;
     { Trendline_Drawing: TL_SetStyle }
-    Value1 = TL_SetStyle;
+    // TL_SetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetEnd_s }
-    Value1 = TL_SetEnd_s( 14, 14, 14 );
+    // TL_SetEnd_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetEnd_Dt }
-    Value1 = TL_SetEnd_Dt( 14, 14, 14 );
+    // TL_SetEnd_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetExtLeft }
-    Value1 = TL_SetExtLeft;
+    // TL_SetExtLeft is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetSize }
-    Value1 = TL_SetSize;
+    // TL_SetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_SetExtRight }
-    Value1 = TL_SetExtRight;
+    // TL_SetExtRight is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetLock }
-    Value1 = TL_GetLock;
+    // TL_GetLock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetFirst }
-    Value1 = TL_GetFirst( 14 );
+    // TL_GetFirst is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetNext }
-    Value1 = TL_GetNext( 14, 14 );
+    // TL_GetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetStyle }
-    Value1 = TL_GetStyle;
+    // TL_GetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetSize }
-    Value1 = TL_GetSize;
+    // TL_GetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetExtRight }
-    Value1 = TL_GetExtRight;
+    // TL_GetExtRight is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetEndVal }
-    Value1 = TL_GetEndVal;
+    // TL_GetEndVal is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetEndTime_s }
-    Value1 = TL_GetEndTime_s;
+    // TL_GetEndTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetEnd_BN }
-    Value1 = TL_GetEnd_BN;
+    // TL_GetEnd_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetExtLeft }
-    Value1 = TL_GetExtLeft;
+    // TL_GetExtLeft is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetEnd_Dt }
-    Value1 = TL_GetEnd_Dt;
+    // TL_GetEnd_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_BN }
-    Value1 = TL_New_BN( 14, 14, 14 );
+    // TL_New_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New }
-    Value1 = TL_New( 14, 14, 14 );
+    // TL_New is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_Dt }
-    Value1 = TL_New_Dt( 14, 14, 14 );
+    // TL_New_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_self }
-    Value1 = TL_New_self( 14, 14, 14 );
+    // TL_New_self is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_New_s }
-    Value1 = TL_New_s( 14, 14, 14 );
+    // TL_New_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_Lock }
-    Value1 = TL_Lock;
+    // TL_Lock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetValue_BN }
-    Value1 = TL_GetValue_BN( 14, 14 );
+    // TL_GetValue_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetValue }
-    Value1 = TL_GetValue( 14, 14, 14 );
+    // TL_GetValue is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetValue_Dt }
-    Value1 = TL_GetValue_Dt( 14, 14 );
+    // TL_GetValue_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_Get_Anchor_to_Bars }
-    Value1 = TL_Get_Anchor_to_Bars;
+    // TL_Get_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Trendline_Drawing: TL_GetValue_s }
-    Value1 = TL_GetValue_s( 14, 14, 14 );
+    // TL_GetValue_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: Sess2FirstBarTime }
     Value1 = Sess2FirstBarTime;
     { Sessions: Sess2EndTime }
@@ -553,7 +553,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Sessions: AutoSession }
     Value1 = AutoSession;
     { Rectangle_Drawing: RectangleSetStyle }
-    Value1 = RectangleSetStyle;
+    // RectangleSetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Sessions: RegularSession }
     Value1 = RegularSession;
     { Sessions: Sess1FirstBarTime }
@@ -583,95 +583,95 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Sessions: SessionEndTimeMS }
     Value1 = SessionEndTimeMS;
     { Rectangle_Drawing: RectangleNewSelf_s }
-    Value1 = RectangleNewSelf_s;
+    // RectangleNewSelf_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNewSelf_DT }
-    Value1 = RectangleNewSelf_DT;
+    // RectangleNewSelf_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNew_BN }
-    Value1 = RectangleNew_BN( 14, 14, 14 );
+    // RectangleNew_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNew_s }
-    Value1 = RectangleNew_s( 14, 14, 14 );
+    // RectangleNew_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNew_DT }
-    Value1 = RectangleNew_DT( 14, 14, 14 );
+    // RectangleNew_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNewSelf_BN }
-    Value1 = RectangleNewSelf_BN;
+    // RectangleNewSelf_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetStyle }
-    Value1 = RectangleGetStyle;
+    // RectangleGetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleGetSize }
-    Value1 = RectangleGetSize;
+    // RectangleGetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleLock }
-    Value1 = RectangleLock;
+    // RectangleLock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNewSelf }
-    Value1 = RectangleNewSelf( 14, 14, 14 );
+    // RectangleNewSelf is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleNew }
-    Value1 = RectangleNew( 14, 14, 14 );
+    // RectangleNew is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetEnd_DT }
-    Value1 = RectangleSetEnd_DT( 14, 14, 14 );
+    // RectangleSetEnd_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetEnd_BN }
-    Value1 = RectangleSetEnd_BN( 14, 14, 14 );
+    // RectangleSetEnd_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetEnd_s }
-    Value1 = RectangleSetEnd_s( 14, 14, 14 );
+    // RectangleSetEnd_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetSize }
-    Value1 = RectangleSetSize;
+    // RectangleSetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetFillColor }
-    Value1 = RectangleSetFillColor( 14, 14 );
+    // RectangleSetFillColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetEnd }
-    Value1 = RectangleSetEnd( 14, 14, 14 );
+    // RectangleSetEnd is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetBegin_BN }
-    Value1 = RectangleSetBegin_BN( 14, 14, 14 );
+    // RectangleSetBegin_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetBegin }
-    Value1 = RectangleSetBegin( 14, 14, 14 );
+    // RectangleSetBegin is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetBegin_DT }
-    Value1 = RectangleSetBegin_DT( 14, 14, 14 );
+    // RectangleSetBegin_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetColor }
-    Value1 = RectangleSetColor( 14, 14 );
+    // RectangleSetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Rectangle_Drawing: RectangleSetBegin_s }
-    Value1 = RectangleSetBegin_s( 14, 14, 14 );
+    // RectangleSetBegin_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Skip_Words: Based }
     // Based appears inside other constructs.
     { Text_Drawing: Text_GetTime_s }
-    Value1 = Text_GetTime_s;
+    // Text_GetTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetTime_DT }
-    Value1 = Text_GetTime_DT;
+    // Text_GetTime_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetValue }
-    Value1 = Text_GetValue;
+    // Text_GetValue is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_Get_Anchor_to_Bars }
-    Value1 = Text_Get_Anchor_to_Bars;
+    // Text_Get_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetVStyle }
-    Value1 = Text_GetVStyle;
+    // Text_GetVStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetTime }
-    Value1 = Text_GetTime;
+    // Text_GetTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetLock }
-    Value1 = Text_GetLock;
+    // Text_GetLock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetHStyle }
-    Value1 = Text_GetHStyle;
+    // Text_GetHStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetNext }
-    Value1 = Text_GetNext( 14, 14 );
+    // Text_GetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetString }
-    Value1 = Text_GetString;
+    // Text_GetString is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetSize }
-    Value1 = Text_GetSize;
+    // Text_GetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_Self_DT }
-    Value1 = Text_New_Self_DT( 14, 14, "x" );
+    // Text_New_Self_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_Self_BN }
-    Value1 = Text_New_Self_BN;
+    // Text_New_Self_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_self_s }
-    Value1 = Text_New_self_s( 14, 14, 14 );
+    // Text_New_self_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetBarNumber }
-    Value1 = Text_SetBarNumber;
+    // Text_SetBarNumber is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_SetAttribute }
-    Value1 = Text_SetAttribute( 14, 14, True );
+    // Text_SetAttribute is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_self }
-    Value1 = Text_New_self( 14, 14, 14 );
+    // Text_New_self is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New }
-    Value1 = Text_New( 14, 14, 14 );
+    // Text_New is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_Lock }
-    Value1 = Text_Lock;
+    // Text_Lock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_BN }
-    Value1 = Text_New_BN( 14, 14, "x" );
+    // Text_New_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_s }
-    Value1 = Text_New_s( 14, 14, 14 );
+    // Text_New_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_New_Dt }
-    Value1 = Text_New_Dt( 14, 14, "x" );
+    // Text_New_Dt is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Skip_Words: Than }
     // Than appears inside other constructs.
     { Skip_Words: Place }
@@ -695,27 +695,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Skip_Words: Is }
     // Is appears inside other constructs.
     { Text_Drawing: Text_GetColor }
-    Value1 = Text_GetColor;
+    // Text_GetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetBorder }
-    Value1 = Text_GetBorder;
+    // Text_GetBorder is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetDate }
-    Value1 = Text_GetDate;
+    // Text_GetDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetFontName }
     // Text_GetFontName returns a string; see official docs for usage.
     { Text_Drawing: Text_GetFirst }
-    Value1 = Text_GetFirst( 14 );
+    // Text_GetFirst is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetBGColor }
-    Value1 = Text_GetBGColor;
+    // Text_GetBGColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_Delete }
-    Value1 = Text_Delete;
+    // Text_Delete is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_Anchor_to_Bars }
-    Value1 = Text_Anchor_to_Bars;
+    // Text_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetActive }
-    Value1 = Text_GetActive;
+    // Text_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetBarNumber }
-    Value1 = Text_GetBarNumber;
+    // Text_GetBarNumber is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Text_Drawing: Text_GetAttribute }
-    Value1 = Text_GetAttribute( 14, 14 );
+    // Text_GetAttribute is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Dynamic_Arrays: Array_Copy }
     Value1 = Array_Copy;
     { Comparison_and_Loops: For }
@@ -897,49 +897,49 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Currency_Codes: ZAR }
     Value1 = ZAR;
     { Arrow_Drawing: Arw_GetSize }
-    Value1 = Arw_GetSize;
+    // Arw_GetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetNext }
-    Value1 = Arw_GetNext( 14, 14 );
+    // Arw_GetNext is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetStyle }
-    Value1 = Arw_GetStyle;
+    // Arw_GetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTextAttribute }
-    Value1 = Arw_GetTextAttribute( 14, 14 );
+    // Arw_GetTextAttribute is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetText }
-    Value1 = Arw_GetText;
+    // Arw_GetText is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetLock }
-    Value1 = Arw_GetLock;
+    // Arw_GetLock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetColor }
-    Value1 = Arw_GetColor;
+    // Arw_GetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetBarNumber }
-    Value1 = Arw_GetBarNumber;
+    // Arw_GetBarNumber is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetDate }
-    Value1 = Arw_GetDate;
+    // Arw_GetDate is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetFirst }
-    Value1 = Arw_GetFirst( 14 );
+    // Arw_GetFirst is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetDirection }
-    Value1 = Arw_GetDirection;
+    // Arw_GetDirection is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetVal }
-    Value1 = Arw_GetVal;
+    // Arw_GetVal is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTime_s }
-    Value1 = Arw_GetTime_s;
+    // Arw_GetTime_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_Get_Anchor_to_Bars }
-    Value1 = Arw_Get_Anchor_to_Bars;
+    // Arw_Get_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New }
-    Value1 = Arw_New( 14, 14, 14 );
+    // Arw_New is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_Lock }
-    Value1 = Arw_Lock;
+    // Arw_Lock is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTime_DT }
-    Value1 = Arw_GetTime_DT;
+    // Arw_GetTime_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTextColor }
-    Value1 = Arw_GetTextColor;
+    // Arw_GetTextColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTextBGColor }
-    Value1 = Arw_GetTextBGColor;
+    // Arw_GetTextBGColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTextFontName }
     // Arw_GetTextFontName returns a string; see official docs for usage.
     { Arrow_Drawing: Arw_GetTime }
-    Value1 = Arw_GetTime;
+    // Arw_GetTime is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetTextSize }
-    Value1 = Arw_GetTextSize;
+    // Arw_GetTextSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { AccountsPositions: GetPositionQuantity }
     Value1 = GetPositionQuantity;
     { AccountsPositions: GetPositionOpenPL }
@@ -967,11 +967,11 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Alerts: Cancel Alert }
     // Cancel Alert (multi-word keyword); see official docs for usage.
     { Arrow_Drawing: Arw_Anchor_to_Bars }
-    Value1 = Arw_Anchor_to_Bars;
+    // Arw_Anchor_to_Bars is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_GetActive }
-    Value1 = Arw_GetActive;
+    // Arw_GetActive is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_Delete }
-    Value1 = Arw_Delete;
+    // Arw_Delete is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Alerts: AlertEx }
     // AlertEx is a reserved syntactic token; see official docs for usage.
     { AccountsPositions: GetRTUnrealizedPL }
@@ -985,7 +985,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Alerts: Alert }
     // Alert is a reserved syntactic token; see official docs for usage.
     { Arrow_Drawing: Arw_New_BN }
-    Value1 = Arw_New_BN( 14, 14, True );
+    // Arw_New_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Attributes: IntraBarOrderGeneration }
     // IntraBarOrderGeneration is a language construct (Attributes); see official docs for usage.
     { Attributes: AllowSendOrdersOnTimer }
@@ -1031,49 +1031,49 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Colors: Blue }
     Value1 = Blue;
     { Arrow_Drawing: Arw_SetColor }
-    Value1 = Arw_SetColor( 14, 14 );
+    // Arw_SetColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetBarNumber }
-    Value1 = Arw_SetBarNumber;
+    // Arw_SetBarNumber is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetLocation }
-    Value1 = Arw_SetLocation( 14, 14, 14 );
+    // Arw_SetLocation is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetLocation_DT }
-    Value1 = Arw_SetLocation_DT( 14, 14, 14 );
+    // Arw_SetLocation_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetLocation_BN }
-    Value1 = Arw_SetLocation_BN( 14, 14, 14 );
+    // Arw_SetLocation_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New_self_s }
-    Value1 = Arw_New_self_s( 14, 14, 14 );
+    // Arw_New_self_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New_s }
-    Value1 = Arw_New_s( 14, 14, 14 );
+    // Arw_New_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New_DT }
-    Value1 = Arw_New_DT( 14, 14, True );
+    // Arw_New_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New_self }
-    Value1 = Arw_New_self( 14, 14, 14 );
+    // Arw_New_self is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_New_Self_DT }
-    Value1 = Arw_New_Self_DT( 14, 14, True );
+    // Arw_New_Self_DT is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: ARW_New_Self_BN }
-    Value1 = ARW_New_Self_BN;
+    // ARW_New_Self_BN is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetTextFontName }
     // Arw_SetTextFontName returns a string; see official docs for usage.
     { Arrow_Drawing: Arw_SetTextColor }
-    Value1 = Arw_SetTextColor( 14, 14 );
+    // Arw_SetTextColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetTextSize }
-    Value1 = Arw_SetTextSize;
+    // Arw_SetTextSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Attributes: AllowSendOrdersAlways }
     // AllowSendOrdersAlways is a language construct (Attributes); see official docs for usage.
     { Arrow_Drawing: MC_Arw_GetActive }
     Value1 = MC_Arw_GetActive;
     { Arrow_Drawing: Arw_SetTextBGColor }
-    Value1 = Arw_SetTextBGColor( 14, 14 );
+    // Arw_SetTextBGColor is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetSize }
-    Value1 = Arw_SetSize;
+    // Arw_SetSize is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetLocation_s }
-    Value1 = Arw_SetLocation_s( 14, 14, 14 );
+    // Arw_SetLocation_s is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetStyle }
-    Value1 = Arw_SetStyle;
+    // Arw_SetStyle is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetTextAttribute }
-    Value1 = Arw_SetTextAttribute( 14, 14, True );
+    // Arw_SetTextAttribute is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Arrow_Drawing: Arw_SetText }
-    Value1 = Arw_SetText;
+    // Arw_SetText is a drawing-object accessor (takes a drawing-object ID); see official docs.
     { Data_Information_General: GetRTSymbolName }
     // GetRTSymbolName returns a string; see official docs for usage.
     { Declaration: RecalcPersist }

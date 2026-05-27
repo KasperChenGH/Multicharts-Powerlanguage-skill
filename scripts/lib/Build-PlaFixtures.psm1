@@ -125,6 +125,14 @@ function Get-KeywordStatement {
     return "Condition1 = $name;"
   }
 
+  # Drawing-object accessors (Rectangle/TL/Arw/Text Get*/Set*/Delete*/Active*)
+  # all take at least one drawing-object ID arg. Parse-Chm often misses that
+  # parameter for these (the CHM uses a non-standard param-list shape), so the
+  # default zero-arg branch emits invalid calls. Skip them with a safe comment.
+  if ($name -match '^(Rectangle|TL_|Arw_|Text_)(Get|Set|Delete|Active|Anchor|Lock|Color|Style|Size|Width|Begin|End|Fill|First|Next|Prev|Last|New)') {
+    return "// $name is a drawing-object accessor (takes a drawing-object ID); see official docs."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {
