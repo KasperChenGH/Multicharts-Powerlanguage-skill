@@ -13,7 +13,7 @@ Three skills that auto-activate based on what you're asking Claude to do:
 ## Install (Claude Code)
 
 ```bash
-/plugin marketplace add kappa123451/Multicharts-Powerlanguage-skill
+/plugin marketplace add KasperChenGH/Multicharts-Powerlanguage-skill
 /plugin install multicharts-powerlanguage@multicharts-powerlanguage-dev
 ```
 
@@ -48,4 +48,4 @@ MIT — see `LICENSE`.
 
 ## Source
 
-https://github.com/kappa123451/Multicharts-Powerlanguage-skill
+https://github.com/KasperChenGH/Multicharts-Powerlanguage-skill
