@@ -123,10 +123,12 @@ function New-PlaFixtures {
     $byType[$type] += $kw
   }
 
+  # Note: Value1..Value10000 are pre-declared built-in numeric variables in
+  # PowerLanguage — no `Variables: Value1(0);` declaration is needed.
   $headerByType = @{
-    'Indicator' = "{ test_indicator.txt -- exercises every keyword routed to Indicator script type }`r`n{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`n"
-    'Signal'    = "{ test_signal.txt -- exercises every keyword routed to Signal script type }`r`n{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`n"
-    'Function'  = "{ test_function.txt -- function return idioms }`r`n{ Paste this whole file into a new Function in PowerLanguage Editor and Verify (F3). }`r`nVariables: Value1( 0 );`r`nVariables: result( 0 );`r`nresult = Value1;`r`n"
+    'Indicator' = "{ test_indicator.txt -- exercises every keyword routed to Indicator script type }`r`n{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }`r`n"
+    'Signal'    = "{ test_signal.txt -- exercises every keyword routed to Signal script type }`r`n{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }`r`n"
+    'Function'  = "{ test_function.txt -- function return idioms }`r`n{ Paste this whole file into a new Function in PowerLanguage Editor and Verify (F3). }`r`n"
   }
 
   foreach ($type in 'Indicator','Signal','Function') {

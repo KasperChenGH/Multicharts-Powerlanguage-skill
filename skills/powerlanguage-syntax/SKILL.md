@@ -26,6 +26,15 @@ Arrays:
 - **Variables / Vars / Var** — script state. Each gets an initial value. Persist across bars within the same chart.
 - **Arrays** — fixed-size collections. `[size]` is the index of the last element (zero-based by default), `(initial)` initializes every slot.
 
+**Pre-declared default variables.** PowerLanguage ships with numbered built-ins that don't need a `Variables:` declaration:
+
+| Name | Type | Count |
+|---|---|---|
+| `Value1` … `Value10000` | numeric | 10,000 |
+| `Condition1` … `Condition10000` | truefalse | 10,000 |
+
+Use them directly: `Value1 = Average(Close, 14);`, `If Condition1 Then Buy ...;`. No declaration line required (declaring one just shadows the built-in with an identical local). These are handy for quick scratch values when you don't want to bother naming a variable.
+
 ## Data types
 
 PowerLanguage is loosely typed but each value is one of:
