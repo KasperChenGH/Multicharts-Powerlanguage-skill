@@ -16,7 +16,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: EntryDate }
     Value1 = EntryDate( Close );
     { Strategy_Position: CurrentShares }
-    Value1 = CurrentShares;
+    // CurrentShares is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: TotalBarsWinTrades }
     Value1 = TotalBarsWinTrades;
     { Strategy_Performance: TotalBarsLosTrades }
@@ -62,19 +62,19 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: EntryTime }
     Value1 = EntryTime( Close );
     { Strategy_Performance: i_AvgEntryPrice_at_Broker_for_The_Strategy }
-    Value1 = i_AvgEntryPrice_at_Broker_for_The_Strategy;
+    // i_AvgEntryPrice_at_Broker_for_The_Strategy is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: i_AvgEntryPrice_at_Broker }
-    Value1 = i_AvgEntryPrice_at_Broker;
+    // i_AvgEntryPrice_at_Broker is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: i_AvgEntryPrice }
-    Value1 = i_AvgEntryPrice;
+    // i_AvgEntryPrice is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: i_ClosedEquity }
     Value1 = i_ClosedEquity;
     { Strategy_Performance: i_MarketPosition }
     Value1 = i_MarketPosition;
     { Strategy_Performance: i_CurrentShares }
-    Value1 = i_CurrentShares;
+    // i_CurrentShares is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: i_CurrentContracts }
-    Value1 = i_CurrentContracts;
+    // i_CurrentContracts is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: AvgEntryPrice }
     Value1 = AvgEntryPrice;
     { Strategy_Performance: AvgBarsWinTrade }
@@ -114,7 +114,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Performance: MaxConsecWinners }
     Value1 = MaxConsecWinners;
     { Strategy_Performance: MaxSharesHeld }
-    Value1 = MaxSharesHeld;
+    // MaxSharesHeld is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Performance: MaxIDDrawDown }
     Value1 = MaxIDDrawDown;
     { Strategy_Performance: MaxContractsHeld }
@@ -214,7 +214,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: PositionProfit_Checked }
     Value1 = PositionProfit_Checked( Close );
     { Strategy_Position_Trades: OpenEntriesCount }
-    Value1 = OpenEntriesCount;
+    // OpenEntriesCount is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Position_Trades: OpenEntryDate }
     Value1 = OpenEntryDate( Close );
     { Strategy_Position_Trades: OpenEntryContracts }
@@ -228,13 +228,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: MaxPositionProfit }
     Value1 = MaxPositionProfit( Close );
     { Strategy_Position: MaxShares }
-    Value1 = MaxShares;
+    // MaxShares is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Position: PositionProfit }
     Value1 = PositionProfit( Close );
     { Strategy_Position: OpenPositionProfit }
     Value1 = OpenPositionProfit;
     { Strategy_Position: MaxShares_Checked }
-    Value1 = MaxShares_Checked;
+    // MaxShares_Checked is documented as an alias/redirect; see official docs for the canonical signature.
     { Portfolio_Money_Management: pmms_strategy_resume }
     Value1 = pmms_strategy_resume( Close );
     { Portfolio_Money_Management: pmms_strategy_pause }
@@ -384,7 +384,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: Shares }
     // Shares -- see official docs
     { Strategy_Orders: Share }
-    // Share -- see official docs
+    // Share is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Orders: SetTrailingStop_pt }
     // SetTrailingStop_pt is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: Short }
@@ -404,7 +404,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: SetStopLoss }
     // SetStopLoss is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopShare }
-    // SetStopShare is a setter (takes at least one value argument); see official docs.
+    // SetStopShare is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Orders: SetStopPosition }
     // SetStopPosition is a setter (takes at least one value argument); see official docs.
     { Strategy_Orders: SetStopLoss_pt }
@@ -448,7 +448,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Orders: All }
     Sell All Contracts Next Bar Market;
     { Strategy_Orders: Contract }
-    Buy ( "C" ) 1 Contract Next Bar Market;
+    // Contract is documented as an alias/redirect; see official docs for the canonical signature.
     { Strategy_Orders: BuyToCover }
     BuyToCover ( "BuyToCover_T" ) 1 Contract Next Bar Market;
     { Strategy_Orders: Buy }

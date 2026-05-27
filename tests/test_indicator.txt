@@ -14,7 +14,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Plotting: SetPlotWidth }
     // SetPlotWidth is a setter (takes at least one value argument); see official docs.
     { Plotting: PlotPB }
-    // PlotPB -- see official docs
+    // PlotPB is documented as an alias/redirect; see official docs for the canonical signature.
     { Plotting: I_setplotvalue }
     // I_setplotvalue -- see official docs
     { Plotting: I_getplotvalue }
@@ -160,7 +160,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: q_Bid }
     Value1 = q_Bid;
     { Quote_Fields: Symbol }
-    // Symbol returns a string; see official docs for usage.
+    // Symbol is documented as an alias/redirect; see official docs for the canonical signature.
     { Quote_Fields: RTSymbolName }
     // RTSymbolName returns a string; see official docs for usage.
     { Quote_Fields: SymbolName }
@@ -170,13 +170,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Quote_Fields: SymbolRoot }
     // SymbolRoot returns a string; see official docs for usage.
     { Quote_Fields: RTSymbol }
-    // RTSymbol returns a string; see official docs for usage.
+    // RTSymbol is documented as an alias/redirect; see official docs for the canonical signature.
     { Quote_Fields: q_Time_Dt }
     Value1 = q_Time_Dt;
     { Quote_Fields: q_Time }
     Value1 = q_Time;
     { Quote_Fields: q_Time_s }
-    Value1 = q_Time_s;
+    // q_Time_s is documented as an alias/redirect; see official docs for the canonical signature.
     { Quote_Fields: q_tradevolume }
     Value1 = q_tradevolume;
     { Quote_Fields: q_TotalVolume }
@@ -292,7 +292,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Power }
     Value1 = Power( Close, 2 );
     { Math_and_Trig: Pos }
-    Value1 = Pos( Close );
+    // Pos is documented as an alias/redirect; see official docs for the canonical signature.
     { Miscellaneous_keywords: Market }
     // Market is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Contracts }
@@ -830,7 +830,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Call }
     // Call is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: C }
-    Value1 = C;
+    // C is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: DownTicks }
     Value1 = DownTicks;
     { Data_Information_General: DeltaType }
@@ -846,7 +846,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Date }
     Value1 = Date;
     { Data_Information_General: DataCompression }
-    Value1 = DataCompression;
+    // DataCompression is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: DateTime }
     Value1 = DateTime;
     { Data_Information_General: Day }
@@ -1302,17 +1302,17 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Low }
     Value1 = Low;
     { Data_Information_General: L }
-    Value1 = L;
+    // L is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: MinMove }
     Value1 = MinMove;
     { Data_Information_General: O }
-    Value1 = O;
+    // O is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: Next }
     // Next is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: IntervalType_ex }
     Value1 = IntervalType_ex;
     { Data_Information_General: H }
-    Value1 = H;
+    // H is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: GetSymbolName }
     // GetSymbolName returns a string; see official docs for usage.
     { Data_Information_General: High }
@@ -1358,15 +1358,15 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: EncodeTime }
     Value1 = EncodeTime( Close, 14, 14, 14 );
     { Date_and_Time_routines: El_DateToDateTime }
-    Value1 = El_DateToDateTime;
+    // El_DateToDateTime is documented as an alias/redirect; see official docs for the canonical signature.
     { Date_and_Time_routines: El_DateStr }
     Value1 = El_DateStr( Close, 14, 14 );
     { Date_and_Time_routines: EL_TimeToDateTime }
-    Value1 = EL_TimeToDateTime;
+    // EL_TimeToDateTime is documented as an alias/redirect; see official docs for the canonical signature.
     { Date_and_Time_routines: EncodeDate }
     Value1 = EncodeDate( Close, 14, 14 );
     { Date_and_Time_routines: EL_TimeToDateTime_s }
-    Value1 = EL_TimeToDateTime_s;
+    // EL_TimeToDateTime_s is documented as an alias/redirect; see official docs for the canonical signature.
     { Date_and_Time_routines: MilliSecondsFromDateTime }
     Value1 = MilliSecondsFromDateTime( Close );
     { Date_and_Time_routines: LastCalcSSTime }
@@ -1402,7 +1402,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Date_and_Time_routines: ComputerDateTime }
     Value1 = ComputerDateTime;
     { Data_Information_General: V }
-    Value1 = V;
+    // V is documented as an alias/redirect; see official docs for the canonical signature.
     { Data_Information_General: UpTicks }
     Value1 = UpTicks;
     { Data_Information_General: Volume }

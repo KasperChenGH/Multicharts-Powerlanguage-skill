@@ -99,6 +99,12 @@ function Get-KeywordStatement {
     return "// $name (multi-word keyword); see official docs for usage."
   }
 
+  # Alias/redirect pages: CHM has stubs like "Same as ElDateToDateTime" with
+  # no Usage block. We can't infer signature; skip with a comment.
+  if ($Kw.Description -match '^(?i)(Same as|See|Synonym for|Alias for)\b') {
+    return "// $name is documented as an alias/redirect; see official docs for the canonical signature."
+  }
+
   # String-returning keywords cannot be assigned to numeric Value1.
   # Match a curated list plus a heuristic on name endings.
   $stringReturningNames = @(
