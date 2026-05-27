@@ -61,7 +61,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { MouseClickEvents: MouseClickBarNumber }
     Value1 = MouseClickBarNumber;
     { Miscellaneous_keywords: Yesterday }
-    Value1 = Yesterday;
+    // Yesterday is a language construct (Miscellaneous_keywords); see official docs for usage.
     { MouseClickEvents: MouseClickCtrlPressed }
     Value1 = MouseClickCtrlPressed;
     { MouseClickEvents: MouseClickDateTime }
@@ -293,27 +293,27 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Math_and_Trig: Pos }
     Value1 = Pos;
     { Miscellaneous_keywords: Market }
-    Value1 = Market;
+    // Market is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Contracts }
-    Value1 = Contracts;
+    // Contracts is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Next }
-    Value1 = Next;
+    // Next is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Today }
-    Value1 = Today;
+    // Today is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: This }
-    Value1 = This;
+    // This is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Contract }
-    Value1 = Contract;
+    // Contract is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Math_and_Trig: Tangent }
     Value1 = Tangent;
     { Math_and_Trig: SumList }
     Value1 = SumList;
     { Miscellaneous_keywords: Ago }
-    Value1 = Ago;
+    // Ago is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Bars }
-    Value1 = Bars;
+    // Bars is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Miscellaneous_keywords: Bar }
-    Value1 = Bar;
+    // Bar is a language construct (Miscellaneous_keywords); see official docs for usage.
     { Math_and_Trig: ArcTangent }
     Value1 = ArcTangent;
     { Math_and_Trig: AbsValue }
