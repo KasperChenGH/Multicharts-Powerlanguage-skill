@@ -87,6 +87,15 @@ function Get-KeywordStatement {
     return "// $name is a reserved syntactic token; see official docs for usage."
   }
 
+  # Multi-word keyword names (e.g. "DateTime bar update") cannot be used as
+  # identifiers in expressions. PowerLanguage parses only the first token and
+  # then sees the rest as stray syntax. These show up because Parse-Chm
+  # captures the H1 text verbatim from the CHM, which sometimes contains spaces.
+  if ($name -match '\s') {
+    $safeName = $name -replace '\s+', '_'
+    return "// $name (multi-word keyword); see official docs for usage."
+  }
+
   switch ($cat) {
     'Strategy_Orders' {
       if ($name -in @('Buy','Sell','SellShort','BuyToCover')) {

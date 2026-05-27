@@ -851,7 +851,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Data_Information_General: Day }
     // Day is a reserved syntactic token; see official docs for usage.
     { Data_Information_General: DateTime bar update }
-    Value1 = DateTime bar update;
+    // DateTime bar update (multi-word keyword); see official docs for usage.
     { Currency_Codes: Portfolio_CurrencyCode }
     Value1 = Portfolio_CurrencyCode;
     { Currency_Codes: NZD }
@@ -965,7 +965,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Alerts: CheckAlert }
     Value1 = CheckAlert;
     { Alerts: Cancel Alert }
-    Value1 = Cancel Alert;
+    // Cancel Alert (multi-word keyword); see official docs for usage.
     { Arrow_Drawing: Arw_Anchor_to_Bars }
     Value1 = Arw_Anchor_to_Bars;
     { Arrow_Drawing: Arw_GetActive }
