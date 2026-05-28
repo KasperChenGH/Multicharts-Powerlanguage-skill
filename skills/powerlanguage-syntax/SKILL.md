@@ -230,6 +230,22 @@ If Time = 1501 Then ...     // for 1-min bars
 
 Add one bar's worth of minutes to the session-start clock time.
 
+### Variable names must not match built-in function names
+
+PowerLanguage is **case-insensitive**. If you declare `Variables: dmiPlus(0);` and then call `dmiPlus = DMIPlus(14);`, the compiler sees the variable and function as the same identifier — the variable shadows the function and the call fails. This applies to every built-in function: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, etc.
+
+Use a different name — abbreviate, add a suffix, or prefix:
+
+```pascal
+// WRONG — shadows the built-in DMIPlus function
+Variables: dmiPlus(0);
+dmiPlus = DMIPlus(14);        // compile error
+
+// RIGHT
+Variables: dpVal(0);
+dpVal = DMIPlus(14);          // works
+```
+
 ### Inputs are read-only
 
 You cannot assign to an Input inside a script. If you need a mutable copy, declare a Variable and copy from the Input once.
