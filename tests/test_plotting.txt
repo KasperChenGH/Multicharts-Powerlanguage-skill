@@ -1,0 +1,72 @@
+{ test_plotting.txt -- exercises plotting and drawing keywords }
+{ Paste this whole file into a new Indicator study in PowerLanguage Editor and Verify (F3). }
+{ Expected: 0 errors, 0 warnings. }
+
+Variables:
+    maVal(0),
+    tlID(0), txtID(0), arwID(0);
+
+{ ================================================================ }
+{ === Basic plots (these execute so the indicator renders) === }
+{ ================================================================ }
+maVal = Average(Close, 20);
+Plot1(maVal, "MA20");
+Plot2(Average(Close, 50), "MA50");
+Plot3(BollingerBand(Close, 20, 2), "UpperBB");
+Plot4(BollingerBand(Close, 20, -2), "LowerBB");
+
+{ ================================================================ }
+{ === Plot formatting === }
+{ ================================================================ }
+SetPlotColor(1, Blue);
+SetPlotColor(2, Red);
+SetPlotWidth(1, 2);
+SetPlotWidth(2, 2);
+SetPlotStyle(1, 1);
+SetPlotStyle(2, 2);
+
+{ ================================================================ }
+{ === Conditional plot color === }
+{ ================================================================ }
+If Close > maVal Then
+    SetPlotColor(1, Green)
+Else
+    SetPlotColor(1, Red);
+
+{ ================================================================ }
+{ === Conditional NoPlot === }
+{ ================================================================ }
+If CurrentBar < 50 Then
+    NoPlot(3);
+
+If False Then Begin
+
+    { ================================================================ }
+    { === Alert === }
+    { ================================================================ }
+    Alert("Price crossed MA");
+
+    { ================================================================ }
+    { === Trendline drawing === }
+    { ================================================================ }
+    tlID = TL_New(Date[10], Time[10], Low[10], Date, Time, High);
+    TL_SetColor(tlID, Yellow);
+    TL_SetSize(tlID, 2);
+    TL_SetStyle(tlID, 1);
+    TL_Delete(tlID);
+
+    { ================================================================ }
+    { === Text drawing === }
+    { ================================================================ }
+    txtID = Text_New(Date, Time, High, "Signal");
+    Text_SetColor(txtID, White);
+    Text_Delete(txtID);
+
+    { ================================================================ }
+    { === Arrow drawing === }
+    { ================================================================ }
+    arwID = Arw_New(Date, Time, Low, True);
+    Arw_SetColor(arwID, Green);
+    Arw_Delete(arwID);
+
+End;

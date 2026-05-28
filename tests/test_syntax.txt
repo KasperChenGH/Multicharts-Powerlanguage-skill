@@ -1,0 +1,225 @@
+{ test_syntax.txt -- exercises PowerLanguage syntax constructs }
+{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
+{ Expected: 0 errors, 0 warnings. }
+
+Inputs:
+    FastLen(10),
+    SlowLen(20),
+    Thresh(0.5),
+    MyStr("default"),
+    MyBool(True);
+
+Variables:
+    idx(0), nn(0), cnt(0),
+    avgVal(0), rsiVal(0),
+    flagA(False), flagB(False),
+    labelStr(""),
+    runTotal(0);
+
+If False Then Begin
+
+    { ================================================================ }
+    { === Simple If/Then (single statement, no begin/end) === }
+    { ================================================================ }
+    If Close > Open Then
+        Value1 = 1;
+
+    { ================================================================ }
+    { === If/Then/Else (single statements, no begin/end) === }
+    { ================================================================ }
+    If Close > Open Then
+        Value1 = 1
+    Else
+        Value1 = -1;
+
+    { ================================================================ }
+    { === If/Then Begin...End (terminal semicolon) === }
+    { ================================================================ }
+    If Close > Close[1] Then Begin
+        Value1 = Close - Close[1];
+        Value2 = Value1 * 100;
+    End;
+
+    { ================================================================ }
+    { === If/Then/Else with Begin...End (semicolon rule) === }
+    { === End before Else: NO semicolon. Terminal End: YES semicolon. === }
+    { ================================================================ }
+    If Close > Close[1] Then Begin
+        Value1 = 1;
+        Value2 = Close - Close[1];
+    End
+    Else Begin
+        Value1 = -1;
+        Value2 = Close[1] - Close;
+    End;
+
+    { ================================================================ }
+    { === Nested If/Then/Else with Begin...End === }
+    { ================================================================ }
+    If Close > Close[1] Then Begin
+        If Volume > Volume[1] Then Begin
+            Value1 = 1;
+        End
+        Else Begin
+            Value1 = 2;
+        End;
+    End
+    Else Begin
+        If Volume > Volume[1] Then
+            Value1 = -1
+        Else
+            Value1 = -2;
+    End;
+
+    { ================================================================ }
+    { === Else If chain === }
+    { ================================================================ }
+    If Close > Close[1] * 1.02 Then
+        Value1 = 3
+    Else If Close > Close[1] * 1.01 Then
+        Value1 = 2
+    Else If Close > Close[1] Then
+        Value1 = 1
+    Else
+        Value1 = 0;
+
+    { ================================================================ }
+    { === For loop ascending (To) === }
+    { ================================================================ }
+    runTotal = 0;
+    For idx = 1 To 10 Begin
+        runTotal = runTotal + Close[idx];
+    End;
+    avgVal = runTotal / 10;
+
+    { ================================================================ }
+    { === For loop descending (DownTo) === }
+    { ================================================================ }
+    runTotal = 0;
+    For idx = 10 DownTo 1 Begin
+        runTotal = runTotal + Close[idx];
+    End;
+
+    { ================================================================ }
+    { === Nested For loops === }
+    { ================================================================ }
+    runTotal = 0;
+    For idx = 1 To 5 Begin
+        For nn = 1 To 5 Begin
+            runTotal = runTotal + Close[idx + nn];
+        End;
+    End;
+
+    { ================================================================ }
+    { === While loop === }
+    { ================================================================ }
+    cnt = 0;
+    While cnt < 10 Begin
+        cnt = cnt + 1;
+        runTotal = runTotal + Close[cnt];
+    End;
+
+    { ================================================================ }
+    { === Switch/Case/Default === }
+    { ================================================================ }
+    Switch (DayOfWeek(Date)) Begin
+        Case 1:
+            Value1 = 1;
+        Case 2:
+            Value1 = 2;
+        Case 3:
+            Value1 = 3;
+        Default:
+            Value1 = 0;
+    End;
+
+    { ================================================================ }
+    { === Once (first-bar-only execution) === }
+    { ================================================================ }
+    Once
+        Value10 = Close;
+
+    Once Begin
+        Value11 = High;
+        Value12 = Low;
+    End;
+
+    { ================================================================ }
+    { === Comparison operators === }
+    { ================================================================ }
+    Condition1 = Close > Open;
+    Condition2 = Close < Open;
+    Condition3 = Close >= Close[1];
+    Condition4 = Close <= Close[1];
+    Condition5 = Close = Open;
+    Condition6 = Close <> Open;
+
+    { ================================================================ }
+    { === Logical operators (and, or, not) === }
+    { ================================================================ }
+    Condition7 = Close > Open and Volume > 1000;
+    Condition8 = Close < Open or High = Low;
+    Condition9 = not (Close > Open);
+
+    { ================================================================ }
+    { === Arithmetic === }
+    { ================================================================ }
+    Value1 = (High + Low + Close) / 3;
+    Value2 = High - Low;
+    Value3 = Close * Volume;
+    Value4 = (Close - Open) / Open * 100;
+
+    { ================================================================ }
+    { === String assignment and concatenation === }
+    { ================================================================ }
+    labelStr = "test";
+    labelStr = "hello" + " world";
+
+    { ================================================================ }
+    { === Boolean variables in conditions === }
+    { ================================================================ }
+    flagA = Close > Open;
+    flagB = Volume > Average(Volume, 20);
+    If flagA and flagB Then
+        Value1 = 1;
+
+    { ================================================================ }
+    { === Bar-back references === }
+    { ================================================================ }
+    Value1 = Close[0];
+    Value2 = Close[1];
+    Value3 = Close[10];
+    Value4 = Open[1];
+    Value5 = High[1];
+    Value6 = Low[1];
+    Value7 = Volume[1];
+
+    { ================================================================ }
+    { === Crosses over / crosses under === }
+    { ================================================================ }
+    avgVal = Average(Close, FastLen);
+    rsiVal = Average(Close, SlowLen);
+    If avgVal crosses over rsiVal Then
+        Value1 = 1;
+    If avgVal crosses under rsiVal Then
+        Value1 = -1;
+
+    { ================================================================ }
+    { === IFF inline ternary === }
+    { ================================================================ }
+    Value1 = IFF(Close > Open, 1, -1);
+
+    { ================================================================ }
+    { === Inputs used in computation === }
+    { ================================================================ }
+    avgVal = Average(Close, FastLen);
+    rsiVal = RSI(Close, SlowLen);
+    If rsiVal > 50 + Thresh Then
+        Value1 = 1;
+
+    { ================================================================ }
+    { === Print output (statement, not a value) === }
+    { ================================================================ }
+    Print("Close = ", Close, " Volume = ", Volume);
+
+End;
