@@ -279,6 +279,11 @@ function Get-KeywordStatement {
         return "Value1 = $name( $($argv -join ', ') );"
       }
 
+      # PMM functions that take an indexesArray argument (dynamic array, not numeric).
+      if ($name -match '^pmms_strategies_in_(positions|long|short)_count$') {
+        return "Value1 = $name( pl_test_ints );"
+      }
+
       # Heuristic: function-name prefix hints arg types.
       # - StringTo*/StrTo*: all args are strings (input value AND format spec)
       # - GetPosition*/GetRT*Account*: AccountsPositions args are strings

@@ -294,13 +294,13 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmm_set_global_named_num }
     // pmm_set_global_named_num is a setter; see official docs.
     { Portfolio_Money_Management: pmms_strategies_in_positions_count }
-    Value1 = pmms_strategies_in_positions_count( Close );
+    Value1 = pmms_strategies_in_positions_count( pl_test_ints );
     { Portfolio_Money_Management: pmms_strategies_in_long_count }
-    Value1 = pmms_strategies_in_long_count( Close );
+    Value1 = pmms_strategies_in_long_count( pl_test_ints );
     { Portfolio_Money_Management: pmms_strategies_get_by_symbol_name }
     // pmms_strategies_get_by_symbol_name returns a string; see official docs for usage.
     { Portfolio_Money_Management: pmms_strategies_in_short_count }
-    Value1 = pmms_strategies_in_short_count( Close );
+    Value1 = pmms_strategies_in_short_count( pl_test_ints );
     { Portfolio_Money_Management: pmms_strategies_set_status_for_all }
     // pmms_strategies_set_status_for_all is a setter; see official docs.
     { Portfolio_Money_Management: pmms_strategies_resume_all }
