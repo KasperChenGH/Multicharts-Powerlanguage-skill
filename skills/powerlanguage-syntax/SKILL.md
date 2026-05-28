@@ -52,6 +52,7 @@ Type is inferred from initial value in `Variables:` / `Inputs:` declarations.
 `begin` opens a block; `end` closes it. **Every `end` gets a semicolon EXCEPT when followed by `else`.**
 
 ```pascal
+// (pseudocode — real scripts need Variables declarations for all names)
 If condition Then Begin
     statement1;
     statement2;
@@ -66,13 +67,14 @@ Forgetting a semicolon on a terminal `End` is the most common compile error new 
 ## Control flow
 
 ```pascal
+// (pseudocode forms — declare all variables in real scripts)
 If x > 0 Then Begin ... End;
 
 If x > 0 Then ... Else If x = 0 Then ... Else ... ;
 
-Variables: idx(0), total(0);   // loop counter + accumulator must be declared
+Variables: idx(0), runTotal(0);   // loop counter + accumulator must be declared
 For idx = 1 To 10 Begin
-    total = total + idx;
+    runTotal = runTotal + idx;
 End;
 
 While condition Begin ... End;
@@ -371,7 +373,7 @@ A common new-user mistake is to write `Value1 = SomeKeyword;` for a keyword that
 
 - A keyword name that contains a space in the official docs (e.g. `DateTime bar update`, `Cancel Alert`) cannot be used as a single identifier — PowerLanguage parses only the first word and chokes on the rest.
 - **Single-letter data-series aliases** (`C`=Close, `D`=Date, `H`=High, `I`=OpenInt, `L`=Low, `O`=Open, `T`=Time, `V`=Volume) are reserved — using them with parentheses like `C(Close)` causes *"A keyword/variable is used as a function"*. Use square brackets for barsback: `C[1]`.
-- A handful of names in otherwise-value-rich categories are reserved syntactic tokens: `Data` (used as `Close of Data2`), `Call` / `Put` / `Strike` (option-context syntax), `Length`, `OptionType`, `DeltaType`, `RevSize`, `BoxSize`.
+- A handful of names in otherwise-value-rich categories are reserved syntactic tokens: `Data` (used as `Close of Data2`), `Call` / `Put` / `Strike` (option-context syntax), `OptionType`, `DeltaType`, `RevSize`, `BoxSize`.
 - **Procedure keywords** like `ScrollToBar`, `PlaceMarketOrder`, `ChangeMarketPosition`, and all PMM action keywords (`pmms_strategy_resume`, `pmms_strategy_pause`, `pmms_strategy_close_position`, `pmms_strategy_deny_*`, `pmms_strategy_allow_*`, `pmms_strategies_*_all`) perform an action and do NOT return a value — assigning them to `Value1` causes *"Function must have a return value"*. Call them as standalone statements: `ScrollToBar(1, 0);`.
 - **Signal/portfolio-only keywords** like `Portfolio_CurrencyCode`, `StrategyCurrencyCode`, `InitialCapital` cause *"X is not applicable to this type of study"* when used in an Indicator. They only work in Signal studies.
 - **Drawing-object accessors** (any `Rectangle*`, `TL_*`, `Arw_*`, `Text_*`, or `MC_TL_*`/`MC_Arw_*`/etc. function ending in `Get`/`Set`/`Delete`/`New`/…) take at least one drawing-object ID argument — never use them as bare values.
