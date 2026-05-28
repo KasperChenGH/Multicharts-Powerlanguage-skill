@@ -1,13 +1,18 @@
-{ test_builtins.txt -- exercises every built-in function (.elf) documented in the syntax skill }
+{ test_builtins.txt -- exercises built-in functions (.elf) shipped with MultiCharts }
 { Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
 { Expected: 0 errors, 0 warnings. }
 
 Variables:
-    fk(0), fd(0), sk(0), sd(0), idx(0);
+    fk(0), fd(0), sk(0), sd(0), idx(0),
+    oHigh(0), oLow(0), oClose(0),
+    oDMIp(0), oDMIm(0), oADXval(0), oDIp(0), oDIm(0), oADXr(0),
+    oExtUp(0), oExtDn(0);
 
 If False Then Begin
 
+    { ================================================================ }
     { === Moving averages and smoothing === }
+    { ================================================================ }
     { Average(Price, Length) }
     Value1 = Average(Close, 14);
     { XAverage(Price, Length) }
@@ -18,60 +23,150 @@ If False Then Begin
     Value1 = WAverage(Close, 14);
     { AdaptiveMovAvg(Price, EffRatioLen, FastAvgLen, SlowAvgLen) }
     Value1 = AdaptiveMovAvg(Close, 10, 2, 30);
+    { MidPoint(Price, Length) }
+    Value1 = MidPoint(Close, 14);
 
+    { ================================================================ }
     { === Oscillators and indicators === }
+    { ================================================================ }
     { RSI(Price, Length) }
     Value1 = RSI(Close, 14);
-    { Stochastic -- 11 params: PriceH, PriceL, PriceC, StochLen, SmoothLen1, SmoothLen2, SmoothType, oFastK, oFastD, oSlowK, oSlowD }
+    { Stochastic -- 11 params }
     Value1 = Stochastic(High, Low, Close, 14, 3, 3, 1, fk, fd, sk, sd);
-    { BollingerBand(Price, Length, NumDevs) -- positive for upper, negative for lower }
+    { BollingerBand(Price, Length, NumDevs) }
     Value1 = BollingerBand(Close, 20, 2);
     Value2 = BollingerBand(Close, 20, -2);
     Value3 = BollingerBand(Close, 20, 0);
     { MACD(Price, FastLen, SlowLen) }
     Value1 = MACD(Close, 12, 26);
-    { CCI(Length) -- Length only, NO Price parameter }
+    { CCI(Length) -- Length only }
     Value1 = CCI(14);
-    { ADX(Length) -- Length only, NO Price parameter }
+    { ADX(Length) -- Length only }
     Value1 = ADX(14);
-    { DMIPlus(Length) -- Length only, NO Price parameter }
+    { DMIPlus(Length) -- Length only }
     Value1 = DMIPlus(14);
-    { DMIMinus(Length) -- Length only, NO Price parameter }
+    { DMIMinus(Length) -- Length only }
     Value1 = DMIMinus(14);
+    { Momentum(Price, Length) }
+    Value1 = Momentum(Close, 14);
+    { RateOfChange(Price, Length) }
+    Value1 = RateOfChange(Close, 14);
+    { PercentR(Length) }
+    Value1 = PercentR(14);
+    { MoneyFlow(Length) }
+    Value1 = MoneyFlow(14);
+    { Parabolic(AfStep, AfLimit) }
+    Value1 = Parabolic(0.02, 0.2);
+    { KeltnerChannel(Price, Length, NumATRs) }
+    Value1 = KeltnerChannel(Close, 20, 1.5);
 
+    { ================================================================ }
+    { === Directional Movement (multi-output) === }
+    { ================================================================ }
+    { DirMovement(H, L, C, Length, oDMIp, oDMIm, oADXval, oDIp, oDIm, oADXr) }
+    Value1 = DirMovement(High, Low, Close, 14, oDMIp, oDMIm, oADXval, oDIp, oDIm, oADXr);
+
+    { ================================================================ }
     { === Volatility and range === }
-    { AvgTrueRange(Length) -- Length only, NO Price parameter }
+    { ================================================================ }
+    { AvgTrueRange(Length) -- Length only }
     Value1 = AvgTrueRange(14);
     { TrueRange -- no arguments }
     Value1 = TrueRange;
-    { StandardDev(Price, Length, DataType) -- DataType: 1=population, 2=sample }
+    { StandardDev(Price, Length, DataType) }
     Value1 = StandardDev(Close, 20, 1);
     Value2 = StandardDev(Close, 20, 2);
     { TrueHigh -- no arguments }
     Value1 = TrueHigh;
     { TrueLow -- no arguments }
     Value1 = TrueLow;
+    { Range -- no arguments (High - Low) }
+    Value1 = Range;
+    { Extremes(Price, Length, oExtUp, oExtDn) }
+    Value1 = Extremes(Close, 20, oExtUp, oExtDn);
 
-    { === Price extremes === }
+    { ================================================================ }
+    { === Price extremes and Nth === }
+    { ================================================================ }
     { Highest(Price, Length) }
     Value1 = Highest(High, 20);
     { Lowest(Price, Length) }
     Value1 = Lowest(Low, 20);
-    { HighestBar(Price, Length) -- returns bars ago }
+    { HighestBar(Price, Length) }
     Value1 = HighestBar(High, 20);
-    { LowestBar(Price, Length) -- returns bars ago }
+    { LowestBar(Price, Length) }
     Value1 = LowestBar(Low, 20);
+    { NthHighest(Nth, Price, Length) }
+    Value1 = NthHighest(2, High, 20);
+    { NthLowest(Nth, Price, Length) }
+    Value1 = NthLowest(2, Low, 20);
+    { NthHighestBar(Nth, Price, Length) }
+    Value1 = NthHighestBar(2, High, 20);
+    { NthLowestBar(Nth, Price, Length) }
+    Value1 = NthLowestBar(2, Low, 20);
 
-    { === Aggregation === }
+    { ================================================================ }
+    { === Swing detection === }
+    { ================================================================ }
+    { SwingHigh(Occurrence, Price, Strength, Length) }
+    Value1 = SwingHigh(1, High, 3, 10);
+    { SwingLow(Occurrence, Price, Strength, Length) }
+    Value1 = SwingLow(1, Low, 3, 10);
+    { SwingHighBar(Occurrence, Price, Strength, Length) }
+    Value1 = SwingHighBar(1, High, 3, 10);
+    { SwingLowBar(Occurrence, Price, Strength, Length) }
+    Value1 = SwingLowBar(1, Low, 3, 10);
+
+    { ================================================================ }
+    { === Aggregation and linear regression === }
+    { ================================================================ }
     { Summation(Price, Length) }
     Value1 = Summation(Close, 14);
-    { Cum(Price) -- cumulative sum from bar 1 }
+    { Cum(Price) }
     Value1 = Cum(Close - Close[1]);
     { LinearRegValue(Price, Length, Offset) }
     Value1 = LinearRegValue(Close, 20, 0);
     Value2 = LinearRegValue(Close, 20, 1);
+    { LinearRegAngle(Price, Length) }
+    Value1 = LinearRegAngle(Close, 20);
+    { LinearRegSlope(Price, Length) }
+    Value1 = LinearRegSlope(Close, 20);
+    { Correlation(Price1, Price2, Length) }
+    Value1 = Correlation(Close, Volume, 20);
 
-    { === Naming gotcha: use idx not i for loops (I = OpenInterest) === }
+    { ================================================================ }
+    { === Price calculation shortcuts === }
+    { ================================================================ }
+    { AvgPrice -- (H+L+C)/3, no arguments }
+    Value1 = AvgPrice;
+    { MedianPrice -- (H+L)/2, no arguments }
+    Value1 = MedianPrice;
+    { TypicalPrice -- (H+L+C)/3, no arguments }
+    Value1 = TypicalPrice;
+    { WeightedClose -- (H+L+C+C)/4, no arguments }
+    Value1 = WeightedClose;
+
+    { ================================================================ }
+    { === Counting and occurrence === }
+    { ================================================================ }
+    { CountIF(Condition, Length) }
+    Value1 = CountIF(Close > Close[1], 14);
+    { MRO(Condition, Length, Occurrence) -- Most Recent Occurrence }
+    Value1 = MRO(Close > Close[1], 14, 1);
+
+    { ================================================================ }
+    { === Volume-based === }
+    { ================================================================ }
+    { AccumDist -- no arguments }
+    Value1 = AccumDist;
+
+    { ================================================================ }
+    { === Utility === }
+    { ================================================================ }
+    { IFF(Condition, TrueVal, FalseVal) -- inline ternary }
+    Value1 = IFF(Close > Open, 1, -1);
+
+    { === Loop counter gotcha: use idx not i (I = OpenInterest) === }
     For idx = 1 To 10 Begin
         Value1 = Value1 + Close[idx];
     End;
