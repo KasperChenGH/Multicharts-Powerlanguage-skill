@@ -230,13 +230,21 @@ If Time = 1501 Then ...     // for 1-min bars
 
 Add one bar's worth of minutes to the session-start clock time.
 
-### Variable names must not match built-in function names
+### Variable names must not match built-in function names or reserved letters
 
 PowerLanguage is **case-insensitive**. If you declare `Variables: dmiPlus(0);` and then call `dmiPlus = DMIPlus(14);`, the compiler sees the variable and function as the same identifier — the variable shadows the function and the call fails. This applies to every built-in function: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, etc.
+
+The **single-letter data-series aliases** are also reserved and cannot be used as variable or loop-counter names: `C`(Close), `D`(Date), `H`(High), `I`(OpenInterest), `L`(Low), `O`(Open), `T`(Time), `V`(Volume). Because PL is case-insensitive, `i`, `c`, `l`, `v`, etc. are all off-limits. This is especially easy to hit with `i` in `For` loops.
 
 Use a different name — abbreviate, add a suffix, or prefix:
 
 ```pascal
+// WRONG — i is reserved (alias for OpenInterest)
+For i = 1 To 10 Begin ... End;
+
+// RIGHT — use ii, idx, cnt, n, etc.
+For ii = 1 To 10 Begin ... End;
+
 // WRONG — shadows the built-in DMIPlus function
 Variables: dmiPlus(0);
 dmiPlus = DMIPlus(14);        // compile error
