@@ -195,6 +195,8 @@ function Get-KeywordStatement {
     'ScrollToBar'          { return 'ScrollToBar( 1, 0 );' }
     'PlaceMarketOrder'     { return 'PlaceMarketOrder( True, True, 1 );' }
     'ChangeMarketPosition' { return 'ChangeMarketPosition( 1, Close, "x" );' }
+    'pmms_strategy_close_position_partial' { return 'pmms_strategy_close_position_partial( 1, True, 1 );' }
+    'pmms_strategy_close_position'         { return 'pmms_strategy_close_position( 1 );' }
   }
 
   switch ($cat) {

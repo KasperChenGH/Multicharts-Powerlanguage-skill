@@ -328,7 +328,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_currentcontracts }
     Value1 = pmms_strategy_currentcontracts( Close );
     { Portfolio_Money_Management: pmms_strategy_close_position_partial }
-    Value1 = pmms_strategy_close_position_partial( Close, 14, 14 );
+    pmms_strategy_close_position_partial( 1, True, 1 );
     { Portfolio_Money_Management: pmms_strategy_deny_exits }
     Value1 = pmms_strategy_deny_exits( Close );
     { Portfolio_Money_Management: pmms_strategy_deny_long_entries }
@@ -346,7 +346,7 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Portfolio_Money_Management: pmms_strategy_allow_long_entries }
     Value1 = pmms_strategy_allow_long_entries( Close );
     { Portfolio_Money_Management: pmms_strategy_close_position }
-    Value1 = pmms_strategy_close_position( Close );
+    pmms_strategy_close_position( 1 );
     { Portfolio_Money_Management: pmms_strategy_avgentryprice }
     Value1 = pmms_strategy_avgentryprice( Close );
     { Portfolio_Money_Management: pmms_strategy_allow_short_entries }
