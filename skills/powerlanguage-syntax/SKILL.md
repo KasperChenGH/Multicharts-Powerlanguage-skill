@@ -186,7 +186,7 @@ A common new-user mistake is to write `Value1 = SomeKeyword;` for a keyword that
 |---|---|---|
 | Type / declaration words | `Numeric`, `String`, `TrueFalse`, `Variable`, `Var`, `NumericSeries`, `IntraBarPersist` | Used inside `Inputs:` / `Variables:` / `Arrays:` blocks |
 | Control flow / operators | `If`, `Then`, `Else`, `For`, `While`, `Begin`, `End`, `To`, `DownTo`, `Switch`, `Case`, `and`, `or`, `not` | Reserved syntax |
-| Script-level attributes | `IntraBarOrderGeneration`, `LegacyColorValue`, `RecoverDrawings`, `AllowSendOrdersOn…` | Used in `[Attr = value];` form at script start |
+| Script-level attributes | `IntraBarOrderGeneration`, `LegacyColorValue`, `RecoverDrawings`, `AllowSendOrdersOn…`, `PortfolioEntriesPriority` | Used in `[Attr = value];` form at script start |
 | Output statements | `Print`, `FileAppend`, `FileClose`, `FileDelete`, `ClearDebug`, `ClearPrintLog`, `File`, `MessageLog`, `PlaySound` | Statement-shaped, no return value |
 | DLL-calling directives | `DefineDllFunc`, `external`, `method`, `OnCreate`, `OnDestroy`, `ThreadSafe`, plus C type names (`int`, `lpstr`, `bool`, …) | Statement / declaration syntax |
 | Expert Commentary | `#BeginCmtry`, `#EndCmtry`, `CheckCommentary`, `AtCommentaryBar` | Paired-block directives |
@@ -198,13 +198,13 @@ A common new-user mistake is to write `Value1 = SomeKeyword;` for a keyword that
 - A keyword name that contains a space in the official docs (e.g. `DateTime bar update`, `Cancel Alert`) cannot be used as a single identifier — PowerLanguage parses only the first word and chokes on the rest.
 - **Single-letter data-series aliases** (`C`=Close, `D`=Date, `H`=High, `I`=OpenInt, `L`=Low, `O`=Open, `T`=Time, `V`=Volume) are reserved — using them with parentheses like `C(Close)` causes *"A keyword/variable is used as a function"*. Use square brackets for barsback: `C[1]`.
 - A handful of names in otherwise-value-rich categories are reserved syntactic tokens: `Data` (used as `Close of Data2`), `Call` / `Put` / `Strike` (option-context syntax), `Length`, `OptionType`, `DeltaType`, `RevSize`, `BoxSize`.
-- **Procedure keywords** like `ScrollToBar`, `PlaceMarketOrder`, `ChangeMarketPosition` perform an action and do NOT return a value — assigning them to `Value1` causes *"Function must have a return value"*. Call them as standalone statements: `ScrollToBar(1, 0);`.
+- **Procedure keywords** like `ScrollToBar`, `PlaceMarketOrder`, `ChangeMarketPosition`, and all PMM action keywords (`pmms_strategy_resume`, `pmms_strategy_pause`, `pmms_strategy_close_position`, `pmms_strategy_deny_*`, `pmms_strategy_allow_*`, `pmms_strategies_*_all`) perform an action and do NOT return a value — assigning them to `Value1` causes *"Function must have a return value"*. Call them as standalone statements: `ScrollToBar(1, 0);`.
 - **Signal/portfolio-only keywords** like `Portfolio_CurrencyCode`, `StrategyCurrencyCode`, `InitialCapital` cause *"X is not applicable to this type of study"* when used in an Indicator. They only work in Signal studies.
 - **Drawing-object accessors** (any `Rectangle*`, `TL_*`, `Arw_*`, `Text_*`, or `MC_TL_*`/`MC_Arw_*`/etc. function ending in `Get`/`Set`/`Delete`/`New`/…) take at least one drawing-object ID argument — never use them as bare values.
 - **Setter keywords** (`Set*`, `Portfolio_Set*`, `pmm_set_*`, or any name containing `_set_`) are statement-shaped — they always require at least one value argument and don't return a value.
 - **Lowercase-prefix functions** (e.g. `getTPOinfo`, `getplotstyle`) usually take parameters; the unusual lowercase naming is the signal.
 - **String-returning keywords** like `Description`, `Symbol`, `GetCurrency`, `BarType_uid`, anything ending in `Name` / `Description` / `Listed` / `ToStr` — can be assigned only to a string variable, not the numeric `Value1`.
-- **Boolean-returning keywords** like `Is64BitProcess`, `MouseClickShiftPressed`, `AlertEnabled` — use them inside an `If` condition (`If Is64BitProcess Then ...`); direct assignment to `Condition1` sometimes fails because PowerLanguage returns numeric 0/1 instead of `TrueFalse` for some "logical" functions.
+- **Boolean-returning keywords** like `Is64BitProcess`, `MouseClickShiftPressed`, `AlertEnabled`, `PosTradeIsOpen`, `PosTradeIsLong`, `pmms_strategy_is_paused` — use them inside an `If` condition (`If Is64BitProcess Then ...`); direct assignment to `Condition1` sometimes fails because PowerLanguage returns numeric 0/1 instead of `TrueFalse` for some "logical" functions. **Exception:** `MarketPosition_at_Broker_for_The_Strategy` looks boolean but returns numeric 1/0/-1 (market position) — use `Value1 = X;`, not `If X Then`.
 
 ### Quick error → fix lookup
 
