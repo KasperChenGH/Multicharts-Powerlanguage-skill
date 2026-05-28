@@ -199,6 +199,22 @@ function Get-KeywordStatement {
     'pmms_strategy_close_position'         { return 'pmms_strategy_close_position( 1 );' }
     'pmms_strategy_resume'                 { return 'pmms_strategy_resume( 1 );' }
     'pmms_strategy_pause'                  { return 'pmms_strategy_pause( 1 );' }
+    'pmms_strategy_deny_entries'           { return 'pmms_strategy_deny_entries( 1 );' }
+    'pmms_strategy_deny_exits'             { return 'pmms_strategy_deny_exits( 1 );' }
+    'pmms_strategy_deny_short_entries'     { return 'pmms_strategy_deny_short_entries( 1 );' }
+    'pmms_strategy_deny_long_entries'      { return 'pmms_strategy_deny_long_entries( 1 );' }
+    'pmms_strategy_deny_exit_from_short'   { return 'pmms_strategy_deny_exit_from_short( 1 );' }
+    'pmms_strategy_deny_exit_from_long'    { return 'pmms_strategy_deny_exit_from_long( 1 );' }
+    'pmms_strategy_allow_entries'          { return 'pmms_strategy_allow_entries( 1 );' }
+    'pmms_strategy_allow_exits'            { return 'pmms_strategy_allow_exits( 1 );' }
+    'pmms_strategy_allow_short_entries'    { return 'pmms_strategy_allow_short_entries( 1 );' }
+    'pmms_strategy_allow_long_entries'     { return 'pmms_strategy_allow_long_entries( 1 );' }
+    'pmms_strategy_allow_exit_from_short'  { return 'pmms_strategy_allow_exit_from_short( 1 );' }
+    'pmms_strategy_allow_exit_from_long'   { return 'pmms_strategy_allow_exit_from_long( 1 );' }
+    'pmms_strategies_resume_all'           { return 'pmms_strategies_resume_all;' }
+    'pmms_strategies_pause_all'            { return 'pmms_strategies_pause_all;' }
+    'pmms_strategies_deny_entries_all'     { return 'pmms_strategies_deny_entries_all;' }
+    'pmms_strategies_allow_entries_all'    { return 'pmms_strategies_allow_entries_all;' }
   }
 
   switch ($cat) {
