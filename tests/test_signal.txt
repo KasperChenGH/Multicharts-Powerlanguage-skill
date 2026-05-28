@@ -236,9 +236,9 @@ If False Then Begin    { wrap every statement in an unreachable If/Then to verif
     { Strategy_Position: MaxShares_Checked }
     Value1 = MaxShares_Checked;
     { Portfolio_Money_Management: pmms_strategy_resume }
-    Value1 = pmms_strategy_resume( Close );
+    pmms_strategy_resume( 1 );
     { Portfolio_Money_Management: pmms_strategy_pause }
-    Value1 = pmms_strategy_pause( Close );
+    pmms_strategy_pause( 1 );
     { Portfolio_Money_Management: pmms_strategy_openprofit }
     Value1 = pmms_strategy_openprofit( Close );
     { Portfolio_Money_Management: pmms_strategy_riskcapital }
