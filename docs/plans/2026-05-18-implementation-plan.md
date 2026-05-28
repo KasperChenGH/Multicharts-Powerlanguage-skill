@@ -29,7 +29,7 @@ Multicharts-Powerlanguage-skill/
 │   ├── plugin.json                       # Task 2
 │   └── marketplace.json                  # Task 2
 ├── .gitignore                            # already exists (Task 1 verifies)
-├── LICENSE                               # already exists (MIT, Kasper Chen)
+├── LICENSE                               # already exists (MIT, Yu-An Chen)
 ├── NOTICE                                # Task 14
 ├── README.md                             # Task 14 replaces the stub
 ├── package.json                          # Task 2
@@ -2450,7 +2450,7 @@ Create `NOTICE`:
 multicharts-powerlanguage
 A Claude Code plugin for MultiCharts PowerLanguage
 
-Copyright (c) 2026 Yu-An Chen (also published as Kasper Chen)
+Copyright (c) 2026 Yu-An Chen (also published as Yu-An Chen)
 Licensed under the MIT License — see LICENSE.
 
 ---
