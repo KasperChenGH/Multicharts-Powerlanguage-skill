@@ -70,6 +70,7 @@ If x > 0 Then Begin ... End;
 
 If x > 0 Then ... Else If x = 0 Then ... Else ... ;
 
+Variables: idx(0), sum(0);   // loop counter + accumulator must be declared
 For idx = 1 To 10 Begin
     sum = sum + idx;
 End;
@@ -117,10 +118,10 @@ Inside a Signal script, these are always available — no declaration needed:
 
 | Variable | Meaning |
 |---|---|
-| `MarketPosition` | `1` if long, `-1` if short, `0` if flat |
+| `MarketPosition` | `1` if long, `-1` if short, `0` if flat. Optional `(N)` = Nth-ago position — see gotcha below |
 | `CurrentContracts` | Absolute size of current position |
-| `EntryPrice` | Average fill price of the current position |
-| `BarsSinceEntry` | Bars since the current position was entered |
+| `EntryPrice` | Average fill price of current position. Optional `(N)` = Nth-ago position |
+| `BarsSinceEntry` | Bars since current position was entered. Optional `(N)` = Nth-ago position |
 | `BarsSinceExit(N)` | Bars since the Nth-most-recent exit |
 
 ## Order syntax (high-level recap)
@@ -172,7 +173,10 @@ MultiCharts ships with hundreds of pre-built Functions (`.elf` files) that are N
 | `ChaikinOsc` | `ChaikinOsc(FastLen, SlowLen, SmoothType)` | numeric |
 | `PriceOscillator` | `PriceOscillator(Price, FastLen, SlowLen)` | numeric |
 
-**"Length-only" gotcha:** `CCI`, `ADX`, `DMIPlus`, `DMIMinus`, `AvgTrueRange`, `PercentR`, `MoneyFlow`, `Volatility`, and `RSquared` take **only a Length** — no Price parameter. This is unlike `Average(Price, Length)` or `RSI(Price, Length)`. Writing `ADX(Close, 14)` is a compile error; the correct call is `ADX(14)`. `Parabolic` takes only an acceleration factor step — `Parabolic(0.02)`.
+**"No Price parameter" gotcha:** These functions take **no Price parameter** — passing `Close` as the first arg is a compile error:
+- **Length-only:** `CCI`, `ADX`, `DMIPlus`, `DMIMinus`, `AvgTrueRange`, `PercentR`, `MoneyFlow`, `Volatility`, `RSquared`, `AccumDist` — call as `ADX(14)`, not `ADX(Close, 14)`.
+- **Multi-length (no Price):** `UltimateOscillator(Len1, Len2, Len3)`, `ChaikinOsc(FastLen, SlowLen, SmoothType)` — all parameters are lengths/types, not prices.
+- **Single non-length:** `Parabolic(AfStep)` — takes only an acceleration factor step, e.g. `Parabolic(0.02)`.
 
 **`Stochastic` gotcha:** It takes **11 parameters**, not 3. The last 4 are output ref variables — you must declare Variables for them. The return value is just a status code (1 or -1), not the stochastic value itself. Typical usage:
 
@@ -278,9 +282,11 @@ These take no arguments — they use the current bar's OHLC automatically.
 
 ## Gotchas
 
-### `MarketPosition(N)` is position history, NOT bar offset
+### `MarketPosition(N)`, `EntryPrice(N)`, `BarsSinceEntry(N)` are position history, NOT bar offset
 
 A natural-looking expression like `MarketPosition(1)` reads as "the market position one bar ago" — but it actually returns the position **one trade ago**. So `MarketPosition(1)` on bar 50, when the strategy has been flat for the last 30 bars, returns whatever the previous closed position was (long or short), not `0`.
+
+**The same trap applies to `EntryPrice(N)` and `BarsSinceEntry(N)`.** `EntryPrice(1)` returns the entry price of the **previous closed position**, not the entry price one bar ago. `BarsSinceEntry(1)` returns the bars-since-entry of the previous position, not the current position minus one.
 
 To detect a position transition between bars (e.g. "did we just enter long?"), store the previous bar's position at the END of each bar:
 
@@ -314,7 +320,7 @@ Add one bar's worth of minutes to the session-start clock time.
 
 ### Variable names must not match built-in function names or reserved letters
 
-PowerLanguage is **case-insensitive**. If you declare `Variables: dmiPlus(0);` and then call `dmiPlus = DMIPlus(14);`, the compiler sees the variable and function as the same identifier — the variable shadows the function and the call fails. This applies to every built-in function: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, etc.
+PowerLanguage is **case-insensitive**. If you declare `Variables: dmiPlus(0);` and then call `dmiPlus = DMIPlus(14);`, the compiler sees the variable and function as the same identifier — the variable shadows the function and the call fails. This applies to every built-in function: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, etc. **Especially dangerous** are function names that look like natural variable names: `Range`, `Momentum`, `Median`, `Correlation`, `Sign`, `Last`, `Slippage`, `Margin`.
 
 The **single-letter data-series aliases** are also reserved and cannot be used as variable or loop-counter names: `C`(Close), `D`(Date), `H`(High), `I`(OpenInterest), `L`(Low), `O`(Open), `T`(Time), `V`(Volume). Because PL is case-insensitive, `i`, `c`, `l`, `v`, etc. are all off-limits. This is especially easy to hit with `i` in `For` loops.
 

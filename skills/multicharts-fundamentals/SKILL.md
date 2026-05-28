@@ -78,9 +78,9 @@ Each form is documented in detail in the `powerlanguage-keywords-reference` skil
 **Every order name within one Signal script must be unique.** If you write:
 
 ```
-Buy ("LE") 1 Contract Next Bar Market;
+Buy ("LE") 1 Contract Next Bar at Market;
 // ... later ...
-Buy ("LE") 1 Contract Next Bar 100 Stop;
+Buy ("LE") 1 Contract Next Bar at 100 Stop;
 ```
 
 …the script will not compile. MultiCharts uses the order name string to track which order produced which fill, so duplicate names are rejected at compile time. Pick distinct labels — `"LE_Market"` and `"LE_Stop"`, or `"LE"` and `"LE_Pyramid"`. This rule applies to all four order keywords (`Buy`, `Sell`, `SellShort`, `BuyToCover`), and is enforced per-Signal — two different Signals on the same chart can each have their own `"LE"`.
