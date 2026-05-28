@@ -15,7 +15,7 @@ Inputs:
     Threshold(0.0);
 
 Variables:
-    avg(0),
+    avgVal(0),
     triggered(False);
 
 Arrays:
@@ -70,9 +70,9 @@ If x > 0 Then Begin ... End;
 
 If x > 0 Then ... Else If x = 0 Then ... Else ... ;
 
-Variables: idx(0), sum(0);   // loop counter + accumulator must be declared
+Variables: idx(0), total(0);   // loop counter + accumulator must be declared
 For idx = 1 To 10 Begin
-    sum = sum + idx;
+    total = total + idx;
 End;
 
 While condition Begin ... End;
