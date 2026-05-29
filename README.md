@@ -1,6 +1,6 @@
 # multicharts-powerlanguage
 
-A Claude Code plugin that gives Claude expert knowledge of MultiCharts PowerLanguage — the language used to write Indicators, Signals, and Functions in [MultiCharts](https://www.multicharts.com/). Works on Windows, macOS, and Linux.
+The first public Claude Code plugin for [MultiCharts](https://www.multicharts.com/) PowerLanguage — gives Claude expert knowledge of the language used to write Indicators, Signals, and Functions. Works on Windows, macOS, and Linux.
 
 ## What's inside
 
@@ -13,7 +13,7 @@ Three skills that auto-activate based on what you're asking Claude to do:
 ## Install (Claude Code)
 
 ```bash
-/plugin marketplace add KasperChenGH/Multicharts-Powerlanguage-skill
+/plugin marketplace add KasperChenGH/multicharts-powerlanguage
 /plugin install multicharts-powerlanguage@multicharts-powerlanguage-dev
 ```
 
@@ -48,4 +48,4 @@ MIT — see `LICENSE`.
 
 ## Source
 
-https://github.com/KasperChenGH/Multicharts-Powerlanguage-skill
+https://github.com/KasperChenGH/multicharts-powerlanguage
