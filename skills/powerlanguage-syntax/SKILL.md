@@ -398,3 +398,36 @@ If MultiCharts gives you one of these errors when using a keyword:
 | `X is not applicable to this type of study` | Using a signal-only keyword in an Indicator (e.g. `InitialCapital`) | Move to a Signal study, or remove the keyword |
 
 When in doubt, look up the keyword in the `powerlanguage-keywords-reference` skill — the signature line shows whether it's used as `KeywordName(args)` (callable function) or in a larger construct (then it can't be the whole RHS).
+
+## Pre-generation checklist
+
+**Before writing any PowerLanguage code, verify every item below.** Do not skip steps — each one maps to a real compile error encountered during testing.
+
+1. **Script type matches intent.** Indicator (plots, no orders), Signal (orders, no plots), or Function (returns a value)?
+2. **Declarations exist and come first.** `Inputs:` → `Variables:` → `Arrays:` → code. Every variable used anywhere — including loop counters — must be declared.
+3. **No variable-name collisions.** Check every name in `Variables:` against:
+   - Built-in functions: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `DMIPlus`, `DMIMinus`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, `Range`, `Momentum`, `Median`, `Correlation`, `Volatility`, `MoneyFlow`, `Summation`, `Cum`, `Sign`, `Last`, `Total`, etc.
+   - Single-letter aliases: `C`, `D`, `H`, `I`, `L`, `O`, `T`, `V` (and their lowercase forms — `i` as a loop counter is the #1 trap).
+   - Use suffixed names: `rsiVal`, `atrVal`, `dpVal`, `avgVal`, `runTotal`, `idx`, `nn`, `cnt`.
+4. **Function signatures are correct.** Check every function call:
+   - Length-only functions (`CCI`, `ADX`, `DMIPlus`, `DMIMinus`, `AvgTrueRange`, `PercentR`, `MoneyFlow`, `Volatility`, `RSquared`, `AccumDist`) take **no Price parameter**.
+   - `Stochastic` takes **11 params** (4 are output ref vars that must be declared).
+   - `DirMovement` takes **10 params** (6 are output ref vars).
+   - `AdaptiveMovAvg` takes **4 params** (Price, EffRatioLen, FastAvgLen, SlowAvgLen).
+   - `Parabolic` takes **1 param** (AfStep only).
+   - If unsure, look it up in the "Common built-in functions" tables above.
+5. **Order syntax is complete.** Every order has: a unique name string, quantity + unit, and the `at` keyword — `Next Bar at Market`, `Next Bar at <price> Stop`, `Next Bar at <price> Limit`, or `This Bar on Close`.
+6. **Order names are unique.** No two orders in the same Signal share a name string.
+7. **Semicolon rule.** `End` before `Else` → no semicolon. `End` at statement boundary → semicolon.
+8. **Study-type restrictions.** No `Plot` in Signals. No `Buy`/`Sell` in Indicators. No `MarketPosition`/`EntryPrice` in Indicators.
+
+## Post-generation self-review
+
+**After writing PowerLanguage code, re-read it against this list before presenting it.** Fix any issues silently — do not present code that fails these checks.
+
+1. **Walk the `Variables:` block.** Read each name aloud — does it match any built-in function or single-letter alias? If yes, rename it.
+2. **Walk every function call.** Count the arguments. Compare to the signature table. Pay special attention to Length-only functions (no Price) and multi-output functions (ref vars declared?).
+3. **Walk every order line.** Is the `at` keyword present? Is the name string unique within this Signal?
+4. **Walk every `End`.** Is the next token `Else`? If yes → no semicolon. Otherwise → semicolon.
+5. **Walk every `For`/`While`.** Is the loop counter declared in `Variables:`?
+6. **Check type consistency.** Numeric functions → `Value1` or numeric variable. String functions (anything ending in `ToStr`, `Name`, `Description`) → string variable. Don't assign strings to `Value1`.
