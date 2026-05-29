@@ -1,0 +1,13 @@
+# Locally extracted MultiCharts help — copyright MCT Limited, do NOT commit.
+references/chm_extracted/
+references/wiki_keyword_index.txt
+
+# Working files that should never be committed
+*.tmp
+*.bak
+.vscode/
+.idea/
+
+# Build artifacts from the maintainer script — DO commit the final outputs under
+# skills/powerlanguage-keywords-reference/ and tests/ but never these working dirs:
+scripts/.cache/

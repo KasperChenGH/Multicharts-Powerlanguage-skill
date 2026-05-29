@@ -1,0 +1,13 @@
+{
+  "name": "multicharts-powerlanguage-dev",
+  "description": "MultiCharts PowerLanguage skills marketplace",
+  "owner": { "name": "Yu-An Chen" },
+  "plugins": [
+    {
+      "name": "multicharts-powerlanguage",
+      "description": "MultiCharts PowerLanguage skills for Claude: fundamentals, syntax, and keywords reference.",
+      "version": "0.1.0",
+      "source": "./"
+    }
+  ]
+}
