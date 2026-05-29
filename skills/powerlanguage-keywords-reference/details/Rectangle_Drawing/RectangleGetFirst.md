@@ -1,12 +1,10 @@
-# RectangleGetFirst
+﻿# RectangleGetFirst
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleGetFirst (Origin) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `Origin` *(numeric, required)* ??a numerical expression specifying the origin ??see official docs
+- `Origin` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

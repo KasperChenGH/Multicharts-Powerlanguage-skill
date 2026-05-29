@@ -1,9 +1,7 @@
-# Portfolio_GrossProfit
+﻿# Portfolio_GrossProfit
 
 **Category:** Portfolio_Strategy_Performance
 **Signature:** `Portfolio_GrossProfit`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

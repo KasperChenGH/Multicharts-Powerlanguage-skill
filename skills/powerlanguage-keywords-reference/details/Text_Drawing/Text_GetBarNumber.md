@@ -1,9 +1,7 @@
-# Text_GetBarNumber
+﻿# Text_GetBarNumber
 
 **Category:** Text_Drawing
 **Signature:** `Text_GetBarNumber(ref);`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

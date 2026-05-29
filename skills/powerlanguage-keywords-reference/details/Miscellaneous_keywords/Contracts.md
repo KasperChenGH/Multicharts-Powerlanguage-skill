@@ -1,9 +1,7 @@
-# Contracts
+﻿# Contracts
 
 **Category:** Miscellaneous_keywords
 **Signature:** `TradeSize Contracts`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

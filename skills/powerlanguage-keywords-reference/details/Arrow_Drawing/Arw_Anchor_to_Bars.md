@@ -1,9 +1,7 @@
-# Arw_Anchor_to_Bars
+﻿# Arw_Anchor_to_Bars
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_Anchor_to_Bars(ArrowID,LogicalExpression)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

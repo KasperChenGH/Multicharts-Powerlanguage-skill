@@ -1,9 +1,7 @@
-# MaxContractProfit
+﻿# MaxContractProfit
 
 **Category:** Strategy_Position
 **Signature:** `MaxContractProfit`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

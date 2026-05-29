@@ -1,9 +1,7 @@
-# Arw_GetBarNumber
+﻿# Arw_GetBarNumber
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_GetBarNumber(ref)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

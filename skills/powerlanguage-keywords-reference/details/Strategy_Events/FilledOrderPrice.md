@@ -1,9 +1,7 @@
-# FilledOrderPrice
+﻿# FilledOrderPrice
 
 **Category:** Strategy_Events
 **Signature:** `FilledOrderPrice`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

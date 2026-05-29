@@ -1,9 +1,7 @@
-# Is64BitOperatingSystem
+﻿# Is64BitOperatingSystem
 
 **Category:** Environment_Information
 **Signature:** `Is64BitOperatingSystem`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

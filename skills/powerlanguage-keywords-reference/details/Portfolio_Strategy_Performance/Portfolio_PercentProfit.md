@@ -1,9 +1,7 @@
-# Portfolio_PercentProfit
+﻿# Portfolio_PercentProfit
 
 **Category:** Portfolio_Strategy_Performance
 **Signature:** `Portfolio_PercentProfit`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

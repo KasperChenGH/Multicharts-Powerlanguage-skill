@@ -1,9 +1,7 @@
-# Portfolio_MaxOpenPositionPotentialLoss
+﻿# Portfolio_MaxOpenPositionPotentialLoss
 
 **Category:** Portfolio_Strategy_Position
 **Signature:** `SetStopPosition;`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

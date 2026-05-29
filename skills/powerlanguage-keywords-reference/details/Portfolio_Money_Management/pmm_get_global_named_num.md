@@ -1,12 +1,10 @@
-# pmm_get_global_named_num
+﻿# pmm_get_global_named_num
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmm_get_global_named_num(VariableName)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `VariableName` *(string, required)* ??string variable. ??see official docs
+- `VariableName` *(string, required)* — see official docs
 
 **Example (illustrative)**
 ```

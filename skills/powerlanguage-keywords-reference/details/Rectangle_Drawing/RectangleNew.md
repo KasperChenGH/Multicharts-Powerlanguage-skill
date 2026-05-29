@@ -1,17 +1,15 @@
-# RectangleNew
+﻿# RectangleNew
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleNew (sDate, sTime, sPriceValue, eDate, eTime, ePriceValue) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `sDate` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `sTime` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `sPriceValue` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `eDate` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `eTime` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `ePriceValue` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
+- `sDate` *(numeric, required)* — see official docs
+- `sTime` *(numeric, required)* — see official docs
+- `sPriceValue` *(numeric, required)* — see official docs
+- `eDate` *(numeric, required)* — see official docs
+- `eTime` *(numeric, required)* — see official docs
+- `ePriceValue` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

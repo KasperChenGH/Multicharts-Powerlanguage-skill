@@ -1,9 +1,7 @@
-# Portfolio_StrategyDrawdown
+﻿# Portfolio_StrategyDrawdown
 
 **Category:** Portfolio_Strategy_Performance
 **Signature:** `Portfolio_StrategyDrawdown`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

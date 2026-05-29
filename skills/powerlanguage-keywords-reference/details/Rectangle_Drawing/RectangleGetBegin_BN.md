@@ -1,9 +1,7 @@
-# RectangleGetBegin_BN
+﻿# RectangleGetBegin_BN
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleGetBegin_BN(ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

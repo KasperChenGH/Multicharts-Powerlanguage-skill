@@ -1,9 +1,7 @@
-# TL_GetExtLeft
+﻿# TL_GetExtLeft
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_GetExtLeft(TL_ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

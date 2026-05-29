@@ -1,9 +1,7 @@
-# Array_Copy
+﻿# Array_Copy
 
 **Category:** Dynamic_Arrays
 **Signature:** `Array_Copy(SourceArray,SourceIndex,DestinationArray,DestinationIndex,NumberOfElements)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

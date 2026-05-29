@@ -1,9 +1,7 @@
-# i_MarketPosition_at_Broker
+﻿# i_MarketPosition_at_Broker
 
 **Category:** Strategy_Position
 **Signature:** `i_MarketPosition_at_Broker`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

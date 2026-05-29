@@ -1,12 +1,10 @@
-# pmms_strategies_set_status_for_all
+﻿# pmms_strategies_set_status_for_all
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategies_set_status_for_all(Status)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `Status` *(string, required)* ??string variable. ??see official docs
+- `Status` *(string, required)* — see official docs
 
 **Example (illustrative)**
 ```

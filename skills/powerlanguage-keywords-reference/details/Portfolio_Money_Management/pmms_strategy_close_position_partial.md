@@ -1,14 +1,12 @@
-# pmms_strategy_close_position_partial
+﻿# pmms_strategy_close_position_partial
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategy_close_position_partial(Index, isNextBar, contracts)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `Index` *(numeric, required)* ??numeric variable, strategy index. ??see official docs
-- `isNextBar` *(truefalse, required)* ??bool variable, true - generates open ??see official docs
-- `contracts` *(numeric, required)* ??numeric variable, contracts number ??see official docs
+- `Index` *(numeric, required)* — see official docs
+- `isNextBar` *(truefalse, required)* — see official docs
+- `contracts` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

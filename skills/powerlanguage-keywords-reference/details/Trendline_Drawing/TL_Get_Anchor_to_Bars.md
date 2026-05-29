@@ -1,9 +1,7 @@
-# TL_Get_Anchor_to_Bars
+﻿# TL_Get_Anchor_to_Bars
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_Get_Anchor_to_Bars(TL_ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

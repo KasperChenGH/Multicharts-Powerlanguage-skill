@@ -1,9 +1,7 @@
-# Symbol_TickID
+﻿# Symbol_TickID
 
 **Category:** Data_Information_General
 **Signature:** `Symbol_TickID`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

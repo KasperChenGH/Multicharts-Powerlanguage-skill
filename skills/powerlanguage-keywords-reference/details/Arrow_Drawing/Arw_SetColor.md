@@ -1,13 +1,11 @@
-# Arw_SetColor
+﻿# Arw_SetColor
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetColor(ObjectID,ArrowColor) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ObjectID` *(numeric, required)* ??a numerical expression specifying the object ??see official docs
-- `ArrowColor` *(numeric, required)* ??an expression specifying the color of ??see official docs
+- `ObjectID` *(numeric, required)* — see official docs
+- `ArrowColor` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

@@ -1,12 +1,10 @@
-# I_getplotvalue
+﻿# I_getplotvalue
 
 **Category:** Plotting
 **Signature:** `i_getplotvalue(index)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `index` *(expression, required)* ??is the reference number ??see official docs
+- `index` *(expression, required)* — see official docs
 
 **Example (illustrative)**
 ```

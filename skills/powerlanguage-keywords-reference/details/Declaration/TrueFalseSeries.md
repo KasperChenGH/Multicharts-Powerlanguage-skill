@@ -1,9 +1,7 @@
-# TrueFalseSeries
+﻿# TrueFalseSeries
 
 **Category:** Declaration
 **Signature:** `Input:InputName(TrueFalseSeries)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

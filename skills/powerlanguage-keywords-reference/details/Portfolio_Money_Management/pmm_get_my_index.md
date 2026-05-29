@@ -1,9 +1,7 @@
-# pmm_get_my_index
+﻿# pmm_get_my_index
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmm_get_my_index`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

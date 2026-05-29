@@ -1,9 +1,7 @@
-# Array_SetMaxIndex
+﻿# Array_SetMaxIndex
 
 **Category:** Dynamic_Arrays
 **Signature:** `Array_SetMaxIndex(ArrayName,MaxIndex)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

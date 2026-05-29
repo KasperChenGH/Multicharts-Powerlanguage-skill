@@ -1,9 +1,7 @@
-# pmms_strategies_count
+﻿# pmms_strategies_count
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategies_count`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

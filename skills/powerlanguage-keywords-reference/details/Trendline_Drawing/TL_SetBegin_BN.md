@@ -1,14 +1,12 @@
-# TL_SetBegin_BN
+﻿# TL_SetBegin_BN
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_SetBegin_BN (TL_ID, BarNumber, Price); Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `TL_ID` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `BarNumber` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `Price` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
+- `TL_ID` *(numeric, required)* — see official docs
+- `BarNumber` *(numeric, required)* — see official docs
+- `Price` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

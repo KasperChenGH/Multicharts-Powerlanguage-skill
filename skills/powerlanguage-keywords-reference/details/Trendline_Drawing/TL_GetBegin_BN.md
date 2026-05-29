@@ -1,9 +1,7 @@
-# TL_GetBegin_BN
+﻿# TL_GetBegin_BN
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_GetBegin_BN(TL_ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

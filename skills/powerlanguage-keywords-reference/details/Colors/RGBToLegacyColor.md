@@ -1,9 +1,7 @@
-# RGBToLegacyColor
+﻿# RGBToLegacyColor
 
 **Category:** Colors
 **Signature:** `RGBToLegacyColor(RGBColorValue)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

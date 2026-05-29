@@ -1,14 +1,12 @@
-# Arw_New_BN
+﻿# Arw_New_BN
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_New_BN (BarNumber, PriceValue, Direction) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `BarNumber` *(numeric, required)* ??a numerical expression specifying the bar ??see official docs
-- `PriceValue` *(numeric, required)* ??a numerical expression specifying the price ??see official docs
-- `Direction` *(truefalse, required)* ??a logical expression specifying the direction ??see official docs
+- `BarNumber` *(numeric, required)* — see official docs
+- `PriceValue` *(numeric, required)* — see official docs
+- `Direction` *(truefalse, required)* — see official docs
 
 **Example (illustrative)**
 ```

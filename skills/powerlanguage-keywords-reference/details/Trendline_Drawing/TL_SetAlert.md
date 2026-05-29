@@ -1,13 +1,11 @@
-# TL_SetAlert
+﻿# TL_SetAlert
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_SetAlert(TL_ID,AlertStatus) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `TL_ID` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `AlertStatus` *(numeric, required)* ??a numerical expression specifying the alert ??see official docs
+- `TL_ID` *(numeric, required)* — see official docs
+- `AlertStatus` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

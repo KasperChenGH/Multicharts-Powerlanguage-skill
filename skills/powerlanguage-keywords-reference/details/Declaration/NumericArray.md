@@ -1,12 +1,10 @@
-# NumericArray
+﻿# NumericArray
 
 **Category:** Declaration
 **Signature:** `Input:InputName[M1,M2,M3,etc.](NumericArray) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `M` *(expression, required)* ??an input variable that represents the ??see official docs
+- `M` *(expression, required)* — see official docs
 
 **Example (illustrative)**
 ```

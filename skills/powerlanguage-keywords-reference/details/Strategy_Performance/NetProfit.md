@@ -1,9 +1,7 @@
-# NetProfit
+﻿# NetProfit
 
 **Category:** Strategy_Performance
 **Signature:** `NetProfit`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

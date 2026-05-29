@@ -1,13 +1,11 @@
-# RectangleGetNext
+﻿# RectangleGetNext
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleGetNext (ID,Origin) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ID` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `Origin` *(numeric, required)* ??a numerical expression specifying the origin ??see official docs
+- `ID` *(numeric, required)* — see official docs
+- `Origin` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

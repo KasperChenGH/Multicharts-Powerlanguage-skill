@@ -1,9 +1,7 @@
-# ELTimeToDateTime_s
+﻿# ELTimeToDateTime_s
 
 **Category:** Date_and_Time_routines
 **Signature:** `ELTimeToDateTime_s(HHmmss)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

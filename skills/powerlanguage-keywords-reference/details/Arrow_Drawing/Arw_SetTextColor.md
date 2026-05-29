@@ -1,13 +1,11 @@
-# Arw_SetTextColor
+﻿# Arw_SetTextColor
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetTextColor(ObjectID,TextColor) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ObjectID` *(numeric, required)* ??a numerical expression specifying the object ??see official docs
-- `TextColor` *(numeric, required)* ??an expression specifying the color of ??see official docs
+- `ObjectID` *(numeric, required)* — see official docs
+- `TextColor` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

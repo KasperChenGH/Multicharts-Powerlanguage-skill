@@ -1,9 +1,7 @@
-# Array_SetValRange
+﻿# Array_SetValRange
 
 **Category:** Dynamic_Arrays
 **Signature:** `Array_SetValRange(ArrayName,StartIndex,EndIndex,Value)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

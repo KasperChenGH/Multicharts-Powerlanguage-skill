@@ -1,9 +1,7 @@
-# Market
+﻿# Market
 
 **Category:** Miscellaneous_keywords
 **Signature:** `At Market`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

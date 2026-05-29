@@ -1,9 +1,7 @@
-# DOM_AsksCount
+﻿# DOM_AsksCount
 
 **Category:** DOM
 **Signature:** `DOM_AsksCount [Data(N)]`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# PriceScale
+﻿# PriceScale
 
 **Category:** Data_Information_General
 **Signature:** `PriceScale`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

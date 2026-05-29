@@ -1,9 +1,7 @@
-# Convert_Currency
+﻿# Convert_Currency
 
 **Category:** Currency_Codes
 **Signature:** `Convert_Currency(DateTime, SrcCurrency, DstCurrency, SrcMoney);`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

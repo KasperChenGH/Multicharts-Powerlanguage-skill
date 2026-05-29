@@ -1,9 +1,7 @@
-# Text_GetHStyle
+﻿# Text_GetHStyle
 
 **Category:** Text_Drawing
 **Signature:** `Text_GetHStyle(ObjectID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

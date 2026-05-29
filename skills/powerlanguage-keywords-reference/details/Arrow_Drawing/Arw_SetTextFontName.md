@@ -1,9 +1,7 @@
-# Arw_SetTextFontName
+﻿# Arw_SetTextFontName
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetTextFontName(ObjectID,"FontName")`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

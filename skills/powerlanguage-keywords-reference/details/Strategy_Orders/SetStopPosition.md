@@ -1,9 +1,7 @@
-# SetStopPosition
+﻿# SetStopPosition
 
 **Category:** Strategy_Orders
 **Signature:** `SetStopPosition`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

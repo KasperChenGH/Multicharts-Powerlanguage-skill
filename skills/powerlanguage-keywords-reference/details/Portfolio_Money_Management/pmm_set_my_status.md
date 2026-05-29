@@ -1,12 +1,10 @@
-# pmm_set_my_status
+﻿# pmm_set_my_status
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmm_set_my_status(Status)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `Status` *(string, required)* ??string variable. ??see official docs
+- `Status` *(string, required)* — see official docs
 
 **Example (illustrative)**
 ```

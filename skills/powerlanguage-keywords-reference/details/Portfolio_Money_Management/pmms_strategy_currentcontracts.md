@@ -1,12 +1,10 @@
-# pmms_strategy_currentcontracts
+﻿# pmms_strategy_currentcontracts
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategy_currentcontracts(StrategyIndex)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `StrategyIndex` *(numeric, required)* ??numeric variable. ??see official docs
+- `StrategyIndex` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

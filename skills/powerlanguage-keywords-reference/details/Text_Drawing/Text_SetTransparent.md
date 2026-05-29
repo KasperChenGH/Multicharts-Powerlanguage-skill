@@ -1,13 +1,11 @@
-# Text_SetTransparent
+﻿# Text_SetTransparent
 
 **Category:** Text_Drawing
 **Signature:** `Text_SetTransparent (ref, state) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ref` *(expression, required)* ??ID of the text object; ??see official docs
-- `state` *(truefalse, required)* ??True or False, where true means ??see official docs
+- `ref` *(expression, required)* — see official docs
+- `state` *(truefalse, required)* — see official docs
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# Round
+﻿# Round
 
 **Category:** Math_and_Trig
 **Signature:** `Round(Value,Precision)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# TL_GetAlert
+﻿# TL_GetAlert
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_GetAlert(TL_ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

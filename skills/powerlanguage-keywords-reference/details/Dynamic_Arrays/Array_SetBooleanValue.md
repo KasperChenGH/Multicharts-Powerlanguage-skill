@@ -1,9 +1,7 @@
-# Array_SetBooleanValue
+﻿# Array_SetBooleanValue
 
 **Category:** Dynamic_Arrays
 **Signature:** `Array_SetBooleanValue`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

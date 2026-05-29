@@ -1,9 +1,7 @@
-# i_AvgEntryPrice_at_Broker
+﻿# i_AvgEntryPrice_at_Broker
 
 **Category:** Strategy_Performance
 **Signature:** ``
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

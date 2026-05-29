@@ -1,9 +1,7 @@
-# DateTime bar update
+﻿# DateTime bar update
 
 **Category:** Data_Information_General
 **Signature:** `datetime_bar_update`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

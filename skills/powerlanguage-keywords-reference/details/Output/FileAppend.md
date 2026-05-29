@@ -1,9 +1,7 @@
-# FileAppend
+﻿# FileAppend
 
 **Category:** Output
 **Signature:** `FileAppend("PathFilename","StringExpression")`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

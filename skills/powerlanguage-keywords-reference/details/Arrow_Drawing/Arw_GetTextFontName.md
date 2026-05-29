@@ -1,9 +1,7 @@
-# Arw_GetTextFontName
+﻿# Arw_GetTextFontName
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_GetTextFontName(ObjectID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# Cancel Alert
+﻿# Cancel Alert
 
 **Category:** Alerts
 **Signature:** `Cancel Alert`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# Arw_Lock
+﻿# Arw_Lock
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_Lock(ArrowID,LogicalExpression)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

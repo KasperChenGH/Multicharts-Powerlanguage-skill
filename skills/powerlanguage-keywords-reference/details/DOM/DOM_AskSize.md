@@ -1,9 +1,7 @@
-# DOM_AskSize
+﻿# DOM_AskSize
 
 **Category:** DOM
 **Signature:** `DOM_AskSize(num) [Data(N)]`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# MouseClickDataNumber
+﻿# MouseClickDataNumber
 
 **Category:** MouseClickEvents
 **Signature:** `MouseClickDataNumber`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

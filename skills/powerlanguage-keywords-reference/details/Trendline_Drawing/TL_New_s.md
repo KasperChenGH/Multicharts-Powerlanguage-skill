@@ -1,17 +1,15 @@
-# TL_New_s
+﻿# TL_New_s
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_New_s (sDate, sTime_s, sPriceValue, eDate, eTime_s, ePriceValue) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `sDate` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `sTime_s` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `sPriceValue` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `eDate` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `eTime_s` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
-- `ePriceValue` *(numeric, required)* ??a numerical expression specifying the trendline ??see official docs
+- `sDate` *(numeric, required)* — see official docs
+- `sTime_s` *(numeric, required)* — see official docs
+- `sPriceValue` *(numeric, required)* — see official docs
+- `eDate` *(numeric, required)* — see official docs
+- `eTime_s` *(numeric, required)* — see official docs
+- `ePriceValue` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# SessionEndDay
+﻿# SessionEndDay
 
 **Category:** Sessions
 **Signature:** `SessionEndDay(SessionType,SessionNum)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

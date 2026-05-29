@@ -1,9 +1,7 @@
-# MC_TL_New_BN
+﻿# MC_TL_New_BN
 
 **Category:** Trendline_Drawing
 **Signature:** ``
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

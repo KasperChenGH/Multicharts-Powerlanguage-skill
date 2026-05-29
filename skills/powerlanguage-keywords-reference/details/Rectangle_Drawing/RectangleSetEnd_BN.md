@@ -1,14 +1,12 @@
-# RectangleSetEnd_BN
+﻿# RectangleSetEnd_BN
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleSetEnd_BN (ID, BarNumber, Price); Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ID` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `BarNumber` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `Price` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
+- `ID` *(numeric, required)* — see official docs
+- `BarNumber` *(numeric, required)* — see official docs
+- `Price` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

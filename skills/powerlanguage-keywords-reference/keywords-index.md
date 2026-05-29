@@ -27,7 +27,7 @@ Index of every PowerLanguage keyword grouped by the 40 categories from MultiChar
 |---|---|
 | `Alert` | `Alert` |
 | `AlertEnabled` | `AlertEnabled` |
-| `AlertEx` | `AlertEx(text&#060;,bgColor&#060;,txtColor&#062;&#062;);` |
+| `AlertEx` | `AlertEx(text[,bgColor[,txtColor]]);` |
 | `Cancel Alert` | `Cancel Alert` |
 | `CheckAlert` | `CheckAlert` |
 
@@ -583,7 +583,7 @@ Index of every PowerLanguage keyword grouped by the 40 categories from MultiChar
 | `I_getplotvalue` | `i_getplotvalue(index)` |
 | `I_setplotvalue` | `i_setplotvalue(index,value)` |
 | `NoPlot` | `NoPlot(PlotNumber)` |
-| `Plot` | `Numerical: PlotN&#060;[Offset]&#062;(Expression &#060;,"PlotName"&#060;,PlotColor &#060;,Scanner Cell Background Color &#060;,LineWidth &#062;&#062;&#062;&#062;)` |
+| `Plot` | `Numerical: PlotN[Offset](Expression [,"PlotName"[,PlotColor [,Scanner Cell Background Color [,LineWidth ]]]])` |
 | `PlotPaintBar` | `See official docs for signature details.` |
 | `PlotPB` | `` |
 | `SetPlotBGColor` | `SetPlotBGColor(PlotNumber,PlotColor)` |
@@ -668,7 +668,7 @@ Index of every PowerLanguage keyword grouped by the 40 categories from MultiChar
 
 | Keyword | Signature |
 |---|---|
-| `Portfolio_CalcMaxPotentialLossForEntry` | `Portfolio_CalcMaxPotentialLossForEntry (Side &#060;,Contracts &#060;,Price&#062;&#062;);` |
+| `Portfolio_CalcMaxPotentialLossForEntry` | `Portfolio_CalcMaxPotentialLossForEntry (Side [,Contracts [,Price]]);` |
 | `Portfolio_CurrentEntries` | `Portfolio_CurrentEntries` |
 | `Portfolio_MaxOpenPositionPotentialLoss` | `SetStopPosition;` |
 | `Portfolio_OpenPositionProfit` | `Portfolio_OpenPositionProfit` |

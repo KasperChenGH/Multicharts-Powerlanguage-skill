@@ -1,15 +1,13 @@
-# Text_SetLocation_s
+﻿# Text_SetLocation_s
 
 **Category:** Text_Drawing
 **Signature:** `Text_SetLocation_s (ObjectID, BarDate, BarTime_s, PriceValue) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ObjectID` *(numeric, required)* ??a numerical expression specifying the object ??see official docs
-- `BarDate` *(numeric, required)* ??a numerical expression specifying the date ??see official docs
-- `BarTime_s` *(numeric, required)* ??a numerical expression specifying the time ??see official docs
-- `PriceValue` *(numeric, required)* ??a numerical expression specifying the price ??see official docs
+- `ObjectID` *(numeric, required)* — see official docs
+- `BarDate` *(numeric, required)* — see official docs
+- `BarTime_s` *(numeric, required)* — see official docs
+- `PriceValue` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# MarketPosition
+﻿# MarketPosition
 
 **Category:** Strategy_Position
 **Signature:** `MarketPosition(PosBack)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

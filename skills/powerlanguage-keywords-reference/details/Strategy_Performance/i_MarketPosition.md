@@ -1,9 +1,7 @@
-# i_MarketPosition
+﻿# i_MarketPosition
 
 **Category:** Strategy_Performance
 **Signature:** `i_MarketPosition`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

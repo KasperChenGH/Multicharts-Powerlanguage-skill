@@ -1,12 +1,10 @@
-# pmms_strategy_close_position
+﻿# pmms_strategy_close_position
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategy_close_position(Index)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `Index` *(numeric, required)* ??numeric variable. ??see official docs
+- `Index` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

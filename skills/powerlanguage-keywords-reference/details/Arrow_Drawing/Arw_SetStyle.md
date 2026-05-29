@@ -1,9 +1,7 @@
-# Arw_SetStyle
+﻿# Arw_SetStyle
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetStyle(ObjectID,ArrowStyle)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

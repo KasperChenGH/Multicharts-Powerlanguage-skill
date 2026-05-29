@@ -1,9 +1,7 @@
-# pmms_strategies_deny_entries_all
+﻿# pmms_strategies_deny_entries_all
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategies_deny_entries_all`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

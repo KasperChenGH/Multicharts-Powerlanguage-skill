@@ -1,12 +1,10 @@
-# pmms_strategies_in_short_count
+﻿# pmms_strategies_in_short_count
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategies_in_short_count(indexesArray)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `indexesArray` *(expression, required)* ??array variable. ??see official docs
+- `indexesArray` *(expression, required)* — see official docs
 
 **Example (illustrative)**
 ```

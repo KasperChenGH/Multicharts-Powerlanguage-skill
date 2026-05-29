@@ -1,13 +1,11 @@
-# I_setplotvalue
+﻿# I_setplotvalue
 
 **Category:** Plotting
 **Signature:** `i_setplotvalue(index,value)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `index` *(expression, required)* ??is the reference number ??see official docs
-- `value` *(expression, required)* ??is the value that is to ??see official docs
+- `index` *(expression, required)* — see official docs
+- `value` *(expression, required)* — see official docs
 
 **Example (illustrative)**
 ```

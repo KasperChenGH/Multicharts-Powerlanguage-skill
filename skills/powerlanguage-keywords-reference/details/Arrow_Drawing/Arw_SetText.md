@@ -1,9 +1,7 @@
-# Arw_SetText
+﻿# Arw_SetText
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetText(ObjectID,"Text")`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

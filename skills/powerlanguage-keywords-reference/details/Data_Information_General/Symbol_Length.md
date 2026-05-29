@@ -1,9 +1,7 @@
-# Symbol_Length
+﻿# Symbol_Length
 
 **Category:** Data_Information_General
 **Signature:** `Symbol_Length`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

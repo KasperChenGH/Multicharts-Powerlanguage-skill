@@ -1,9 +1,7 @@
-# Arw_SetTextSize
+﻿# Arw_SetTextSize
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_SetTextSize(ObjectID,FontSize)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

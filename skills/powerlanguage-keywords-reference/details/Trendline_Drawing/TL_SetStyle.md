@@ -1,9 +1,7 @@
-# TL_SetStyle
+﻿# TL_SetStyle
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_SetStyle(TL_ID,TL_Style) Parameters`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

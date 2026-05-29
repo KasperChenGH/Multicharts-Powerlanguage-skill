@@ -1,9 +1,7 @@
-# TL_GetBeginTime_s
+﻿# TL_GetBeginTime_s
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_GetBeginTime_s(TL_ID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

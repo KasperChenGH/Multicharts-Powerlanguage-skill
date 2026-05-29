@@ -1,9 +1,7 @@
-# Portfolio_GetMaxPotentialLossPerContract
+﻿# Portfolio_GetMaxPotentialLossPerContract
 
 **Category:** Portfolio_Strategy_Properties
 **Signature:** `Portfolio_GetMaxPotentialLossPerContract`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

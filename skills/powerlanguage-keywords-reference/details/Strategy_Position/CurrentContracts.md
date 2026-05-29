@@ -1,9 +1,7 @@
-# CurrentContracts
+﻿# CurrentContracts
 
 **Category:** Strategy_Position
 **Signature:** `CurrentContracts`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

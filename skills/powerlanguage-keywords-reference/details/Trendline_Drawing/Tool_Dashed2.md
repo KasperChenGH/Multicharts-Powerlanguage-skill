@@ -1,9 +1,7 @@
-# Tool_Dashed2
+﻿# Tool_Dashed2
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_SetStyle(TL_ID, Tool_Dashed2)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,13 +1,11 @@
-# SetPlotBGColor
+﻿# SetPlotBGColor
 
 **Category:** Plotting
 **Signature:** `SetPlotBGColor(PlotNumber,PlotColor)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `PlotNumber` *(numeric, required)* ??a numerical expression specifying the plot ??see official docs
-- `PlotColor` *(numeric, required)* ??an expression specifying the cell background ??see official docs
+- `PlotNumber` *(numeric, required)* — see official docs
+- `PlotColor` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

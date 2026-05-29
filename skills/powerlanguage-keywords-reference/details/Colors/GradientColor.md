@@ -1,9 +1,7 @@
-# GradientColor
+﻿# GradientColor
 
 **Category:** Colors
 **Signature:** `GradientColor(Value,Min,Max,StartColor,EndColor)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

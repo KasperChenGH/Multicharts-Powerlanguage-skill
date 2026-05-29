@@ -1,9 +1,7 @@
-# Symbol_Date
+﻿# Symbol_Date
 
 **Category:** Data_Information_General
 **Signature:** `Symbol_Date`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

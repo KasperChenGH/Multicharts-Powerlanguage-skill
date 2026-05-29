@@ -1,9 +1,7 @@
-# Arw_GetDate
+﻿# Arw_GetDate
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_GetDate(ObjectID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

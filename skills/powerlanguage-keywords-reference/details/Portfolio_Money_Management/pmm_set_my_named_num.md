@@ -1,13 +1,11 @@
-# pmm_set_my_named_num
+﻿# pmm_set_my_named_num
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmm_set_my_named_num(VariableName, VariableValue)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `VariableName` *(string, required)* ??string variable. ??see official docs
-- `VariableValue` *(numeric, required)* ??numeric variable. ??see official docs
+- `VariableName` *(string, required)* — see official docs
+- `VariableValue` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

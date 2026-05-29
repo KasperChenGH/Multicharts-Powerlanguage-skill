@@ -1,9 +1,7 @@
-# Arw_GetText
+﻿# Arw_GetText
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_GetText(ObjectID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

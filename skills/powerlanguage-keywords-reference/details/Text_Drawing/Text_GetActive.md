@@ -1,9 +1,7 @@
-# Text_GetActive
+﻿# Text_GetActive
 
 **Category:** Text_Drawing
 **Signature:** `Text_GetActive`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

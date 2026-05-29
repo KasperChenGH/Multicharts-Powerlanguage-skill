@@ -1,12 +1,10 @@
-# pmms_strategy_maxiddrawdown
+﻿# pmms_strategy_maxiddrawdown
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategy_maxiddrawdown(StrategyIndex)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `StrategyIndex` *(numeric, required)* ??numeric variable. ??see official docs
+- `StrategyIndex` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# ContractProfit
+﻿# ContractProfit
 
 **Category:** Strategy_Position
 **Signature:** `ContractProfit`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

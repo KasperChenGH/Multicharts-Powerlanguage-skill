@@ -1,9 +1,7 @@
-# switch
+﻿# switch
 
 **Category:** Comparison_and_Loops
 **Signature:** `switch expr begin`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

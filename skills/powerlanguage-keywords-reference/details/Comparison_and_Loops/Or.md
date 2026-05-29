@@ -1,9 +1,7 @@
-# Or
+﻿# Or
 
 **Category:** Comparison_and_Loops
 **Signature:** `E1 Or E2 Where: E - true/false expressions`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,14 +1,12 @@
-# RectangleSetBegin_DT
+﻿# RectangleSetBegin_DT
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleSetBegin_DT (ID, b_DateTime, b_Price); Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ID` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `b_DateTime` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `b_Price` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
+- `ID` *(numeric, required)* — see official docs
+- `b_DateTime` *(numeric, required)* — see official docs
+- `b_Price` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

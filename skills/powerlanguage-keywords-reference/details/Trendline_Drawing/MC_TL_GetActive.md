@@ -1,9 +1,7 @@
-# MC_TL_GetActive
+﻿# MC_TL_GetActive
 
 **Category:** Trendline_Drawing
 **Signature:** `MC_TL_GetActive`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,9 +1,7 @@
-# Arw_GetLock
+﻿# Arw_GetLock
 
 **Category:** Arrow_Drawing
 **Signature:** `Arw_GetLock(ArrowID)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

@@ -1,15 +1,13 @@
-# RectangleSetEnd_s
+﻿# RectangleSetEnd_s
 
 **Category:** Rectangle_Drawing
 **Signature:** `RectangleSetEnd_s (ID, eDate, eTime_s, ePriceValue) Parameters`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `ID` *(numeric, required)* ??a numerical expression specifying the rectangle ??see official docs
-- `eDate` *(numeric, required)* ??a numerical expression specifying the new ??see official docs
-- `eTime_s` *(numeric, required)* ??a numerical expression specifying the new ??see official docs
-- `ePriceValue` *(numeric, required)* ??a numerical expression specifying the new ??see official docs
+- `ID` *(numeric, required)* — see official docs
+- `eDate` *(numeric, required)* — see official docs
+- `eTime_s` *(numeric, required)* — see official docs
+- `ePriceValue` *(numeric, required)* — see official docs
 
 **Example (illustrative)**
 ```

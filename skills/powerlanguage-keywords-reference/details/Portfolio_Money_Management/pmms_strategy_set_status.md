@@ -1,13 +1,11 @@
-# pmms_strategy_set_status
+﻿# pmms_strategy_set_status
 
 **Category:** Portfolio_Money_Management
 **Signature:** `pmms_strategy_set_status(StrategyIndex, Status)`
 
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
-
 **Parameters**
-- `StrategyIndex` *(numeric, required)* ??numeric variable. ??see official docs
-- `Status` *(string, required)* ??string variable. ??see official docs
+- `StrategyIndex` *(numeric, required)* — see official docs
+- `Status` *(string, required)* — see official docs
 
 **Example (illustrative)**
 ```

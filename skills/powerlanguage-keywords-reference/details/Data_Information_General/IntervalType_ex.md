@@ -1,9 +1,7 @@
-# IntervalType_ex
+﻿# IntervalType_ex
 
 **Category:** Data_Information_General
 **Signature:** `IntervalType_ex`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

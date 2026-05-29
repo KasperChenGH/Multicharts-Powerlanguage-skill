@@ -1,9 +1,7 @@
-# TL_SetExtRight
+﻿# TL_SetExtRight
 
 **Category:** Trendline_Drawing
 **Signature:** `TL_SetExtRight(TL_ID,LogicalExpression)`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```

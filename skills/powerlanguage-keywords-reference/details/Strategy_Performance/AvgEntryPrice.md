@@ -1,9 +1,7 @@
-# AvgEntryPrice
+﻿# AvgEntryPrice
 
 **Category:** Strategy_Performance
 **Signature:** `AvgEntryPrice`
-
-See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
 
 **Example (illustrative)**
 ```
