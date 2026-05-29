@@ -1,0 +1,13 @@
+# AllowSendOrdersOnTimer
+
+**Category:** Attributes
+**Signature:** `[AllowSendOrdersOnTimer = LogicalValue]`
+
+See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
+
+**Example (illustrative)**
+```
+Value1 = AllowSendOrdersOnTimer;
+```
+
+*Official docs:* https://www.multicharts.com/trading-software/index.php?title=AllowSendOrdersOnTimer

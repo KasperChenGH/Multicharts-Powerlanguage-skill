@@ -1,0 +1,13 @@
+# Description
+
+**Category:** Quote_Fields
+**Signature:** `Description`
+
+See the official MultiCharts documentation linked below for the full description and behavior of this keyword.
+
+**Example (illustrative)**
+```
+Value1 = Description;
+```
+
+*Official docs:* https://www.multicharts.com/trading-software/index.php?title=Description
