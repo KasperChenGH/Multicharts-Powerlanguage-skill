@@ -1,0 +1,106 @@
+{ test_declarations.txt -- exercises declaration patterns and data types }
+{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
+{ Expected: 0 errors, 0 warnings. }
+
+Inputs:
+    NumLen(14),
+    StrInput("hello"),
+    BoolInput(True),
+    PxInput(Close);
+
+Variables:
+    numVar(0),
+    strVar(""),
+    boolVar(False),
+    IntraBarPersist ibpVar(0),
+    idx(0);
+
+Arrays:
+    prices[20](0),
+    labels[5]("");
+
+If False Then Begin
+
+    { ================================================================ }
+    { === Numeric input and variable === }
+    { ================================================================ }
+    numVar = Average(Close, NumLen);
+    Value1 = numVar;
+
+    { ================================================================ }
+    { === String input and variable === }
+    { ================================================================ }
+    strVar = StrInput + " world";
+    strVar = "bar " + NumToStr(Close, 2);
+
+    { ================================================================ }
+    { === Boolean input and variable === }
+    { ================================================================ }
+    boolVar = BoolInput and Close > Open;
+    If boolVar Then
+        Value1 = 1;
+
+    { ================================================================ }
+    { === Series input (Price) === }
+    { ================================================================ }
+    Value1 = Average(PxInput, NumLen);
+    Value2 = PxInput[1];
+
+    { ================================================================ }
+    { === IntraBarPersist variable === }
+    { ================================================================ }
+    ibpVar = ibpVar + 1;
+
+    { ================================================================ }
+    { === Array write and read === }
+    { ================================================================ }
+    For idx = 0 To 20 Begin
+        prices[idx] = Close[idx];
+    End;
+    Value1 = prices[0] + prices[1];
+
+    labels[0] = "first";
+    labels[1] = "second";
+
+    { ================================================================ }
+    { === Value1..Value99 (pre-declared, no Variables: needed) === }
+    { ================================================================ }
+    Value1 = Close;
+    Value2 = Open;
+    Value3 = High;
+    Value99 = Low;
+
+    { ================================================================ }
+    { === Condition1..Condition99 (pre-declared, no Variables: needed) === }
+    { ================================================================ }
+    Condition1 = Close > Open;
+    Condition2 = Volume > 1000;
+    Condition99 = High > High[1];
+
+    { ================================================================ }
+    { === Multi-data series references === }
+    { ================================================================ }
+    Value1 = Close of data2;
+    Value2 = High of data2;
+    Value3 = Low of data2;
+    Value4 = Open of data2;
+    Value5 = Volume of data2;
+    Value6 = Average(Close of data2, 20);
+
+    { ================================================================ }
+    { === Built-in bar/data references === }
+    { ================================================================ }
+    Value1 = CurrentBar;
+    Value2 = BarNumber;
+    Value3 = Date;
+    Value4 = Time;
+
+    { ================================================================ }
+    { === Signal-only position state keywords === }
+    { ================================================================ }
+    Value1 = MarketPosition;
+    Value2 = CurrentContracts;
+    Value3 = EntryPrice;
+    Value4 = BarsSinceEntry;
+
+End;

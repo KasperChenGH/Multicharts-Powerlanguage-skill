@@ -1,0 +1,95 @@
+{ test_strategies.txt -- exercises real strategy patterns }
+{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
+{ Expected: 0 errors, 0 warnings. }
+
+Variables:
+    fastMA(0), slowMA(0),
+    rsiVal(0), atrVal(0), stopPx(0),
+    upperBB(0), lowerBB(0), volAvg(0),
+    adxVal(0), cciVal(0),
+    prevMP(0);
+
+If False Then Begin
+
+    { ================================================================ }
+    { === Strategy 1: MA Crossover === }
+    { ================================================================ }
+    fastMA = Average(Close, 10);
+    slowMA = Average(Close, 20);
+
+    If fastMA crosses over slowMA Then
+        Buy ("S1_LE") 1 Contract Next Bar at Market;
+
+    If fastMA crosses under slowMA Then
+        Sell ("S1_LX") 1 Contract Next Bar at Market;
+
+    { ================================================================ }
+    { === Strategy 2: RSI + ATR Stop + Position Detection === }
+    { ================================================================ }
+    rsiVal = RSI(Close, 14);
+    atrVal = AvgTrueRange(14);
+
+    { Canonical position-transition pattern }
+    If MarketPosition <> prevMP Then Begin
+        Value1 = MarketPosition;
+    End;
+    prevMP = MarketPosition;
+
+    If MarketPosition = 0 and rsiVal < 30 Then
+        Buy ("S2_LE") 1 Contract Next Bar at Market;
+
+    If MarketPosition = 1 Then Begin
+        stopPx = EntryPrice - 2 * atrVal;
+        Sell ("S2_STP") 1 Contract Next Bar at stopPx Stop;
+        If rsiVal > 70 Then
+            Sell ("S2_TGT") 1 Contract Next Bar at Market;
+    End;
+
+    { ================================================================ }
+    { === Strategy 3: Bollinger Band Breakout + Volume Filter === }
+    { ================================================================ }
+    upperBB = BollingerBand(Close, 20, 2);
+    lowerBB = BollingerBand(Close, 20, -2);
+    volAvg = Average(Volume, 20);
+
+    If Close > upperBB and Volume > volAvg * 1.5 Then
+        Buy ("S3_LE") 1 Contract Next Bar at Market;
+
+    If Close < lowerBB and Volume > volAvg * 1.5 Then
+        SellShort ("S3_SE") 1 Contract Next Bar at Market;
+
+    If MarketPosition = 1 Then
+        Sell ("S3_LX") 1 Contract Next Bar at lowerBB Stop;
+
+    If MarketPosition = -1 Then
+        BuyToCover ("S3_SX") 1 Contract Next Bar at upperBB Stop;
+
+    { ================================================================ }
+    { === Strategy 4: Multi-Indicator + Risk Management === }
+    { ================================================================ }
+    adxVal = ADX(14);
+    cciVal = CCI(20);
+
+    If adxVal > 25 and cciVal crosses over -100 Then
+        Buy ("S4_LE") 1 Contract Next Bar at Market;
+
+    If adxVal > 25 and cciVal crosses under 100 Then
+        SellShort ("S4_SE") 1 Contract Next Bar at Market;
+
+    SetStopLoss(500);
+    SetProfitTarget(1000);
+    SetBreakEven(200);
+
+    { ================================================================ }
+    { === Strategy 5: Multi-Data Regime Filter === }
+    { ================================================================ }
+    { data1 = trading instrument, data2 = regime filter }
+    If Close of data2 > Average(Close of data2, 50) Then Begin
+        If RSI(Close, 14) < 30 Then
+            Buy ("S5_LE") 1 Contract Next Bar at Market;
+    End;
+
+    If MarketPosition = 1 and RSI(Close, 14) > 70 Then
+        Sell ("S5_LX") 1 Contract Next Bar at Market;
+
+End;

@@ -15,7 +15,7 @@ Inputs:
     Threshold(0.0);
 
 Variables:
-    avg(0),
+    avgVal(0),
     triggered(False);
 
 Arrays:
@@ -52,6 +52,7 @@ Type is inferred from initial value in `Variables:` / `Inputs:` declarations.
 `begin` opens a block; `end` closes it. **Every `end` gets a semicolon EXCEPT when followed by `else`.**
 
 ```pascal
+// (pseudocode — real scripts need Variables declarations for all names)
 If condition Then Begin
     statement1;
     statement2;
@@ -66,12 +67,14 @@ Forgetting a semicolon on a terminal `End` is the most common compile error new 
 ## Control flow
 
 ```pascal
+// (pseudocode forms — declare all variables in real scripts)
 If x > 0 Then Begin ... End;
 
 If x > 0 Then ... Else If x = 0 Then ... Else ... ;
 
-For i = 1 To 10 Begin
-    sum = sum + i;
+Variables: idx(0), runTotal(0);   // loop counter + accumulator must be declared
+For idx = 1 To 10 Begin
+    runTotal = runTotal + idx;
 End;
 
 While condition Begin ... End;
@@ -82,6 +85,8 @@ Switch (n) Begin
     Default: ... ;
 End;
 ```
+
+**`For` / `While` loop counters must be declared as Variables.** PowerLanguage does not auto-declare loop counters. Using an undeclared name gives "Invalid type operation."
 
 ## Bar references
 
@@ -115,10 +120,10 @@ Inside a Signal script, these are always available — no declaration needed:
 
 | Variable | Meaning |
 |---|---|
-| `MarketPosition` | `1` if long, `-1` if short, `0` if flat |
+| `MarketPosition` | `1` if long, `-1` if short, `0` if flat. Optional `(N)` = Nth-ago position — see gotcha below |
 | `CurrentContracts` | Absolute size of current position |
-| `EntryPrice` | Average fill price of the current position |
-| `BarsSinceEntry` | Bars since the current position was entered |
+| `EntryPrice` | Average fill price of current position. Optional `(N)` = Nth-ago position |
+| `BarsSinceEntry` | Bars since current position was entered. Optional `(N)` = Nth-ago position |
 | `BarsSinceExit(N)` | Bars since the Nth-most-recent exit |
 
 ## Order syntax (high-level recap)
@@ -132,11 +137,158 @@ BuyToCover ("SX") 1 Contract Next Bar at Market;
 
 Quantities use `Contract` / `Contracts` (futures, FX) or `Share` / `Shares` (equities). The price-placement keyword (`Market`, `Limit`, `Stop`, `This Bar on Close`) determines when the fill happens. See `powerlanguage-keywords-reference` for each order keyword's full signature.
 
+## Common built-in functions
+
+MultiCharts ships with hundreds of pre-built Functions (`.elf` files) that are NOT in the keyword reference. These are the most commonly used ones — get the signatures right or you'll get compile errors.
+
+### Moving averages and smoothing
+
+| Function | Signature | Returns |
+|---|---|---|
+| `Average` | `Average(Price, Length)` | numeric |
+| `XAverage` | `XAverage(Price, Length)` | numeric (exponential MA) |
+| `AverageFC` | `AverageFC(Price, Length)` | numeric (fast calculation) |
+| `WAverage` | `WAverage(Price, Length)` | numeric (weighted MA) |
+| `AdaptiveMovAvg` | `AdaptiveMovAvg(Price, EffRatioLen, FastAvgLen, SlowAvgLen)` | numeric (Kaufman AMA) |
+| `MidPoint` | `MidPoint(Price, Length)` | numeric |
+
+### Oscillators and indicators
+
+| Function | Signature | Returns |
+|---|---|---|
+| `RSI` | `RSI(Price, Length)` | numeric (0–100) |
+| `Stochastic` | `Stochastic(PriceH, PriceL, PriceC, StochLen, SmoothLen1, SmoothLen2, SmoothType, oFastK, oFastD, oSlowK, oSlowD)` | numeric (1=ok, -1=error); populates 4 ref vars |
+| `BollingerBand` | `BollingerBand(Price, Length, NumDevs)` | numeric (+NumDevs for upper, -NumDevs for lower) |
+| `MACD` | `MACD(Price, FastLen, SlowLen)` | numeric |
+| `KeltnerChannel` | `KeltnerChannel(Price, Length, NumATRs)` | numeric |
+| `CCI` | `CCI(Length)` | numeric |
+| `ADX` | `ADX(Length)` | numeric |
+| `DMIPlus` | `DMIPlus(Length)` | numeric |
+| `DMIMinus` | `DMIMinus(Length)` | numeric |
+| `Momentum` | `Momentum(Price, Length)` | numeric |
+| `RateOfChange` | `RateOfChange(Price, Length)` | numeric |
+| `PercentR` | `PercentR(Length)` | numeric (Williams %R) |
+| `MoneyFlow` | `MoneyFlow(Length)` | numeric |
+| `Parabolic` | `Parabolic(AfStep)` | numeric (Parabolic SAR) |
+| `Volatility` | `Volatility(Length)` | numeric |
+| `UltimateOscillator` | `UltimateOscillator(Len1, Len2, Len3)` | numeric |
+| `ChaikinOsc` | `ChaikinOsc(FastLen, SlowLen, SmoothType)` | numeric |
+| `PriceOscillator` | `PriceOscillator(Price, FastLen, SlowLen)` | numeric |
+
+**"No Price parameter" gotcha:** These functions take **no Price parameter** — passing `Close` as the first arg is a compile error:
+- **Length-only:** `CCI`, `ADX`, `DMIPlus`, `DMIMinus`, `AvgTrueRange`, `PercentR`, `MoneyFlow`, `Volatility`, `RSquared`, `AccumDist` — call as `ADX(14)`, not `ADX(Close, 14)`.
+- **Multi-length (no Price):** `UltimateOscillator(Len1, Len2, Len3)`, `ChaikinOsc(FastLen, SlowLen, SmoothType)` — all parameters are lengths/types, not prices.
+- **Single non-length:** `Parabolic(AfStep)` — takes only an acceleration factor step, e.g. `Parabolic(0.02)`.
+
+**`Stochastic` gotcha:** It takes **11 parameters**, not 3. The last 4 are output ref variables — you must declare Variables for them. The return value is just a status code (1 or -1), not the stochastic value itself. Typical usage:
+
+```pascal
+Variables: fastK(0), fastD(0), slowK(0), slowD(0);
+Value1 = Stochastic(High, Low, Close, 14, 3, 3, 1, fastK, fastD, slowK, slowD);
+// Use slowK and slowD for signals
+```
+
+### Multi-output functions
+
+These functions populate output ref variables — you must declare Variables for each output parameter.
+
+| Function | Signature | Returns |
+|---|---|---|
+| `DirMovement` | `DirMovement(H, L, C, Length, oDMIp, oDMIm, oADX, oDIp, oDIm, oADXr)` | numeric; populates 6 ref vars |
+| `Extremes` | `Extremes(Price, Length, ExtrType, oExtUp, oExtDn)` | numeric; populates 2 ref vars |
+
+### Volatility and range
+
+| Function | Signature | Returns |
+|---|---|---|
+| `AvgTrueRange` | `AvgTrueRange(Length)` | numeric |
+| `TrueRange` | `TrueRange` | numeric (no args) |
+| `StandardDev` | `StandardDev(Price, Length, DataType)` | numeric (DataType: 1=population, 2=sample) |
+| `TrueHigh` | `TrueHigh` | numeric (no args) |
+| `TrueLow` | `TrueLow` | numeric (no args) |
+| `Range` | `Range` | numeric (no args; High - Low) |
+
+### Price extremes and Nth
+
+| Function | Signature | Returns |
+|---|---|---|
+| `Highest` | `Highest(Price, Length)` | numeric |
+| `Lowest` | `Lowest(Price, Length)` | numeric |
+| `HighestBar` | `HighestBar(Price, Length)` | numeric (bars ago) |
+| `LowestBar` | `LowestBar(Price, Length)` | numeric (bars ago) |
+| `NthHighest` | `NthHighest(Nth, Price, Length)` | numeric |
+| `NthLowest` | `NthLowest(Nth, Price, Length)` | numeric |
+| `NthHighestBar` | `NthHighestBar(Nth, Price, Length)` | numeric (bars ago) |
+| `NthLowestBar` | `NthLowestBar(Nth, Price, Length)` | numeric (bars ago) |
+
+### Swing detection
+
+| Function | Signature | Returns |
+|---|---|---|
+| `SwingHigh` | `SwingHigh(Occurrence, Price, Strength, Length)` | numeric (price at swing, or -1 if none) |
+| `SwingLow` | `SwingLow(Occurrence, Price, Strength, Length)` | numeric (price at swing, or -1 if none) |
+| `SwingHighBar` | `SwingHighBar(Occurrence, Price, Strength, Length)` | numeric (bars ago) |
+| `SwingLowBar` | `SwingLowBar(Occurrence, Price, Strength, Length)` | numeric (bars ago) |
+
+### Aggregation and linear regression
+
+| Function | Signature | Returns |
+|---|---|---|
+| `Summation` | `Summation(Price, Length)` | numeric |
+| `Cum` | `Cum(Price)` | numeric (cumulative sum from bar 1) |
+| `LinearRegValue` | `LinearRegValue(Price, Length, Offset)` | numeric |
+| `LinearRegAngle` | `LinearRegAngle(Price, Length)` | numeric |
+| `LinearRegSlope` | `LinearRegSlope(Price, Length)` | numeric |
+| `Correlation` | `Correlation(Price1, Price2, Length)` | numeric |
+| `RSquared` | `RSquared(Length)` | numeric |
+| `StdError` | `StdError(Price, Length)` | numeric |
+| `Median` | `Median(Price, Length)` | numeric |
+
+### Date/Time conversion
+
+| Function | Signature | Returns |
+|---|---|---|
+| `ELDate` | `ELDate(Month, Day, Year)` | numeric (EL date format) |
+| `MinutesToTime` | `MinutesToTime(Minutes)` | numeric (HHMM) |
+| `TimeToMinutes` | `TimeToMinutes(Time)` | numeric (total minutes) |
+
+### Price calculation shortcuts
+
+These take no arguments — they use the current bar's OHLC automatically.
+
+| Function | Signature | Returns |
+|---|---|---|
+| `AvgPrice` | `AvgPrice` | numeric |
+| `MedianPrice` | `MedianPrice` | numeric |
+| `TypicalPrice` | `TypicalPrice` | numeric |
+| `WeightedClose` | `WeightedClose` | numeric |
+
+### Counting and occurrence
+
+| Function | Signature | Returns |
+|---|---|---|
+| `CountIF` | `CountIF(Condition, Length)` | numeric |
+| `MRO` | `MRO(Condition, Length, Occurrence)` | numeric (bars ago of Nth occurrence) |
+
+### Volume-based
+
+| Function | Signature | Returns |
+|---|---|---|
+| `AccumDist` | `AccumDist(Length)` | numeric |
+
+### Utility
+
+| Function | Signature | Returns |
+|---|---|---|
+| `IFF` | `IFF(Condition, TrueVal, FalseVal)` | numeric (inline ternary) |
+
 ## Gotchas
 
-### `MarketPosition(N)` is position history, NOT bar offset
+### `MarketPosition(N)`, `EntryPrice(N)`, `BarsSinceEntry(N)` are position history, NOT bar offset
 
 A natural-looking expression like `MarketPosition(1)` reads as "the market position one bar ago" — but it actually returns the position **one trade ago**. So `MarketPosition(1)` on bar 50, when the strategy has been flat for the last 30 bars, returns whatever the previous closed position was (long or short), not `0`.
+
+**The same trap applies to `EntryPrice(N)` and `BarsSinceEntry(N)`.** `EntryPrice(1)` returns the entry price of the **previous closed position**, not the entry price one bar ago. `BarsSinceEntry(1)` returns the bars-since-entry of the previous position, not the current position minus one.
 
 To detect a position transition between bars (e.g. "did we just enter long?"), store the previous bar's position at the END of each bar:
 
@@ -168,6 +320,30 @@ If Time = 1501 Then ...     // for 1-min bars
 
 Add one bar's worth of minutes to the session-start clock time.
 
+### Variable names must not match built-in function names or reserved letters
+
+PowerLanguage is **case-insensitive**. If you declare `Variables: dmiPlus(0);` and then call `dmiPlus = DMIPlus(14);`, the compiler sees the variable and function as the same identifier — the variable shadows the function and the call fails. This applies to every built-in function: `Average`, `RSI`, `CCI`, `ADX`, `MACD`, `Stochastic`, `BollingerBand`, `Highest`, `Lowest`, etc. **Especially dangerous** are function names that look like natural variable names: `Range`, `Momentum`, `Median`, `Correlation`, `Sign`, `Last`, `Slippage`, `Margin`.
+
+The **single-letter data-series aliases** are also reserved and cannot be used as variable or loop-counter names: `C`(Close), `D`(Date), `H`(High), `I`(OpenInterest), `L`(Low), `O`(Open), `T`(Time), `V`(Volume). Because PL is case-insensitive, `i`, `c`, `l`, `v`, etc. are all off-limits. This is especially easy to hit with `i` in `For` loops.
+
+Use a different name — abbreviate, add a suffix, or prefix:
+
+```pascal
+// WRONG — i is reserved (alias for OpenInterest)
+For i = 1 To 10 Begin ... End;
+
+// RIGHT — use ii, idx, cnt, n, etc.
+For ii = 1 To 10 Begin ... End;
+
+// WRONG — shadows the built-in DMIPlus function
+Variables: dmiPlus(0);
+dmiPlus = DMIPlus(14);        // compile error
+
+// RIGHT
+Variables: dpVal(0);
+dpVal = DMIPlus(14);          // works
+```
+
 ### Inputs are read-only
 
 You cannot assign to an Input inside a script. If you need a mutable copy, declare a Variable and copy from the Input once.
@@ -197,7 +373,7 @@ A common new-user mistake is to write `Value1 = SomeKeyword;` for a keyword that
 
 - A keyword name that contains a space in the official docs (e.g. `DateTime bar update`, `Cancel Alert`) cannot be used as a single identifier — PowerLanguage parses only the first word and chokes on the rest.
 - **Single-letter data-series aliases** (`C`=Close, `D`=Date, `H`=High, `I`=OpenInt, `L`=Low, `O`=Open, `T`=Time, `V`=Volume) are reserved — using them with parentheses like `C(Close)` causes *"A keyword/variable is used as a function"*. Use square brackets for barsback: `C[1]`.
-- A handful of names in otherwise-value-rich categories are reserved syntactic tokens: `Data` (used as `Close of Data2`), `Call` / `Put` / `Strike` (option-context syntax), `Length`, `OptionType`, `DeltaType`, `RevSize`, `BoxSize`.
+- A handful of names in otherwise-value-rich categories are reserved syntactic tokens: `Data` (used as `Close of Data2`), `Call` / `Put` / `Strike` (option-context syntax), `OptionType`, `DeltaType`, `RevSize`, `BoxSize`.
 - **Procedure keywords** like `ScrollToBar`, `PlaceMarketOrder`, `ChangeMarketPosition`, and all PMM action keywords (`pmms_strategy_resume`, `pmms_strategy_pause`, `pmms_strategy_close_position`, `pmms_strategy_deny_*`, `pmms_strategy_allow_*`, `pmms_strategies_*_all`) perform an action and do NOT return a value — assigning them to `Value1` causes *"Function must have a return value"*. Call them as standalone statements: `ScrollToBar(1, 0);`.
 - **Signal/portfolio-only keywords** like `Portfolio_CurrencyCode`, `StrategyCurrencyCode`, `InitialCapital` cause *"X is not applicable to this type of study"* when used in an Indicator. They only work in Signal studies.
 - **Drawing-object accessors** (any `Rectangle*`, `TL_*`, `Arw_*`, `Text_*`, or `MC_TL_*`/`MC_Arw_*`/etc. function ending in `Get`/`Set`/`Delete`/`New`/…) take at least one drawing-object ID argument — never use them as bare values.

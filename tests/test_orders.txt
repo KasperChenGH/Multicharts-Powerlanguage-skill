@@ -1,0 +1,72 @@
+{ test_orders.txt -- exercises all order syntax variations }
+{ Paste this whole file into a new Signal study in PowerLanguage Editor and Verify (F3). }
+{ Expected: 0 errors, 0 warnings. }
+
+Variables:
+    limitPx(0), stopPx(0);
+
+If False Then Begin
+
+    limitPx = Close - 10;
+    stopPx = Close + 10;
+
+    { ================================================================ }
+    { === Buy -- long entry === }
+    { ================================================================ }
+    Buy ("LE_Mkt") 1 Contract Next Bar at Market;
+    Buy ("LE_Lmt") 1 Contract Next Bar at limitPx Limit;
+    Buy ("LE_Stp") 1 Contract Next Bar at stopPx Stop;
+    Buy ("LE_Cls") 1 Contract This Bar on Close;
+
+    { plural Contracts }
+    Buy ("LE_Multi") 3 Contracts Next Bar at Market;
+
+    { Shares (equities) }
+    Buy ("LE_Shr1") 100 Shares Next Bar at Market;
+    Buy ("LE_ShrL") 200 Shares Next Bar at limitPx Limit;
+
+    { default quantity (omit number and unit) }
+    Buy ("LE_Def") Next Bar at Market;
+
+    { ================================================================ }
+    { === Sell -- long exit === }
+    { ================================================================ }
+    Sell ("LX_Mkt") 1 Contract Next Bar at Market;
+    Sell ("LX_Lmt") 1 Contract Next Bar at limitPx Limit;
+    Sell ("LX_Stp") 1 Contract Next Bar at stopPx Stop;
+    Sell ("LX_Cls") 1 Contract This Bar on Close;
+    Sell ("LX_Multi") 3 Contracts Next Bar at Market;
+    Sell ("LX_Shr") 100 Shares Next Bar at Market;
+    Sell ("LX_Def") Next Bar at Market;
+
+    { ================================================================ }
+    { === SellShort -- short entry === }
+    { ================================================================ }
+    SellShort ("SE_Mkt") 1 Contract Next Bar at Market;
+    SellShort ("SE_Lmt") 1 Contract Next Bar at limitPx Limit;
+    SellShort ("SE_Stp") 1 Contract Next Bar at stopPx Stop;
+    SellShort ("SE_Cls") 1 Contract This Bar on Close;
+    SellShort ("SE_Multi") 3 Contracts Next Bar at Market;
+    SellShort ("SE_Shr") 100 Shares Next Bar at Market;
+    SellShort ("SE_Def") Next Bar at Market;
+
+    { ================================================================ }
+    { === BuyToCover -- short exit === }
+    { ================================================================ }
+    BuyToCover ("SX_Mkt") 1 Contract Next Bar at Market;
+    BuyToCover ("SX_Lmt") 1 Contract Next Bar at limitPx Limit;
+    BuyToCover ("SX_Stp") 1 Contract Next Bar at stopPx Stop;
+    BuyToCover ("SX_Cls") 1 Contract This Bar on Close;
+    BuyToCover ("SX_Multi") 3 Contracts Next Bar at Market;
+    BuyToCover ("SX_Shr") 100 Shares Next Bar at Market;
+    BuyToCover ("SX_Def") Next Bar at Market;
+
+    { ================================================================ }
+    { === Strategy exit management === }
+    { ================================================================ }
+    SetStopLoss(500);
+    SetProfitTarget(1000);
+    SetBreakEven(200);
+    SetExitOnClose;
+
+End;
